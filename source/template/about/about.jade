@@ -1,0 +1,66 @@
+doctype html
+html(lang="ru-RU")
+  include ../common/_head
+  body
+    include ../common/_browsehappy
+    header.header
+      div.header__top
+        div.header__social
+          a.social__vk_white(href="vk.com")
+          a.social__gh_white(href="github.com")
+          a.social__li_white(href="linkedin.com")
+        div.header__menu
+          a.header__menu__link
+      div.header__bottom
+        div.header__avatar
+          img.avatar__image(src="../assets/img/avatar.jpg" alt="Dmitry Gavrish")
+        h3.header__name Дмитрий Гавриш
+        p.header__description Личный сайт веб-разработчика
+      div.header__arrow
+        div.arrow__down
+    main.main__about
+      section.about__info
+        h1.about__title Обо мне
+        div.about__content
+          img.avatar__image_large(src="../assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          h2.about__info_title Кто я
+          p.about__text.
+            Я начинающий веб-разработчик из Москвы. Мне 23 года. Я занимаюсь разработкой
+            самых разных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+          p.about__text.
+            Этот сайт я сделал в рамках обучения в LoftSchool. Пока что сайт еще не готов,
+            но обязательно будет.
+      section.about__skills
+        h2.about__skills_title Чем я могу быть вам полезен
+        p.about__text.
+          Больше всего меня привлекает Frontend разработка, но я также знаком с технологиями Backend,
+          и могу решать на нем задачи легкого уровня.
+        h4.skills__frontend Frontend
+        div.skills__array
+            div.array__html5
+            div.array__css3
+            div.array__jsjq
+        h4.skills__frontend Backend
+        div.skills__array
+          div.array__php
+          div.array__mysql
+          div.array__nodejs
+          div.array__mongo
+        h4.skills__frontend Workflow
+        div.skills__array
+          div.array__git
+          div.array__gulp
+          div.array__bower
+    section.contacts
+      div.contacts__container
+        div.contacts__plate
+          h2.contacts__title Контакты
+          div.contacts__item.contacts__item_skype
+            p.contacts__item__text dmitry.gavrish
+          div.contacts__item.contacts__item_mail
+            p.contacts__item__text dmitrygavrish@gmail.com
+          div.contacts__item.contacts__item_phone
+            p.contacts__item__text +7 916 068 43 88
+          div.contacts__item.contacts__item_address
+            p.contacts__item__text г. Москва, Люблино
+    include ../common/_footer

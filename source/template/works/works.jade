@@ -1,0 +1,58 @@
+doctype html
+html(lang="ru-RU")
+  include ../common/_head
+  body
+    include ../common/_browsehappy
+    header.header
+      div.header__top
+        div.header__social
+          a.social__vk_white(href="vk.com")
+          a.social__gh_white(href="github.com")
+          a.social__li_white(href="linkedin.com")
+        div.header__menu
+          a.header__menu__link
+      div.header__bottom
+        div.header__avatar
+          img.avatar__image(src="../assets/img/avatar.jpg" alt="Dmitry Gavrish")
+        h3.header__name Дмитрий Гавриш
+        p.header__description Личный сайт веб-разработчика
+      div.header__arrow
+        div.arrow__down
+    main.main__works
+      h1.works__title Мои работы
+      section.works__description
+        h2.works__name
+        p.works__tech
+        a.works__link(href="#" target="_blank")
+      section.works__slides
+        div.works__image
+        div.works__controls
+          div.controls__prev
+          div.controls__next
+      section.opinion
+        h2.opinion__title Что обо мне говорят
+        div.opinion__items
+          div.opinion__item
+            blockquote.opinion__text
+            div.opinion__author
+              img.opinion__avatar
+            p.opinion__author__name
+            p.opinion__author__prof
+          div.opinion__item
+            blockquote.opinion__text
+            div.opinion__author
+              img.opinion__avatar
+            p.opinion__author__name
+            p.opinion__author__prof
+        form.connect__form
+          h3.connect__title Связаться со мной
+          label
+            input(type="text" name="name" id="name" placeholder="Имя")
+          label
+            input(type="email" name="email" id="email" placeholder="Email")
+          textarea(name="message" id="message" placeholder="Ваше сообщение")
+          input(type="submit" name="submit" value="Отправить")
+          input(type="reset" name="reset" value="Очистить")
+        div.arrow_up
+    include ../common/_footer
+

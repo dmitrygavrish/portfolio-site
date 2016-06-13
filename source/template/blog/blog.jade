@@ -1,0 +1,53 @@
+doctype html
+html(lang="ru-RU")
+  include ../common/_head
+  body
+    include ../common/_browsehappy
+    header.header
+      div.header__top
+        div.header__social
+          a.social__vk_white(href="vk.com")
+          a.social__gh_white(href="github.com")
+          a.social__li_white(href="linkedin.com")
+        div.header__menu
+          a.header__menu__link
+      div.header__bottom
+        div.header__avatar
+          img.avatar__image(src="../assets/img/avatar.jpg" alt="Dmitry Gavrish")
+        h1.header__title Блог
+        p.header__description Статьи, которые я написал
+    main.main__blog
+      aside.blog__menu
+        ul.blog__menu__list
+          li.blog__menu__item
+            a.blog__menu__link(href="#wp-1")
+          li.blog__menu__item
+            a.blog__menu__link(href="#wp-2")
+          li.blog__menu__item
+            a.blog__menu__link(href="#wp-3")
+          li.blog__menu__item
+            a.blog__menu__link(href="#wp-4")
+          li.blog__menu__item
+            a.blog__menu__link(href="#wp-5")
+      section.blog__contents
+        div#wp-1.blog__article
+          h2.article__title
+          p.article__date
+          p.article__text
+        div#wp-2.blog__article
+          h2.article__title
+          p.article__date
+          p.article__text
+        div#wp-3.blog__article
+          h2.article__title
+          p.article__date
+          p.article__text
+        div#wp-4.blog__article
+          h2.article__title
+          p.article__date
+          p.article__text
+        div#wp-5.blog__article
+          h2.article__title
+          p.article__date
+          p.article__text
+    include ../common/_footer
