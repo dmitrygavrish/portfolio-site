@@ -13,7 +13,7 @@ html(lang="ru-RU")
           a.header__menu__link
       div.header__bottom
         div.header__avatar
-          img.avatar__image(src="../assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          img.avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
         h3.header__name Дмитрий Гавриш
         p.header__description Личный сайт веб-разработчика
       div.header__arrow
@@ -22,7 +22,7 @@ html(lang="ru-RU")
       section.about__info
         h1.about__title Обо мне
         div.about__content
-          img.avatar__image_large(src="../assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          img.avatar__image_large(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
           h2.about__info_title Кто я
           p.about__text.
             Я начинающий веб-разработчик из Москвы. Мне 23 года. Я занимаюсь разработкой
@@ -63,4 +63,5 @@ html(lang="ru-RU")
             p.contacts__item__text +7 916 068 43 88
           div.contacts__item.contacts__item_address
             p.contacts__item__text г. Москва, Люблино
+    - var page = 'about'
     include ../common/_footer

@@ -1,14 +1,35 @@
 footer.summary
   div.summary__menu
-    ul.summary__pages
-      li.page__item
-        a.page__link(href="../works/works.html") Мои работы
-      li.page__item
-        a.page__link(href="../about/about.html") Обо мне
-      li.page__item
-        a.page__link(href="../blog/blog.html") Блог
-      li.page__item
-        a.page__link(href="../index.html") Авторизация
+    if page == 'works'
+      ul.summary__pages
+        li.page__item
+          a.page__link_works(href="#") Мои работы
+        li.page__item
+          a.page__link_about(href="about.html") Обо мне
+        li.page__item
+          a.page__link_blog(href="blog.html") Блог
+        li.page__item
+          a.page__link_main(href="index.html") Авторизация
+    else if page == 'about'
+      ul.summary__pages
+        li.page__item
+          a.page__link_works(href="works.html") Мои работы
+        li.page__item
+          a.page__link_about(href="#") Обо мне
+        li.page__item
+          a.page__link_blog(href="blog.html") Блог
+        li.page__item
+          a.page__link_main(href="index.html") Авторизация
+    else if page == 'blog'
+      ul.summary__pages
+        li.page__item
+          a.page__link_works(href="works.html") Мои работы
+        li.page__item
+          a.page__link_about(href="about.html") Обо мне
+        li.page__item
+          a.page__link_blog(href="#") Блог
+        li.page__item
+          a.page__link_main(href="index.html") Авторизация
     ul.summary__social
       li.social__vk_r
         a.social__link_r(href="vk.com" target="_blank")
