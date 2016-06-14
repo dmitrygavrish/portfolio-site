@@ -1,69 +1,69 @@
 extends ../main
   block header
-    header.header__admin
-      div.admin__top
-        h1.admin__title
-        a.return__link Вернуться на сайт
+    header.header-admin
+      div.admin-top
+        h1.admin-top__title Панель администрирования
+        a.admin-top__link Вернуться на сайт
   block content
-    main.main__admin
-      div.admin__menu
-        ul.menu__tabs
-          li.menu__tab
-            a.tab__link(href="#tab-1") Обо мне
-          li.menu__tab
-            a.tab__link(href="#tab-2") Блог
-          li.menu__tab
-            a.tab__link(href="#tab-3") Мои работы
-      div.admin__contents
-        div#tab-1.contents__page
-          h2.contents__page__title Страница &laquo;Обо мне&raquo;
-          form.skills__upgrade
+    main.main-admin
+      div.admin-menu
+        ul.admin-menu__tabs
+          li.admin-menu__tab
+            a.admin-menu__link(href="#tab-1") Обо мне
+          li.admin-menu__tab
+            a.admin-menu__link(href="#tab-2") Блог
+          li.admin-menu__tab
+            a.admin-menu__link(href="#tab-3") Мои работы
+      div.admin-contents
+        div#tab-1.contents-page
+          h2.contents-page__title Страница &laquo;Обо мне&raquo;
+          form.skills-upgrade
+            div.skills-block
+              h3.skills-block__title Frontend
+              label.skills-block__label(for="number-html") Html
+                input.skills-block__input(type="number" name="number-html" id="number-html")
+              label.skills-block__label(for="number-css") Css
+                input.skills-block__input(type="number" name="number-css" id="number-css")
+              label.skills-block__label(for="number-js") JavaScript
+                input.skills-block__input(type="number" name="number-js" id="number-js")
             div.skills__block
-              h3.skills__block__title Frontend
-              label(for="number-html") Html
-                input(type="number" name="number-html" id="number-html")
-              label(for="number-css") Css
-                input(type="number" name="number-css" id="number-css")
-              label(for="number-js") JavaScript
-                input(type="number" name="number-js" id="number-js")
+              h3.skills-block__title Backend
+              label.skills-block__label(for="number-php") Php
+                input.skills-block__input(type="number" name="number-php" id="number-php")
+              label.skills-block__label(for="number-mysql") MySql
+                input.skills-block__input(type="number" name="number-mysql" id="number-mysql")
+              label.skills-block__label(for="number-node") Node.js
+                input.skills-block__input(type="number" name="number-node" id="number-node")
+              label.skills-block__label(for="number-mongo") Mongo.db
+                input.skills-block__input(type="number" name="number-mongo" id="number-mongo")
             div.skills__block
-              h3.skills__block__title Backend
-              label(for="number-php") Php
-                input(type="number" name="number-php" id="number-php")
-              label(for="number-mysql") MySql
-                input(type="number" name="number-mysql" id="number-mysql")
-              label(for="number-node") Node.js
-                input(type="number" name="number-node" id="number-node")
-              label(for="number-mongo") Mongo.db
-                input(type="number" name="number-mongo" id="number-mongo")
-            div.skills__block
-              h3.skills__block__title Workflow
-              label(for="number-git") Git
-                input(type="number" name="number-git" id="number-git")
-              label(for="number-gulp") Gulp
-                input(type="number" name="number-gulp" id="number-gulp")
-              label(for="number-bower") Bower
-                input(type="number" name="number-bower" id="number-bower")
-            input(type="submit" name="submit-skills" value="Сохранить")
-        div#tab-2.contents__page
-          h2.contents__page__title Страница &laquo;Блог&raquo;
-          form.add__article
-            h3.add__article__title Добавить запись
-            label
-              input(type="text" name="article" id="article" placeholder="Название")
-            label
-              input(type="text" name="date" id="date" placeholder="Дата")
-            textarea(name="content" id="content" placeholder="Содержание")
-            input(type="submit" name="submit-blog" value="Добавить")
-        div#tab-3.contents__page
-          h2.contents__page__title Страница &laquo;Мои работы&raquo;
-          form.add__project
-            h3.add__project__title Добавить работу
-            label
-              input(type="text" name="project" id="project" placeholder="Название проекта")
-            label
-              input(type="text" name="tech" id="tech" placeholder="Технологии")
-            label(for="projectimg") Загрузить картинку
-            input(type="file" name="projectimg" id="projectimg")
-            input(type="submit" name="submit-project" value="Добавить")
+              h3.skills-block__title Workflow
+              label.skills-block__label(for="number-git") Git
+                input.skills-block__input(type="number" name="number-git" id="number-git")
+              label.skills-block__label(for="number-gulp") Gulp
+                input.skills-block__input(type="number" name="number-gulp" id="number-gulp")
+              label.skills-block__label(for="number-bower") Bower
+                input.skills-block__input(type="number" name="number-bower" id="number-bower")
+            input.skills-upgrade__submit(type="submit" name="submit-skills" value="Сохранить")
+        div#tab-2.contents-page
+          h2.contents-page__title Страница &laquo;Блог&raquo;
+          form.add-article
+            h3.add-article__title Добавить запись
+            label.add-article__label
+              input.add-article__input(type="text" name="article" id="article" placeholder="Название")
+            label.add-article__label
+              input.add-article__input(type="text" name="date" id="date" placeholder="Дата")
+            textarea.add-article__text(name="content" id="content" placeholder="Содержание")
+            input.add-article__submit(type="submit" name="submit-blog" value="Добавить")
+        div#tab-3.contents-page
+          h2.contents-page__title Страница &laquo;Мои работы&raquo;
+          form.add-project
+            h3.add-project__title Добавить работу
+            label.add-project__label
+              input.add-project__input(type="text" name="project" id="project" placeholder="Название проекта")
+            label.add-project__label
+              input.add-project__input(type="text" name="tech" id="tech" placeholder="Технологии")
+            label.add-project__image(for="projectimg") Загрузить картинку
+            input.add-project__i-input(type="file" name="projectimg" id="projectimg")
+            input.add-project__submit(type="submit" name="submit-project" value="Добавить")
   block footer

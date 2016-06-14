@@ -6,19 +6,19 @@ html(lang="ru-RU")
     include common/_browsehappy
     block header
       header.header
-        div.header__top
-          div.header__social
-            a.social__vk_white(href="vk.com")
-            a.social__gh_white(href="github.com")
-            a.social__li_white(href="linkedin.com")
-          div.header__menu
-            a.header__menu__link
-        div.header__bottom
-          div.header__avatar
-            img.avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
-          h3.header__name Дмитрий Гавриш
-          p.header__description Личный сайт веб-разработчика
-        div.header__arrow
+        div.header-top
+          div.header-social
+            a.header-social__link.header-social__link_vk-white(href="vk.com")
+            a.header-social__link.header-social__link_gh-white(href="github.com")
+            a.header-social__link.header-social__link_li-white(href="linkedin.com")
+          div.header-menu
+            a.header-menu__link
+        div.header-bottom
+          div.header-avatar
+            img.header-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          h3.header-bottom__title Дмитрий Гавриш
+          p.header-bottom__desc Личный сайт веб-разработчика
+        div.arrow
           div.arrow__down
     block content
     block footer-page

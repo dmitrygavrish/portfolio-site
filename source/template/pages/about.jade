@@ -1,49 +1,54 @@
 extends ../main
   block content
-    main.main__about
-      section.about__info
-        h1.about__title Обо мне
-        div.about__content
-          img.avatar__image_large(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
-          h2.about__info_title Кто я
-          p.about__text.
+    main.main-about
+      section.about-info
+        h1.about-info__title Обо мне
+        div.about-content
+          img.about-content__avatar(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          h2.about-content__title Кто я
+          p.about-content__text.
             Я начинающий веб-разработчик из Москвы. Мне 23 года. Я занимаюсь разработкой
             самых разных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-          p.about__text.
+          p.about-content__text.
             Этот сайт я сделал в рамках обучения в LoftSchool. Пока что сайт еще не готов,
             но обязательно будет.
-      section.about__skills
-        h2.about__skills_title Чем я могу быть вам полезен
-        p.about__text.
+      section.about-skills
+        h2.about-skills__title Чем я могу быть вам полезен
+        p.about-content__text.
           Больше всего меня привлекает Frontend разработка, но я также знаком с технологиями Backend,
           и могу решать на нем задачи легкого уровня.
-        h4.skills__frontend Frontend
-        div.skills__array
-            div.array__html5
-            div.array__css3
-            div.array__jsjq
-        h4.skills__frontend Backend
-        div.skills__array
-          div.array__php
-          div.array__mysql
-          div.array__nodejs
-          div.array__mongo
-        h4.skills__frontend Workflow
-        div.skills__array
-          div.array__git
-          div.array__gulp
-          div.array__bower
+        h4.about-skills__title Frontend
+        div.skills-array
+            div.skills-array__html5
+            div.skills-array__css3
+            div.skills-array__jsjq
+        h4.about-skills__title Backend
+        div.skills-array
+          div.skills-array__php
+          div.skills-array__mysql
+          div.skills-array__nodejs
+          div.skills-array__mongo
+        h4.about-skills__title Workflow
+        div.skills-array
+          div.skills-array__git
+          div.skills-array__gulp
+          div.skills-array__bower
     section.contacts
-      div.contacts__container
-        div.contacts__plate
-          h2.contacts__title Контакты
-          div.contacts__item.contacts__item_skype
-            p.contacts__item__text dmitry.gavrish
-          div.contacts__item.contacts__item_mail
-            p.contacts__item__text dmitrygavrish@gmail.com
-          div.contacts__item.contacts__item_phone
-            p.contacts__item__text +7 916 068 43 88
-          div.contacts__item.contacts__item_address
-            p.contacts__item__text г. Москва, Люблино
+      div.contacts-container
+        div.contacts-plate
+          h2.contacts-plate__title Контакты
+          ul.contacts-plate__list
+            li.contacts-plate__item
+              span.contacts-plate__icon.contacts-plate__icon_skype
+              p.contacts-plate__text dmitry.gavrish
+            li.contacts-plate__item
+              span.contacts-plate__icon.contacts-plate__icon_email
+              p.contacts-plate__text dmitrygavrish@gmail.com
+            li.contacts-plate__item
+              span.contacts-plate__icon.contacts-plate__icon_phone
+              p.contacts-plate__text +7 916 068 43 88
+            li.contacts-plate__item
+              span.contacts-plate__icon.contacts-plate__icon_loc
+              p.contacts-plate__text г. Москва, Люблино
   block footer-page
     - var page = 'about'

@@ -1,41 +1,42 @@
 extends ../main
   block content
-    main.main__works
-      h1.works__title Мои работы
-      section.works__description
-        h2.works__name
-        p.works__tech
-        a.works__link(href="#" target="_blank")
-      section.works__slides
-        div.works__image
-        div.works__controls
-          div.controls__prev
-          div.controls__next
+    main.main-works
+      h1.main-works__title Мои работы
+      section.works-desc
+        h2.works-desc__title
+        p.works-desc__tech
+        a.works-desc__link(href="#" target="_blank")
+      section.works-slides
+        div.works-image
+        div.works-controls
+          div.controls-prev
+          div.controls-next
       section.opinion
         h2.opinion__title Что обо мне говорят
-        div.opinion__items
-          div.opinion__item
-            blockquote.opinion__text
-            div.opinion__author
-              img.opinion__avatar
-            p.opinion__author__name
-            p.opinion__author__prof
-          div.opinion__item
-            blockquote.opinion__text
-            div.opinion__author
-              img.opinion__avatar
-            p.opinion__author__name
-            p.opinion__author__prof
-        form.connect__form
-          h3.connect__title Связаться со мной
-          label
-            input(type="text" name="name" id="name" placeholder="Имя")
-          label
-            input(type="email" name="email" id="email" placeholder="Email")
-          textarea(name="message" id="message" placeholder="Ваше сообщение")
-          input(type="submit" name="submit" value="Отправить")
-          input(type="reset" name="reset" value="Очистить")
-        div.arrow_up
+        div.opinion-items
+          div.opinion-item
+            blockquote.opinion-item__text
+            div.opinion-author
+              img.opinion-author__avatar
+              p.opinion-author__name
+              p.opinion-author__occ
+          div.opinion-item
+            blockquote.opinion-item__text
+            div.opinion-author
+              img.opinion-author__avatar
+              p.opinion-author__name
+              p.opinion-author__occ
+        form.connect-form
+          h3.connect-form__title Связаться со мной
+          label.connect-form__label
+            input.connect-form__input(type="text" name="name" id="name" placeholder="Имя")
+          label.connect-form__label
+            input.connect-form__input(type="email" name="email" id="email" placeholder="Email")
+          textarea.connect-form__text(name="message" id="message" placeholder="Ваше сообщение")
+          input.connect-form__submit(type="submit" name="submit" value="Отправить")
+          input.connect-form__reset(type="reset" name="reset" value="Очистить")
+        div.arrow
+          div.arrow__up
    block footer-page
     - var page = 'works'
 

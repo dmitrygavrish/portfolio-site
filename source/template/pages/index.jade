@@ -4,43 +4,43 @@ extends ../main
       div.authorize__button
         a.authorize__link Авторизоваться
   block content
-    main.main__welcome
-      div.welcome__plate
-        div.plate__avatar
-          img.avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
-        h1.plate__name Дмитрий Гавриш
-        p.plate__description Личный сайт веб-разработчика
-        div.plate__social
-          div.social__vk
-            a.social__link(href="vk.com" target="_blank")
-          div.social__gh
-            a.social__link(href="github.com" target="_blank")
-          div.social__li
-            a.social__link(href="linkedin.com" target="_blank")
-        div.plate__menu
-          div.plate__menu__works
-            a.plate__menu__link(href="works.html") Мои работы
-          div.plate__menu__about
-            a.plate__menu__link(href="about.html") Обо мне
-          div.plate__menu__blog
-            a.plate__menu__link(href="blog.html") Блог
-      div.authorize__plate
-        h2.authorize__header
-        form.authorize__form
-          label(for="login")
-          input(type="text" name="login" id="login" placeholder="Логин")
-          label(for="password")
-          input(type="password" name="password" id="password" placeholder="Пароль")
-          label(for="personalize") Я человек
-          input(type="checkbox" name="personalize" id="personalize")
-          p.form__question Вы точно не робот?
-          label(for="radio-1") Да
-          input(type="radio" name="personalize-2" id="radio-1")
-          label(for="radio-2") Не уверен
-          input(type="radio" name="personalize-2" id="radio-2")
-          div.form__menu
-            input(type="reset" name="reset" value="На главную")
-            input(type="submit" name="submit" value="Войти")
+    main.main-welcome
+      div.welcome-plate
+        div.plate-avatar
+          img.plate-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+        h1.welcome-plate__title Дмитрий Гавриш
+        p.welcome-plate__description Личный сайт веб-разработчика
+        ul.plate-social
+          li.plate-social__item
+            a.plate-social__link.plate-social__link_vk(href="vk.com" target="_blank")
+          li.plate-social__item
+            a.plate-social__link.plate-social__link_gh(href="github.com" target="_blank")
+          li.plate-social__item
+            a.plate-social__link.plate-social__link_li(href="linkedin.com" target="_blank")
+        ul.plate-menu
+          li.plate-menu__item
+            a.plate-menu__link.plate-menu__link_works(href="works.html") Мои работы
+          li.plate-menu__item
+            a.plate-menu__link.plate-menu__link_about(href="about.html") Обо мне
+          li.plate-menu__item
+            a.plate-menu__link.plate-menu__link_blog(href="blog.html") Блог
+      div.authorize-plate
+        h2.authorize-plate__title Авторизуйтесь
+        form.authorize-form
+          label.authorize-form__label.authorize-form__label_login(for="login")
+          input.authorize-form__input(type="text" name="login" id="login" placeholder="Логин")
+          label.authorize-form__label.authorize-form__label_pw(for="password")
+          input.authorize-form__input(type="password" name="password" id="password" placeholder="Пароль")
+          label.authorize-form__c-label(for="personalize") Я человек
+          input.authorize-form__c-input(type="checkbox" name="personalize" id="personalize")
+          p.authorize-form__question Вы точно не робот?
+          label.authorize-form__r-label(for="radio-1") Да
+          input.authorize-form__r-input(type="radio" name="personalize-2" id="radio-1")
+          label.authorize-form__r-label(for="radio-2") Не уверен
+          input.authorize-form__r-input(type="radio" name="personalize-2" id="radio-2")
+          div.form-menu
+            input.form-menu__input.form-menu__input_reset(type="reset" name="reset" value="На главную")
+            input.form-menu__input.form-menu__input_submit(type="submit" name="submit" value="Войти")
    block footer
     footer.copyright
       p.copyright__text &copy; Дмитрий Гавриш | создано с любовью в LoftSchool | 2016
