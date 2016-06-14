@@ -1,12 +1,10 @@
-doctype html
-html(lang="ru-RU")
-  include ../common/_head
-  body
-    include ../common/_browsehappy
+extends ../main
+  block header
     header.header__admin
       div.admin__top
         h1.admin__title
         a.return__link Вернуться на сайт
+  block content
     main.main__admin
       div.admin__menu
         ul.menu__tabs
@@ -68,3 +66,4 @@ html(lang="ru-RU")
             label(for="projectimg") Загрузить картинку
             input(type="file" name="projectimg" id="projectimg")
             input(type="submit" name="submit-project" value="Добавить")
+  block footer

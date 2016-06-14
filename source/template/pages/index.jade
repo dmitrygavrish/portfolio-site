@@ -1,12 +1,9 @@
-include ../common/_mixins
-doctype html
-html(lang="ru-RU")
-  include ../common/_head
-  body
-    include ../common/_browsehappy
+extends ../main
+  block header
     header.authorize
       div.authorize__button
         a.authorize__link Авторизоваться
+  block content
     main.main__welcome
       div.welcome__plate
         div.plate__avatar
@@ -44,6 +41,6 @@ html(lang="ru-RU")
           div.form__menu
             input(type="reset" name="reset" value="На главную")
             input(type="submit" name="submit" value="Войти")
+   block footer
     footer.copyright
       p.copyright__text &copy; Дмитрий Гавриш | создано с любовью в LoftSchool | 2016
-

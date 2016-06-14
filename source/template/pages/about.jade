@@ -1,24 +1,5 @@
-include ../common/_mixins
-doctype html
-html(lang="ru-RU")
-  include ../common/_head
-  body
-    include ../common/_browsehappy
-    header.header
-      div.header__top
-        div.header__social
-          a.social__vk_white(href="vk.com")
-          a.social__gh_white(href="github.com")
-          a.social__li_white(href="linkedin.com")
-        div.header__menu
-          a.header__menu__link
-      div.header__bottom
-        div.header__avatar
-          img.avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
-        h3.header__name Дмитрий Гавриш
-        p.header__description Личный сайт веб-разработчика
-      div.header__arrow
-        div.arrow__down
+extends ../main
+  block content
     main.main__about
       section.about__info
         h1.about__title Обо мне
@@ -64,5 +45,5 @@ html(lang="ru-RU")
             p.contacts__item__text +7 916 068 43 88
           div.contacts__item.contacts__item_address
             p.contacts__item__text г. Москва, Люблино
+  block footer-page
     - var page = 'about'
-    include ../common/_footer

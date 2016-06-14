@@ -1,9 +1,5 @@
-include ../common/_mixins
-doctype html
-html(lang="ru-RU")
-  include ../common/_head
-  body
-    include ../common/_browsehappy
+extends ../main
+  block header
     header.header
       div.header__top
         div.header__social
@@ -17,6 +13,7 @@ html(lang="ru-RU")
           img.avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
         h1.header__title Блог
         p.header__description Статьи, которые я написал
+  block content
     main.main__blog
       aside.blog__menu
         ul.blog__menu__list
@@ -51,5 +48,5 @@ html(lang="ru-RU")
           h2.article__title
           p.article__date
           p.article__text
+  block footer-page
     - var page = 'blog'
-    include ../common/_footer
