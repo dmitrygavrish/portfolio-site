@@ -1,0 +1,4 @@
+mixin use(name, sname)
+  - var svg = 'assets/img/svg-sprite.svg'
+  svg(role='img' class='#{sname}')
+    use(xlink:href='#{svg}##{name}')

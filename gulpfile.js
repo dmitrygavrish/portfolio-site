@@ -35,3 +35,7 @@ $.gulp.task('default', $.gulp.series(
     'serve'
   )
 ));
+
+$.gulp.task('svg', $.gulp.series(
+  'svg'
+));
