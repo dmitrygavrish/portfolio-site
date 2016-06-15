@@ -2,7 +2,7 @@ extends ../main-index
 block header
     header.header.authorize
       div.authorize-button
-        a.authorize-button__link Авторизоваться
+        a.authorize-button__link(href="#auth") Авторизоваться
   block content
     main.main.main-welcome
       div.welcome-plate
@@ -22,11 +22,11 @@ block header
               a.plate-social__link.plate-social__link_li(href="linkedin.com" target="_blank")
                 +use('in', 'svg-in-dims')
         ul.plate-menu
-          li.plate-menu__item
+          li.plate-menu__item.plate-menu__item_works
             a.plate-menu__link.plate-menu__link_works(href="works.html") Мои работы
-          li.plate-menu__item
+          li.plate-menu__item.plate-menu__item_about
             a.plate-menu__link.plate-menu__link_about(href="about.html") Обо мне
-          li.plate-menu__item
+          li.plate-menu__item.plate-menu__item_blog
             a.plate-menu__link.plate-menu__link_blog(href="blog.html") Блог
       div.authorize-plate
         h2.authorize-plate__title Авторизуйтесь
