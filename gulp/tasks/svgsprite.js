@@ -17,6 +17,7 @@ module.exports = function() {
     };
 
   return $.gulp.src('./source/images/*.svg')
+    .pipe($.rsp.remove({ properties: [$.rsp.PROPS_FILL] }))
     .pipe($.gp.svgSprite(config))
     .pipe($.gulp.dest('./build'));
 

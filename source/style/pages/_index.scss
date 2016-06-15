@@ -1,10 +1,154 @@
-.plate__avatar {
-  width: 10rem;
-  height: 10rem;
+@import "../mixins";
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background-image: url(../img/mountains.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* *****header***** */
+.authorize {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  border: 1px solid black;
+}
+.authorize-button {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+}
+.authorize-button__link {
+  display: block;
+  color: #fff;
+  font-size: .8rem;
+  padding: .6rem 1.6rem;
+  border: 1px solid #fff;
+  border-radius: .35rem;
+}
+/* *****main***** */
+.main-welcome {
+  height: 100%;
+}
+/* *****footer***** */
+.copyright{
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  border: 1px solid black;
+}
+.copyright__text {
+  text-align: center;
+  color: #fff;
+  font-weight: 200;
+  font-size: .8rem;
+}
+/* *****welcome-plate***** */
+.welcome-plate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 18rem;
+  height: 20rem;
+}
+.welcome-top {
+  background-color: rgba(255, 255, 255, .85);
+  padding-top: 2rem;
+  border-radius: .35rem .35rem 0 0;
+}
+.plate-avatar {
+  position: relative;
+  //margin-top: 2rem;
+  left: 6rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   overflow: hidden;
 }
-
-.avatar__image {
-  height: 10rem;
+.plate-avatar__image {
+  height: 6rem;
+}
+.welcome-plate__title, .welcome-plate__description {
+  text-align: center;
+  color: #455a64;
+}
+.welcome-plate__title {
+  //line-height: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.welcome-plate__description {
+  //line-height: .8rem;
+  margin-top: -.8rem;
+  font-size: .8rem;
+}
+.plate-social {
+  list-style: none;
+  font-size: 0;
+  padding: 0;
+  text-align: center;
+}
+.plate-social__item {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  margin-right: 1.5rem;
+  &:last-child {
+    margin-right: 0;
+  }
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1.5rem;
+}
+//.plate-social__link {
+//  width: 2rem;
+//  height: 2rem;
+//}
+.svg-vk-dims, .svg-github-dims, .svg-in-dims {
+  position: absolute;
+  //top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: rgba(0,191,165,.5);
+  &:hover {
+    fill: rgba(0,191,165,1);
+  }
+}
+.svg-vk-dims {
+  width: 2rem;
+  height: 1.3rem;
+}
+.svg-github-dims {
+  width: 1.6rem;
+  height: 1.5rem;
+}
+.svg-in-dims {
+  width: 1.8rem;
+  height: 1.6rem;
+}
+.plate-menu {
+  list-style: none;
+  font-size: 0;
+  padding: 0;
+}
+.plate-menu__item {
+  display: inline-block;
+}
+.plate-menu__link {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  font-size: .8rem;
+  padding: .6rem 1.2rem;
+}
+/* *****authorize-plate***** */
+.authorize-plate {
+  display: none;
 }

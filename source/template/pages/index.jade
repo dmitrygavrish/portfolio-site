@@ -1,22 +1,26 @@
-extends ../main
+extends ../main-index
 block header
-    header.authorize
-      div.authorize__button
-        a.authorize__link Авторизоваться
+    header.header.authorize
+      div.authorize-button
+        a.authorize-button__link Авторизоваться
   block content
-    main.main-welcome
+    main.main.main-welcome
       div.welcome-plate
-        div.plate-avatar
-          img.plate-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
-        h1.welcome-plate__title Дмитрий Гавриш
-        p.welcome-plate__description Личный сайт веб-разработчика
-        ul.plate-social
-          li.plate-social__item
-            a.plate-social__link.plate-social__link_vk(href="vk.com" target="_blank")
-          li.plate-social__item
-            a.plate-social__link.plate-social__link_gh(href="github.com" target="_blank")
-          li.plate-social__item
-            a.plate-social__link.plate-social__link_li(href="linkedin.com" target="_blank")
+        div.welcome-top
+          div.plate-avatar
+            img.plate-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          h1.welcome-plate__title Дмитрий Гавриш
+          p.welcome-plate__description Личный сайт веб-разработчика
+          ul.plate-social
+            li.plate-social__item
+              a.plate-social__link.plate-social__link_vk(href="vk.com" target="_blank")
+                +use('vk', 'svg-vk-dims')
+            li.plate-social__item
+              a.plate-social__link.plate-social__link_gh(href="github.com" target="_blank")
+                +use('github', 'svg-github-dims')
+            li.plate-social__item
+              a.plate-social__link.plate-social__link_li(href="linkedin.com" target="_blank")
+                +use('in', 'svg-in-dims')
         ul.plate-menu
           li.plate-menu__item
             a.plate-menu__link.plate-menu__link_works(href="works.html") Мои работы
@@ -42,5 +46,5 @@ block header
             input.form-menu__input.form-menu__input_reset(type="reset" name="reset" value="На главную")
             input.form-menu__input.form-menu__input_submit(type="submit" name="submit" value="Войти")
    block footer
-    footer.copyright
+    footer.footer.copyright
       p.copyright__text &copy; Дмитрий Гавриш | создано с любовью в LoftSchool | 2016

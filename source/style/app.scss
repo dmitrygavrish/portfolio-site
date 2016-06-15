@@ -1,1 +1,23 @@
 @import "pages/index";
+@import "mixins";
+@import "fonts";
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.header, .footer {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.main {
+  position: relative;
+  flex: 1 0 auto;
+}

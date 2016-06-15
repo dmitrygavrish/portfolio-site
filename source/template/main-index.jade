@@ -1,0 +1,28 @@
+include common/_mixins
+doctype html
+html(lang="ru-RU")
+  include common/_head
+  body
+    div.wrapper
+      include common/_browsehappy
+      block header
+        header.header
+          div.header-top
+            div.header-social
+              a.header-social__link.header-social__link_vk-white(href="vk.com")
+              a.header-social__link.header-social__link_gh-white(href="github.com")
+              a.header-social__link.header-social__link_li-white(href="linkedin.com")
+            div.header-menu
+              a.header-menu__link
+          div.header-bottom
+            div.header-avatar
+              img.header-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+            h3.header-bottom__title Дмитрий Гавриш
+            p.header-bottom__desc Личный сайт веб-разработчика
+          div.arrow
+            div.arrow__down
+      block content
+      block footer-page
+        - var page = 'index'
+      block footer
+        include common/_footer
