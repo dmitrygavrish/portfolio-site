@@ -15,7 +15,7 @@ $('.authorize-button__link').on('click', function() {
     $('.authorize-plate').css({
       'opacity':'1'
     });
-  }, 500);
+  }, 250);
   setTimeout(function() {
     toggle = 'on';
     $('.welcome-plate').css({
@@ -44,7 +44,7 @@ $(document).on('click', (function (event) {
         'opacity':'0',
         'display':'none'
       });
-    }, 500);
+    }, 250);
     setTimeout(function() {
       $('.welcome-plate').css({
         'transform':'rotate3d(0, 0, 0, 0deg)'

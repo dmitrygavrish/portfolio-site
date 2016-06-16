@@ -29,22 +29,30 @@ block header
           li.plate-menu__item.plate-menu__item_blog
             a.plate-menu__link.plate-menu__link_blog(href="blog.html") Блог
       div.authorize-plate
-        h2.authorize-plate__title Авторизуйтесь
         form.authorize-form
-          label.authorize-form__label.authorize-form__label_login(for="login")
-          input.authorize-form__input(type="text" name="login" id="login" placeholder="Логин")
-          label.authorize-form__label.authorize-form__label_pw(for="password")
-          input.authorize-form__input(type="password" name="password" id="password" placeholder="Пароль")
-          label.authorize-form__c-label(for="personalize") Я человек
-          input.authorize-form__c-input(type="checkbox" name="personalize" id="personalize")
-          p.authorize-form__question Вы точно не робот?
-          label.authorize-form__r-label(for="radio-1") Да
-          input.authorize-form__r-input(type="radio" name="personalize-2" id="radio-1")
-          label.authorize-form__r-label(for="radio-2") Не уверен
-          input.authorize-form__r-input(type="radio" name="personalize-2" id="radio-2")
+          div.form-wrapper
+            div.form-contents
+              h2.form-contents__title Авторизуйтесь
+              label.form-contents__label.form-contents__label_login(for="login")
+                +use('login', 'svg-login-dims')
+              input.form-contents__input(type="text" name="login" id="login" placeholder="Логин")
+              label.form-contents__label.form-contents__label_pw(for="password")
+                +use('password', 'svg-password-dims')
+              input.form-contents__input(type="password" name="password" id="password" placeholder="Пароль")
+              input.form-contents__c-input(type="checkbox" name="personalize" id="personalize")
+              label.form-contents__c-label(for="personalize") Я человек
+              p.form-contents__question Вы точно не робот?
+              input.form-contents__r-input(type="radio" name="personalize-2" id="radio-1")
+              label.form-contents__r-label(for="radio-1") Да
+              input.form-contents__r-input(type="radio" name="personalize-2" id="radio-2")
+              label.form-contents__r-label(for="radio-2") Не уверен
           div.form-menu
-            input.form-menu__input.form-menu__input_reset(type="reset" name="reset" id="return" value="На главную")
-            input.form-menu__input.form-menu__input_submit(type="submit" name="submit" value="Войти")
+            ul.form-menu__list
+              li.form-menu__item
+                input.form-menu__input.form-menu__input_reset(type="reset" name="reset" id="return" value="На главную")
+              li.form-menu__item
+                input.form-menu__input.form-menu__input_submit(type="submit" name="submit" value="Войти")
    block footer
     footer.footer.copyright
-      p.copyright__text &copy; Дмитрий Гавриш | создано с любовью в LoftSchool | 2016
+      p.copyright__text.
+        <span class="copyright__span">&copy; Дмитрий Гавриш </span> создано с любовью в LoftSchool | 2016

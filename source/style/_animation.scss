@@ -14,14 +14,14 @@
   }
 }
 .rotate3d {
-  animation: rotate3d .9s linear;
+  animation: rotate3d .9s ease;
   animation-fill-mode: forwards;
 }
 .rotate3d-reverse {
-  animation: rotate3d-reverse .9s linear;
+  animation: rotate3d-reverse .8s ease;
   animation-fill-mode: forwards;
 }
 .rotate3d-back {
-  animation: rotate3d-back .9s linear;
+  animation: rotate3d-back .8s ease;
   animation-fill-mode: forwards;
 }
