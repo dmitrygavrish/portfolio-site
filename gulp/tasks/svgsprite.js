@@ -20,6 +20,5 @@ module.exports = function() {
     .pipe($.rsp.remove({ properties: [$.rsp.PROPS_FILL] }))
     .pipe($.gp.svgSprite(config))
     .pipe($.gulp.dest('./build'));
-
   });
 };

@@ -1,0 +1,128 @@
+@import "../variables";
+@import "../mixins";
+@import "../animation";
+@import "mediaquery/about_m";
+@import "../templates/main_header";
+.main-about {
+  width: 100%;
+  font-size: 0;
+}
+.about-info, .about-skills {
+  position: relative;
+  width: 50%;
+  padding-bottom: 2.5rem;
+  display: inline-block;
+  vertical-align: top;
+  min-height: 10rem;
+}
+.about-info {
+  background-color: #efeee9;
+}
+.about-skills {
+  background-color: #eeebdf;
+}
+.svg-about_header-dims {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  margin-left: -10.75rem;
+  width: 21.5rem;
+  height: 7rem;
+  fill: rgba(#000, .07);
+}
+.about-info__title {
+  position: relative;
+  margin: 1.125rem;
+  text-align: center;
+  font-family: 'Bernier', sans-serif;
+  font-size: 3rem;
+  color: #373e42;
+  &::before, &::after {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 0.35rem;
+    position: absolute;
+    background-color: rgba(55, 62, 66, .2);
+    top: 50%;
+    margin-top: -0.175rem;
+  }
+  &::before {
+    left: 12rem;
+  }
+  &::after {
+    right: 12rem;
+  }
+}
+.about-content{
+  text-align: center;
+}
+.about-avatar {
+  display: inline-block;
+  width: 27.75rem;
+  height: 24.5rem;
+  overflow: hidden;
+}
+.about-avatar__img {
+  width: 27.75rem;
+}
+.about-content__title, .skills-content__title {
+  position: relative;
+  font-family: 'Bernier', sans-serif;
+  font-size: 2.25rem;
+  color: $titlecolor;
+  text-transform: uppercase;
+  &::before, &::after {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 0.35rem;
+    position: absolute;
+    background-color: rgba(55, 62, 66, .2);
+    top: 50%;
+    margin-top: -0.175rem;
+  }
+  &::before {
+    left: 16rem;
+  }
+  &::after {
+    right: 16rem;
+  }
+}
+.about-content__text {
+  width: 27.75rem;
+  margin: 1rem auto 0;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 200;
+  color: $titlecolor;
+}
+.skills-content {
+  //text-align: center;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+}
+.skills-content__title {
+  width: 20rem;
+  margin: 0 auto;
+  text-align: center;
+  &::before {
+    top: 1.2rem;
+    left: -2rem;
+  }
+  &::after {
+    top: 1.2rem;
+    right: -2rem;
+  }
+}
+.skills-content__text {
+  margin: 1rem auto 0;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 200;
+  color: $titlecolor;
+}
+.skills-content__name {
+  font-size: 1.5rem;
+  color: $titlecolor;
+}

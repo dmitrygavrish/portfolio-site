@@ -1,0 +1,185 @@
+.header-screen {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-height: 650px;
+  background-image: url(../img/mountains.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header-top {
+  height: 9.5rem;
+}
+.header-social {
+  display: block;
+  width: 9.5rem;
+  list-style: none;
+  font-size: 0;
+  padding: 1.5rem 0 0 0;
+  margin-left: 2rem;
+  text-align: center;
+}
+.header-social__item {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  margin-right: 1.5rem;
+  &:last-child {
+    margin-right: 0;
+  }
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 2.5rem;
+}
+//.plate-social__link {
+//  width: 2rem;
+//  height: 2rem;
+//}
+.svg-vk-dims_wh, .svg-github-dims_wh, .svg-in-dims_wh {
+  position: absolute;
+  //top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: rgba(#fff, .5);
+  &:hover {
+    fill: rgba(#fff, 1);
+  }
+  transition: fill .2s;
+}
+.svg-vk-dims_wh {
+  width: 2rem;
+  height: 1.3rem;
+}
+.svg-github-dims_wh {
+  width: 1.6rem;
+  height: 1.5rem;
+}
+.svg-in-dims_wh {
+  width: 1.8rem;
+  height: 1.6rem;
+}
+.header-menu {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.8rem;
+}
+.header-menu__check {
+  display: none;
+}
+.header-menu__check:checked ~ .header-menu__label{
+  .link-line {
+    background-color: rgba(#fff, 1);
+  }
+  .link-line_top {
+    transform: rotate(-45deg) scaleX(1.1);
+  }
+  .link-line_mid {
+    transform: scaleX(0);
+  }
+  .link-line_bot {
+    transform: rotate(45deg) scaleX(1.1);
+  }
+}
+.header-menu__label {
+  cursor: pointer;
+  &:hover {
+    .link-line {
+      background-color: rgba(#fff, 1);
+    }
+  }
+}
+.link-line {
+  width: 2.625rem;
+  height: .375rem;
+  margin-bottom: .625rem;
+  border-radius: .35rem;
+  background-color: rgba(#fff, 0.5);
+  transform-origin: right center;
+  transition: background-color .3s, transform .3s;
+}
+.header-name {
+  position: absolute;
+  width: 100%;
+  height: 20rem;
+  text-align: center;
+  .svg-portfolio_header-dims {
+    fill: rgba(#fff, .06);
+    width: 90%;
+    height: 100%;
+  }
+}
+.header-avatar {
+  position: relative;
+  //margin-top: 2rem;
+  left: 50%;
+  margin-left: -4.5rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.header-avatar__image {
+  height: 9rem;
+}
+.header-bottom__title {
+  margin: 1rem 0 0 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+}
+.header-bottom__desc {
+  margin: .5rem 0 0 0;
+  font-size: .875rem;
+  font-weight: 200;
+  text-align: center;
+  color: rgba(#fff, .8);
+}
+.arrow {
+  position: absolute;
+  z-index: 1;
+  bottom: 15%;
+  width: 100%;
+}
+.arrow__down {
+  width: 1.9rem;
+  height: 1.1rem;
+  margin: 0 auto;
+  cursor: pointer;
+  .svg-arrow_down-dims {
+    width: 1.9rem;
+    height: 1.1rem;
+    fill: rgba(#fff, .5);
+  }
+  &:hover {
+    .svg-arrow_down-dims {
+      fill: rgba(#fff, 1);
+    }
+  }
+}
+.triangles {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  font-size: 0;
+}
+.triangles-left, .triangles-right {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+//.svg-about_bg_left-dims, .svg-about_bg_right-dims {
+//  width: 100%;
+//  min-height: 50rem;
+//  use {
+//    width: 100%;
+//  }
+//}
+.triangles-left {
+  background-image: linear-gradient(to right top, #efeee9, #efeee9 50%, transparent 51%, transparent);
+}
+.triangles-right {
+  background-image: linear-gradient(to left top, #eeebdf, #eeebdf 50%, transparent 51%, transparent);
+}

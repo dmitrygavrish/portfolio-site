@@ -2,9 +2,11 @@ extends ../main
 block content
     main.main-about
       section.about-info
+        +use('about_header','svg-about_header-dims')
         h1.about-info__title Обо мне
         div.about-content
-          img.about-content__avatar(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          div.about-avatar
+            img.about-avatar__img(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
           h2.about-content__title Кто я
           p.about-content__text.
             Я начинающий веб-разработчик из Москвы. Мне 23 года. Я занимаюсь разработкой
@@ -13,26 +15,27 @@ block content
             Этот сайт я сделал в рамках обучения в LoftSchool. Пока что сайт еще не готов,
             но обязательно будет.
       section.about-skills
-        h2.about-skills__title Чем я могу быть вам полезен
-        p.about-content__text.
-          Больше всего меня привлекает Frontend разработка, но я также знаком с технологиями Backend,
-          и могу решать на нем задачи легкого уровня.
-        h4.about-skills__title Frontend
-        div.skills-array
-            div.skills-array__html5
-            div.skills-array__css3
-            div.skills-array__jsjq
-        h4.about-skills__title Backend
-        div.skills-array
-          div.skills-array__php
-          div.skills-array__mysql
-          div.skills-array__nodejs
-          div.skills-array__mongo
-        h4.about-skills__title Workflow
-        div.skills-array
-          div.skills-array__git
-          div.skills-array__gulp
-          div.skills-array__bower
+        div.skills-content
+          h2.skills-content__title Чем я могу быть вам полезен
+          p.skills-content__text.
+            Больше всего меня привлекает Frontend разработка, но я также знаком с технологиями Backend,
+            и могу решать на нем задачи легкого уровня.
+          h4.skills-content__name Frontend
+          div.skills-array
+              div.skills-array__html5
+              div.skills-array__css3
+              div.skills-array__jsjq
+          h4.skills-content__name Backend
+          div.skills-array
+            div.skills-array__php
+            div.skills-array__mysql
+            div.skills-array__nodejs
+            div.skills-array__mongo
+          h4.skills-content__name Workflow
+          div.skills-array
+            div.skills-array__git
+            div.skills-array__gulp
+            div.skills-array__bower
     section.contacts
       div.contacts-container
         div.contacts-plate

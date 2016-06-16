@@ -5,21 +5,40 @@ html(lang="ru-RU")
   body
     include common/_browsehappy
     block header
-      header.header
+      header.header-screen
         div.header-top
-          div.header-social
-            a.header-social__link.header-social__link_vk-white(href="vk.com")
-            a.header-social__link.header-social__link_gh-white(href="github.com")
-            a.header-social__link.header-social__link_li-white(href="linkedin.com")
+          ul.header-social
+            li.header-social__item
+              a.header-social__link.header-social__link_vk-white(href="vk.com")
+                +use('vk', 'svg-vk-dims_wh')
+            li.header-social__item
+              a.header-social__link.header-social__link_gh-white(href="github.com")
+                +use('github', 'svg-github-dims_wh')
+            li.header-social__item
+              a.header-social__link.header-social__link_li-white(href="linkedin.com")
+                +use('in', 'svg-in-dims_wh')
           div.header-menu
-            a.header-menu__link
+            input.header-menu__check(type="checkbox" name="checkbox" id="menu-checkbox")
+            label.header-menu__label(for="menu-checkbox")
+              div.link-line.link-line_top
+              div.link-line.link-line_mid
+              div.link-line.link-line_bot
         div.header-bottom
-          div.header-avatar
-            img.header-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
-          h3.header-bottom__title Дмитрий Гавриш
-          p.header-bottom__desc Личный сайт веб-разработчика
+          div.header-name
+            +use('portfolio_header', 'svg-portfolio_header-dims')
+          div.header-person
+            div.header-avatar
+              img.header-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+            h3.header-bottom__title Дмитрий Гавриш
+            p.header-bottom__desc Личный сайт веб-разработчика
         div.arrow
           div.arrow__down
+            +use('arrow_down','svg-arrow_down-dims')
+        div.triangles
+          div.triangles-left
+            //+use('about_bg_left', 'svg-about_bg_left-dims')
+          div.triangles-right
+            //+use('about_bg_right', 'svg-about_bg_right-dims')
     block content
     block footer-page
       - var page = 'index'
