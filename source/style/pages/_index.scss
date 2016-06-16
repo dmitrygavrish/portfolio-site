@@ -162,6 +162,7 @@
 }
 .plate-menu__link {
   text-decoration: none;
+  text-align: center;
   display: block;
   color: #fff;
   font-size: .8rem;
@@ -174,6 +175,7 @@
 /* *****authorize-plate***** */
 .authorize-plate {
   opacity: 0;
+  display: none;
   transform: rotate3d(0, -180, 0, -180deg);
   position: absolute;
   top: 0;
