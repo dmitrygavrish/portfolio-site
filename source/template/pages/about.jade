@@ -1,4 +1,4 @@
-extends ../main
+extends ../main-about
 block content
     main.main-about
       section.about-info
@@ -24,35 +24,60 @@ block content
           div.skills-array
               div.array-item.array-item_html5
                 +circle(90)
+                span.array-item__name HTML5
               div.array-item.array-item_css3
+                +circle(85)
+                span.array-item__name CSS3
               div.array-item.array-item_jsjq
+                +circle(55)
+                span.array-item__name.array-item__name_l JavaScript & jQuery
           h4.skills-content__name Backend
           div.skills-array
             div.array-item.array-item_php
+              +circle(15)
+              span.array-item__name PHP
             div.array-item.array-item_mysql
+              +circle(5)
+              span.array-item__name mySQL
             div.array-item.array-item_nodejs
+              +circle(5)
+              span.array-item__name.array-item__name_l Node.js & npm
             div.array-item.array-item_mongo
+              +circle(5)
+              span.array-item__name Mongo.db
           h4.skills-content__name Workflow
           div.skills-array
             div.array-item.array-item_git
+              +circle(65)
+              span.array-item__name Git
             div.array-item.array-item_gulp
+              +circle(55)
+              span.array-item__name Gulp
             div.array-item.array-item_bower
+              +circle(75)
+              span.array-item__name Bower
     section.contacts
       div.contacts-container
+        div#map.contacts-map
+        div.map-mask
         div.contacts-plate
           h2.contacts-plate__title Контакты
           ul.contacts-plate__list
             li.contacts-plate__item
               span.contacts-plate__icon.contacts-plate__icon_skype
+                +use('skype','svg-skype-dims')
               p.contacts-plate__text dmitry.gavrish
             li.contacts-plate__item
               span.contacts-plate__icon.contacts-plate__icon_email
+                +use('envelope','svg-envelope-dims')
               p.contacts-plate__text dmitrygavrish@gmail.com
             li.contacts-plate__item
               span.contacts-plate__icon.contacts-plate__icon_phone
+                +use('phone','svg-phone-dims')
               p.contacts-plate__text +7 916 068 43 88
             li.contacts-plate__item
               span.contacts-plate__icon.contacts-plate__icon_loc
+                +use('map_marker','svg-map_marker-dims')
               p.contacts-plate__text г. Москва, Люблино
   block footer-page
     - var page = 'about'

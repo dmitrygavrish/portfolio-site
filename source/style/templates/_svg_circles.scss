@@ -1,12 +1,12 @@
 .skill-circle {
-  width: 7.75rem;
-  height: 7.75rem;
+  width: 7rem;
+  height: 7rem;
   background: lightgray;
   border-radius: 50%;
   transform: rotate(-90deg);
 }
 .skill-circle .inner {
-  fill: white;
+  fill: #eeebdf;
 }
 .skill-circle .outer {
   fill: none;
@@ -28,6 +28,7 @@
 //}
 @for $i from 0 through 100 {
   .skill-circle_#{$i} {
+    opacity: (25 + ($i * 3 / 4)) / 100;
     .outer {
       stroke-dasharray: ($i + 1) 100;
     }
