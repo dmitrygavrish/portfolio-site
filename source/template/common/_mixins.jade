@@ -2,3 +2,8 @@ mixin use(name, sname)
   - var svg = 'assets/img/svg-sprite.svg'
   svg(role='img' class='#{sname}')
     use(xlink:href='#{svg}##{name}')
+
+mixin circle(num)
+  svg(viewBox="0 0 64 64" class="skill-circle skill-circle_#{num}")
+    circle(class="outer" r="25%" cx="50%" cy="50%")
+    circle(class="inner" r="25%" cx="50%" cy="50%")

@@ -3,6 +3,7 @@
 @import "../animation";
 @import "mediaquery/about_m";
 @import "../templates/main_header";
+@import "../templates/svg_circles";
 .main-about {
   width: 100%;
   font-size: 0;
@@ -31,8 +32,9 @@
   fill: rgba(#000, .07);
 }
 .about-info__title {
+  width: 15rem;
   position: relative;
-  margin: 1.125rem;
+  margin: 0 auto 3rem;
   text-align: center;
   font-family: 'Bernier', sans-serif;
   font-size: 3rem;
@@ -48,10 +50,10 @@
     margin-top: -0.175rem;
   }
   &::before {
-    left: 12rem;
+    left: 0;
   }
   &::after {
-    right: 12rem;
+    right: 0;
   }
 }
 .about-content{
@@ -65,6 +67,17 @@
 }
 .about-avatar__img {
   width: 27.75rem;
+}
+.about-content__title {
+  width: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
 }
 .about-content__title, .skills-content__title {
   position: relative;
@@ -81,12 +94,6 @@
     background-color: rgba(55, 62, 66, .2);
     top: 50%;
     margin-top: -0.175rem;
-  }
-  &::before {
-    left: 16rem;
-  }
-  &::after {
-    right: 16rem;
   }
 }
 .about-content__text {

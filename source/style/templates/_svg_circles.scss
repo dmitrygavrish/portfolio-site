@@ -1,0 +1,35 @@
+.skill-circle {
+  width: 7.75rem;
+  height: 7.75rem;
+  background: lightgray;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+.skill-circle .inner {
+  fill: white;
+}
+.skill-circle .outer {
+  fill: none;
+  stroke: rgb(0,191,165);
+  stroke-width: 32;
+  stroke-dasharray: 1 100;
+  transition: stroke-dasharray .8s;
+//  animation: circle 2s linear;
+//  -webkit-animation-fill-mode: forwards;
+//  -moz-animation-fill-mode: forwards;
+//  -o-animation-fill-mode: forwards;
+//  animation-fill-mode: forwards;
+}
+
+//@keyframes circle {
+//  to {
+//    stroke-dasharray: 100 100;
+//  }
+//}
+@for $i from 0 through 100 {
+  .skill-circle_#{$i} {
+    .outer {
+      stroke-dasharray: ($i + 1) 100;
+    }
+  }
+}
