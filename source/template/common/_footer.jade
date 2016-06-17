@@ -33,10 +33,16 @@ footer.summary
     ul.summary-social
       li.summary-social__item
         a.summary-social__link.summary-social__link_vk(href="vk.com" target="_blank")
+          +use('vk_round','svg-vk_round-dims')
+          +use('vk','svg-vk-dims_mask')
       li.summary-social__item
         a.summary-social__link.summary-social__link_gh(href="github.com" target="_blank")
+          +use('github_round','svg-github_round-dims')
+          +use('github','svg-github-dims_mask')
       li.summary-social__item
         a.summary-social__link.summary-social__link_li(href="linkedin.com" target="_blank")
+          +use('in_round','svg-in_round-dims')
+          +use('in','svg-in-dims_mask')
   div.summary-content
     p.summary-content__info.
       Я веб разработчик из Москвы, и этот сайт я сделал в рамках
