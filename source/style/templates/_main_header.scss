@@ -1,3 +1,4 @@
+@import "../mixins";
 .header-screen {
   position: relative;
   height: 100%;
@@ -183,4 +184,7 @@
 }
 .triangles-right {
   background-image: linear-gradient(to left top, #eeebdf, #eeebdf 50%, transparent 51%, transparent);
+  @include tablet {
+    background-image: linear-gradient(to left top, #efeee9, #efeee9 50%, transparent 51%, transparent);
+  }
 }

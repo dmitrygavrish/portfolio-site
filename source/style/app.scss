@@ -1,5 +1,6 @@
 @import "pages/index";
 @import "pages/about";
+@import "pages/blog";
 @import "fonts";
 * {
   box-sizing: border-box;
@@ -9,6 +10,7 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
 .flex-body {
   display: flex;
   flex-direction: column;

@@ -1,14 +1,17 @@
 @import "../variables";
 @import "../mixins";
 @import "../animation";
-@import "mediaquery/about_m";
 @import "../templates/main_header";
 @import "../templates/svg_circles";
 .main-about {
   width: 100%;
   font-size: 0;
   height: 130%;
+  @include large {
+    height: 100%;
+  }
 }
+
 .about-info, .about-skills {
   position: relative;
   width: 50%;
@@ -17,12 +20,22 @@
   vertical-align: top;
   min-height: 10rem;
   height: 100%;
+  @include tablet {
+    display: block;
+    width: 100%;
+  }
 }
 .about-info {
   background-color: #efeee9;
+  @include tablet {
+    height: rem(834px);
+  }
 }
 .about-skills {
   background-color: #eeebdf;
+  @include small {
+    height: rem(1200px);
+  }
 }
 .svg-about_header-dims {
   position: absolute;
@@ -32,6 +45,23 @@
   width: 21.5rem;
   height: 7rem;
   fill: rgba(#000, .07);
+  @include large {
+    top: -2%;
+    left: 28%;
+  }
+  @include xl {
+    left: 55%;
+  }
+  @include tablet {
+    top: 0;
+    width: rem(248px);
+    left: 57%;
+  }
+  @include phone {
+    width: rem(196px);
+    top: -2%;
+    left: 62%;
+  }
 }
 .about-info__title {
   width: 15rem;
@@ -57,23 +87,71 @@
   &::after {
     right: 0;
   }
+  @include large {
+    position: absolute;
+    top: 1rem;
+    left: 15%;
+  }
+  @include xl {
+    left: 45%;
+  }
+  @include tablet {
+    font-size: rem(38px);
+    padding-top: 3rem;
+    &::before, &::after {
+      margin-top: 1.5rem;
+    }
+  }
+  @include phone {
+    font-size: rem(26px);
+    padding-top: 2rem;
+    &::before, &::after {
+      margin-top: .75rem;
+    }
+    &::before {
+      left: 3rem;
+    }
+    &::after {
+      right: 3rem;
+    }
+  }
 }
 .about-content{
   text-align: center;
+  @include large {
+    float: right;
+    margin: 1rem 2rem 0 0;
+  }
+  @include phone {
+    width: 100%;
+  }
 }
 .about-avatar {
   display: inline-block;
   width: 27.75rem;
   height: 24.5rem;
   overflow: hidden;
+  @include tablet {
+    width: rem(472px);
+    height: rem(418px);
+  }
+  @include phone {
+    width: 100%;
+    height: auto;
+  }
 }
 .about-avatar__img {
   width: 27.75rem;
+  @include tablet {
+    width: rem(472px);
+  }
+  @include small {
+    width: 100%;
+  }
 }
 .about-content__title {
   width: 10rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto 0;
   &::before {
     left: 0;
   }
@@ -97,6 +175,12 @@
     top: 50%;
     margin-top: -0.175rem;
   }
+  @include tablet {
+    font-size: 1.75rem;
+  }
+  @include small {
+    font-size: 1.25rem;
+  }
 }
 .about-content__text {
   width: 27.75rem;
@@ -105,11 +189,18 @@
   font-size: 1rem;
   font-weight: 200;
   color: $titlecolor;
+  @include small {
+    width: 100%;
+    margin: 1rem .5rem;
+  }
 }
 .skills-content {
   //text-align: center;
   width: calc(100% - 4rem);
   margin: 0 auto;
+  @include tablet {
+    width: 100%;
+  }
 }
 .skills-content__title {
   width: 20rem;
@@ -118,10 +209,27 @@
   &::before {
     top: 1.2rem;
     left: -2rem;
+    @include tablet {
+      top: 3.2rem;
+      left: 0;
+    }
+    @include small {
+      top: 2.7rem;
+    }
   }
   &::after {
     top: 1.2rem;
     right: -2rem;
+    @include tablet {
+      top: 3.2rem;
+      right: 0;
+    }
+    @include small {
+      top: 2.7rem;
+    }
+  }
+  @include tablet {
+    padding-top: 2rem;
   }
 }
 .skills-content__text {
@@ -130,14 +238,28 @@
   font-size: 1rem;
   font-weight: 200;
   color: $titlecolor;
+  @include tablet {
+    width: rem(444px);
+  }
+  @include small {
+    width: 100%;
+    margin: 1rem .5rem;
+  }
 }
 .skills-content__name {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: $titlecolor;
+  @include tablet {
+    font-size: rem(18px);
+    text-align: center;
+  }
 }
 .skills-array {
   width: 100%;
+  @include tablet {
+    text-align: center;
+  }
 }
 .array-item {
   position: relative;
@@ -145,6 +267,12 @@
   margin-right: 5%;
   &:last-child {
     margin-right: 0;
+    @include tablet {
+      margin-right: 5%;
+    }
+  }
+  @include tablet {
+    margin-bottom: 1rem;
   }
 }
 .array-item__name {
@@ -166,14 +294,25 @@
 }
 .contacts {
   position: relative;
+  @include xs {
+    top: rem(400px);
+  }
 }
 .contacts-container {
-
+  @include tablet {
+    margin-top: rem(796px);
+  }
 }
 .contacts-map {
   position: relative;
   width: 100%;
   height: 61rem;
+  @include large {
+    height: rem(1078px);
+  }
+  @include tablet {
+    height: rem(862px);
+  }
 }
 .map-mask {
   position: absolute;
@@ -182,6 +321,12 @@
   left: 0;
   width: 100%;
   height: 61rem;
+  @include large {
+    height: rem(1078px) - 9.25rem;
+  }
+  @include tablet {
+    height: rem(862px) - rem(230px);
+  }
 }
 .contacts-plate {
   position: absolute;
@@ -195,6 +340,21 @@
   bottom: 0;
   left: 0;
   margin: auto;
+  @include tablet {
+    width: rem(350px);
+    height: rem(286px);
+  }
+  @include phone {
+    width: rem(320px);
+    //height: rem(258px);
+  }
+  @include small {
+    width: 100%;
+    border-radius: 0;
+    top: 0;
+    margin: 0;
+    background: #fff;
+  }
 }
 .contacts-plate__title {
   position: relative;
@@ -229,6 +389,7 @@
 }
 .contacts-plate__item {
   position: relative;
+  margin-bottom: 1.5rem;
 }
 .contacts-plate__icon {
   position: absolute;
@@ -253,8 +414,18 @@
   position: relative;
   z-index: 2;
   height: 9.25rem;
-  background-color: rgba(#000, .85);
+  background-color: rgba(#000, .7);
   margin-top: -9.25rem;
+  @include tablet {
+    height: rem(230px);
+    margin-top: - rem(230px);
+  }
+  @include small {
+    height: rem(270px);
+  }
+  @include xs {
+    margin-top: rem(130px);
+  }
 }
 .summary-menu, .summary-content {
   position: relative;
@@ -269,12 +440,22 @@
   padding: 0;
   list-style: none;
   font-size: 0;
+  @include tablet {
+    height: auto;
+    text-align: center;
+  }
 }
 .summary-pages {
   float: left;
+  @include tablet {
+    float: none;
+  }
 }
 .summary-social {
   float: right;
+  @include tablet {
+    float: none;
+  }
 }
 .summary-pages__item, .summary-social__item {
   position: relative;
@@ -291,6 +472,14 @@
   &:hover {
     background-color: rgba(#000, .2);
   }
+  @include tablet {
+    margin-top: .5rem;
+    padding: .8rem 1.5rem;
+  }
+  @include small {
+    padding: .8rem .4rem;
+    font-size: rem(14px);
+  }
 }
 .summary-social__item {
 
@@ -300,6 +489,9 @@
   display: block;
   padding: 1rem 0;
   margin-right: 1rem;
+  @include tablet {
+    padding: .2rem 0;
+  }
 }
 .summary-social__link_vk {
   &:hover {
@@ -382,9 +574,17 @@
   margin: auto;
   color: rgba(#fff, .8);
   font-weight: 200;
+  @include tablet {
+    width: 100%;
+    text-align: center;
+  }
 }
 .summary-content__info {
   margin-left: 2rem;
+  @include tablet {
+    padding-top: 1.5rem;
+    margin-left: 0;
+  }
 }
 .summary-content__copyright {
   position: absolute;
@@ -392,4 +592,10 @@
   width: 55%;
   right: 2rem;
   padding: 1.6rem 0;
+  @include tablet {
+    width: 100%;
+    position: static;
+    text-align: center;
+    padding: 1rem 0;
+  }
 }

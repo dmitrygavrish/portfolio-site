@@ -1,9 +1,14 @@
+@import "../mixins";
 .skill-circle {
   width: 7rem;
   height: 7rem;
   background: lightgray;
   border-radius: 50%;
   transform: rotate(-90deg);
+  @include large {
+    width: rem(126px);
+    height: rem(126px);
+  }
 }
 .skill-circle .inner {
   fill: #eeebdf;

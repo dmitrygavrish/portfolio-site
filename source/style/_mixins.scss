@@ -8,3 +8,72 @@
     clear: both;
   }
 }
+
+@mixin border-radius($radius){
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+//responsive
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}
+
+@mixin xl {
+  @media screen and (min-width: 2100px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: 1799px) {
+    @content;
+  }
+}
+
+
+@mixin tablet {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+
+@mixin phone {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media screen and (max-width: 414px) {
+    @content;
+  }
+}
