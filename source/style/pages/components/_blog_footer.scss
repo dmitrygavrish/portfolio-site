@@ -1,0 +1,137 @@
+.summary-blog {
+  position: relative;
+  height: 9.25rem;
+  background-color: rgba(#000, .7);
+  &::before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.summary-blog-menu, .summary-blog-content {
+  position: relative;
+  height: 50%;
+}
+.summary-blog-menu {
+  border-bottom: 1px solid rgba(#fff, .5);
+  @include clearfix;
+}
+.summary-blog-pages,.summary-blog-social {
+  height: 100%;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+.summary-blog-pages {
+  float: left;
+}
+.summary-blog-social {
+  float: right;
+}
+.summary-blog-pages__item, .summary-blog-social__item {
+  position: relative;
+  height: 100%;
+  display: inline-block;
+}
+.summary-blog-pages__link {
+  display: block;
+  font-size: 1rem;
+  padding: 1.6rem 2rem;
+  color: white;
+  text-decoration: none;
+  @include transition(background-color .2s);
+  &:hover {
+    background-color: rgba(#000, .2);
+  }
+}
+.summary-blog-social__item {
+
+}
+.summary-blog-social__link {
+  position: relative;
+  top: 50%;
+  margin-top: -1.3rem;
+  margin-right: 1rem;
+  display: block;
+  width: 2.6rem;
+  height: 2.6rem;
+  &:hover {
+    .summary-blog__icon {
+      opacity: 0;
+    }
+  }
+}
+.summary-blog-social__link_vk {
+  &:hover {
+    .svg-vk_round-blog {
+      fill: #fff;
+    }
+  }
+}
+.summary-blog-social__link_gh {
+  &:hover {
+    .svg-github_round-blog {
+      fill: #fff;
+    }
+  }
+}
+.summary-blog-social__link_li {
+  margin-right: 2rem;
+  &:hover {
+    .svg-in_round-blog {
+      fill: #fff;
+    }
+  }
+}
+.summary-blog__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  @include transition(opacity .2s);
+}
+.svg-vk_round-blog, .svg-github_round-blog, .svg-in_round-blog {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: transparent;
+  @include transition(fill .2s);
+}
+.summary-blog-content {
+  &::after {
+    content:'';
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+  }
+}
+.summary-blog-content__info, .summary-blog-content__copyright {
+  display: inline-block;
+  vertical-align: middle;
+  width: 35%;
+  max-height: 100%;
+  margin: auto;
+  color: rgba(#fff, .8);
+  font-weight: 200;
+}
+.summary-blog-content__info {
+  margin-left: 2rem;
+}
+.summary-blog-content__copyright {
+  position: absolute;
+  text-align: right;
+  width: 55%;
+  right: 2rem;
+  padding: 1.6rem 0;
+}

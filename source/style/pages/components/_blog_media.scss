@@ -1,0 +1,137 @@
+@media screen and (min-width: 1800px) {
+  .triangles-left_blog, .triangles-right_blog {
+    height: rem(150px);
+  }
+  .blog-contents {
+    margin-left: rem(420px);
+    max-width: rem(980px);
+  }
+  .main-blog {
+    max-width: rem(1400px);
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .header-blog {
+    height: rem(506px);
+  }
+  .header-blog-menu {
+    transform: scale(.8);
+  }
+  .header-blog-bottom {
+    top: 3rem;
+  }
+  .title-wrapper__title {
+    font-size: rem(36px);
+  }
+  .header-blog-bottom__desc {
+    font-size: rem(14px);
+  }
+  .triangles-left_blog, .triangles-right_blog {
+    height: rem(66px);
+  }
+  .arrow-blog {
+    display: block;
+  }
+  .main-blog {
+    width: 100%;
+    margin: rem(56px) auto 0;
+  }
+  .blog-menu {
+    left: - rem(350px);
+  }
+  .blog-contents {
+    float: none;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .blog-article {
+    width: rem(720px);
+    margin: 0 auto;
+  }
+  .blog-article {
+    &::after {
+      width: rem(720px);
+      margin: rem(56px) 0;
+    }
+  }
+  .blog-article__date {
+    margin: rem(12px) 0 0 0;
+  }
+  .blog-article__text {
+    margin: rem(12px) 0 0 0;
+  }
+  .summary-blog {
+    height: rem(230px);
+    text-align: center;
+  }
+  .summary-blog-pages,.summary-blog-social {
+    width: 100%;
+    height: 50%;
+  }
+  .summary-blog-social__link {
+    margin-top: -.5rem;
+  }
+  .summary-blog-pages__item, .summary-blog-social__item {
+    height: 50%;
+  }
+  .summary-blog-pages__link {
+    padding: .8rem 2rem;
+    margin-top: .5rem;
+  }
+  .summary-blog-content__info, .summary-blog-content__copyright {
+    width: 100%;
+    text-align: center;
+  }
+  .summary-blog-content__info {
+    padding-top: 1.5rem;
+    margin-left: 0;
+  }
+  .summary-blog-content__copyright {
+    width: 100%;
+    position: static;
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-blog {
+    height: rem(558px);
+  }
+  .header-blog-menu {
+    transform: scale(.6);
+  }
+  .header-blog-bottom {
+    top: 4rem;
+  }
+  .title-wrapper__title {
+    font-size: rem(26px);
+  }
+  .triangles-left_blog, .triangles-right_blog {
+    height: rem(36px);
+  }
+  .main-blog {
+    margin: rem(38px) auto 0;
+  }
+  .blog-article {
+    width: rem(300px);
+  }
+  .blog-article {
+    &::after {
+      width: rem(300px);
+      margin: rem(26px) 0;
+    }
+  }
+  .blog-article__text {
+    font-size: rem(12px);
+  }
+  .summary-blog {
+    height: rem(270px);
+  }
+  .summary-blog-pages__link {
+    font-size: rem(14px);
+    padding: .8rem .5rem;
+    margin-top: .5rem;
+  }
+}
