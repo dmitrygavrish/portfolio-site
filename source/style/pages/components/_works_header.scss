@@ -80,6 +80,7 @@
 
 .header-works-bottom {
   position: relative;
+  top: rem(80px);
   &::before {
     content: '';
     display: table;
@@ -89,7 +90,7 @@
 
 .svg-portfolio_header-works {
   position: absolute;
-  top: rem(188px);
+  top: rem(40px);
   left: 0;
   right: 0;
   margin: auto;
@@ -99,7 +100,7 @@
 }
 .header-works-person {
   width: rem(320px);
-  margin: rem(120px) auto;
+  margin: 0 auto;
 }
 .header-works-bottom__title {
   margin: rem(30px) 0 0 0;

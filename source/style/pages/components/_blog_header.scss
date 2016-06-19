@@ -78,16 +78,32 @@
 
 .header-blog-bottom {
   position: relative;
+  top: rem(80px);
   &::before {
     content: '';
     display: table;
     clear: both;
   }
 }
-
+.header-blog-person {
+  position: relative;
+  top: rem(-80px);
+}
+.header-blog-avatar {
+  position: relative;
+  left: 50%;
+  margin-left: -4.5rem;
+  width: 9rem;
+  height: 9rem;
+  @include border-radius(50%);
+  overflow: hidden;
+}
+.header-blog-avatar__image {
+  height: 9rem;
+}
 .svg-blog_header-dims {
   position: absolute;
-  top: rem(188px);
+  top: rem(108px);
   left: 0;
   right: 0;
   margin: auto;
@@ -95,6 +111,8 @@
   fill: rgba(#fff, .1);
 }
 .title-wrapper {
+  position: relative;
+  top: rem(-80px);
   width: 100%;
 }
 .title-wrapper__title {
@@ -123,6 +141,8 @@
 }
 
 .header-blog-bottom__desc {
+  position: relative;
+  top: rem(-80px);
   font-size: rem(16px);
   color: #fff;
   font-weight: 200;

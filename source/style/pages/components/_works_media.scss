@@ -1,3 +1,251 @@
 @import "../../variables";
 @import "../../mixins";
 @import "../../animation";
+
+@media screen and (max-width: 1199px) {
+  .svg-portfolio_header-works {
+    display: none;
+  }
+  .svg-works_header-dims {
+    bottom: 20%;
+    width: rem(392px);
+  }
+  .works-name {
+    height: rem(134px);
+  }
+  .works-name__title {
+    margin-top: rem(48px);
+    font-size: rem(36px);
+  }
+  .works-gallery {
+    height: rem(1015px);
+  }
+  .works-desc {
+    float: none;
+    position: absolute;
+    z-index: 1;
+    top: rem(530px);
+    width: 100%;
+    height: rem(270px);
+  }
+  .desc-block {
+    width: rem(350px);
+    height: rem(190px);
+  }
+  .site-name__title {
+    width: auto;
+    font-size: rem(22px);
+    &::before, &::after {
+      top: rem(11px);
+    }
+  }
+  .desc-block__tech {
+    font-size: rem(14px);
+    padding: rem(14px) 0;
+    margin: rem(20px) 0;
+  }
+  .works-slides {
+    float: none;
+    width: 100%;
+    height: rem(1015px);
+  }
+  .works-image {
+    width: 100%;
+    height: rem(530px);
+  }
+  .works-controls {
+    width: 100%;
+    height: rem(215px);
+    margin-top: rem(270px);
+  }
+
+  /***********************/
+
+  .opinion {
+    height: rem(1206px);
+  }
+  .svg-about_header {
+    top: 0;
+    width: rem(400px);
+  }
+  .opinion-name__title {
+    width: rem(300px);
+    font-size: rem(36px);
+    margin: rem(50px) 0 0 0;
+    &::before, &::after {
+      top: rem(18px);
+    }
+  }
+  .opinion-items {
+    width: 100%;
+    padding: 0 0 0 rem(22px);
+    margin: rem(50px) auto;
+  }
+  .opinion-item {
+    width: 50%;
+    margin-right: 0;
+    padding-right: rem(22px);
+  }
+  .opinion-item__text {
+    font-size: rem(14px);
+    margin: 0 0 rem(18px) 0;
+    &::before {
+      margin-bottom: rem(18px);
+    }
+  }
+  .author {
+    width: 50%;
+  }
+  .author__name, .author__occ {
+    font-size: rem(14px);
+  }
+
+  /***********************/
+
+  .connect-form {
+    width: rem(348px);
+    height: rem(424px);
+  }
+  .connect-form__title {
+    width: rem(170px);
+    margin: rem(40px) auto rem(20px);
+    font-size: rem(22px);
+    &::before, &::after {
+      top: rem(11px);
+    }
+  }
+  .connect-form__input, .connect-form__text {
+    width: rem(308px);
+    font-size: rem(14px);
+  }
+
+  /****************************/
+
+  .summary-works {
+    height: rem(230px);
+    margin-top: rem(-230px);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .svg-works_header-dims {
+    width: rem(250px);
+  }
+  .header-works-screen {
+    min-height: rem(558px);
+  }
+  .header-works-menu {
+    transform: scale(.8);
+  }
+  .works-name {
+    height: rem(94px);
+  }
+  .works-name__title {
+    margin-top: rem(28px);
+    font-size: rem(26px);
+  }
+  .works-gallery {
+    height: rem(571px);
+  }
+  .works-desc {
+    top: rem(258px);
+    height: rem(220px);
+  }
+  .desc-block {
+    width: 100%;
+    height: rem(160px);
+  }
+  .site-name__title {
+    width: rem(150px);
+    font-size: rem(16px);
+    &::before, &::after {
+      top: rem(8px);
+      height: rem(4px);
+    }
+  }
+  .desc-block__tech {
+    font-size: rem(14px);
+    padding: rem(8px) 0;
+    margin: rem(20px) 0;
+  }
+  .desc-block__link {
+    font-size: rem(14px);
+    padding: rem(13px) rem(15px) rem(13px) rem(45px);
+  }
+  .works-slides {
+    height: rem(571px);
+  }
+  .works-image {
+    width: 100%;
+    height: rem(258px);
+  }
+  .works-controls {
+    width: 100%;
+    height: rem(93px);
+    margin-top: rem(220px);
+  }
+
+  /***********************/
+
+  .opinion {
+    height: rem(1352px);
+  }
+  .svg-about_header {
+    top: rem(-20px);
+    width: rem(250px);
+  }
+  .opinion-name__title {
+    width: rem(150px);
+    font-size: rem(26px);
+    margin: rem(30px) 0 0 0;
+    &::before, &::after {
+      top: rem(13px);
+    }
+  }
+  .opinion-items {
+    padding: 0 0 0 rem(10px);
+    margin: rem(30px) auto;
+  }
+  .opinion-item {
+    width: 100%;
+    padding-right: rem(10px);
+    padding-bottom: rem(20px);
+  }
+  .opinion-item__text {
+    font-size: rem(14px);
+    margin: 0 0 rem(12px) 0;
+    &::before {
+      margin-bottom: rem(18px);
+      text-align: center;
+    }
+  }
+
+  /***********************/
+
+  .connect-form {
+    width: rem(300px);
+    height: rem(419px);
+  }
+  .connect-form__title {
+    width: rem(150px);
+    font-size: rem(18px);
+    &::before, &::after {
+      top: rem(9px);
+      height: rem(4px);
+    }
+  }
+  .connect-form__input, .connect-form__text {
+    width: rem(260px);
+    font-size: rem(14px);
+  }
+  .works-arrow {
+    margin-top: rem(40px);
+  }
+  /****************************/
+
+  .summary-works {
+    height: rem(285px);
+    margin-top: rem(-285px);
+  }
+}

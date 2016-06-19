@@ -5,31 +5,54 @@ block content
         div.works-name-wrapper
           h1.works-name__title Мои работы
           +use('works_header','svg-works_header-dims')
-      section.works-desc
-        h2.works-desc__title
-        p.works-desc__tech
-        a.works-desc__link(href="#" target="_blank")
-      section.works-slides
-        div.works-image
-        div.works-controls
-          div.controls-prev
-          div.controls-next
+      section.works-gallery
+        div.works-desc
+          div.desc-block
+            div.site-name
+              h2.site-name__title Сайт школы онлайн образования
+            p.desc-block__tech html, css, javascript
+            a.desc-block__link(href="#" target="_blank") Посмотреть сайт
+              +use('link', 'svg-link-dims')
+        div.works-slides
+          div.works-image
+            img.works-image__pic(src="assets/img/portfolio_1.png" alt="сайт")
+          div.works-controls
+            div.controls-prev
+              img.controls-prev__pic(src="assets/img/portfolio_2.png" alt="сайт")
+              div.controls-prev-mask
+              +use('portf_arrow_down', "svg-portf_arrow_down")
+            div.controls-next
+              img.controls-next__pic(src="assets/img/portfolio_3.png" alt="сайт")
+              div.controls-next-mask
+              +use('portf_arrow_up', "svg-portf_arrow_up")
       section.opinion
-        h2.opinion__title Что обо мне говорят
+        div.opinion-name
+          +use('about_header', 'svg-about_header')
+          h2.opinion-name__title Что обо мне говорят
         div.opinion-items
           div.opinion-item
-            blockquote.opinion-item__text
+            blockquote.opinion-item__text.
+              Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!
+              2 месяца только самых тяжелых испытаний и бессонных ночей!
             div.opinion-author
-              img.opinion-author__avatar
-              p.opinion-author__name
-              p.opinion-author__occ
+              div.author-avatar
+                img.author-avatar__image(src="assets/img/author_1.png" alt="Дмитрий Ковальчук")
+              div.author
+                p.author__name Ковальчук Дмитрий
+                p.author__occ основатель Loftschool
           div.opinion-item
-            blockquote.opinion-item__text
+            blockquote.opinion-item__text.
+              Этот код выдержит любые испытания.
+              Только пожалуйста, не загружайте сайт на слишком старых браузерах!
             div.opinion-author
-              img.opinion-author__avatar
-              p.opinion-author__name
-              p.opinion-author__occ
+              div.author-avatar
+                img.author-avatar__image(src="assets/img/author_2.png" alt="Зар Захаров")
+              div.author
+                p.author__name Зар Захаров
+                p.author__occ главный преподаватель
         form.connect-form
+          div.form-mask
+            div.mask-bg
           h3.connect-form__title Связаться со мной
           label.connect-form__label
             input.connect-form__input(type="text" name="name" id="name" placeholder="Имя")
@@ -38,12 +61,12 @@ block content
           textarea.connect-form__text(name="message" id="message" placeholder="Ваше сообщение")
           input.connect-form__submit(type="submit" name="submit" value="Отправить")
           input.connect-form__reset(type="reset" name="reset" value="Очистить")
-        div.arrow
-          div.arrow__up
+        div.works-arrow
+          +use('portf_arrow_up', "svg-arrow_up")
 block footer-page
     - var page = 'works'
 block footer
-  footer.summary-blog
+  footer.summary-works
     div.summary-blog-menu
       ul.summary-blog-pages
         li.summary-blog-pages__item

@@ -1,3 +1,15 @@
 @import "../../variables";
 @import "../../mixins";
 @import "../../animation";
+
+.summary-works {
+  position: relative;
+  height: 9.25rem;
+  margin-top: -9.25rem;
+  background-color: rgba(#000, .7);
+  &::before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
