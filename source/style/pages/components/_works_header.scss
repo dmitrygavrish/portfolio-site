@@ -1,3 +1,135 @@
-@import "../variables";
-@import "../mixins";
-@import "../animation";
+@import "../../variables";
+@import "../../mixins";
+@import "../../animation";
+
+.header-works-screen {
+  position: relative;
+  height: 100%;
+  min-height: rem(650px);
+  width: 100%;
+  background-image: url(../img/mountains.jpg);
+  background-size: cover;
+  text-align: center;
+}
+.header-works-top {
+  width: 100%;
+}
+.header-works-social {
+  float: left;
+  margin: 1rem 0 0 2rem;
+  list-style: none;
+  font-size: 0;
+  padding: 0;
+}
+.header-works-social__item {
+  display: inline-block;
+}
+.header-works-social__link {
+  position: relative;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1.5rem;
+}
+
+
+/***** burger *****/
+
+
+.header-works-menu {
+  float: right;
+  margin: 1rem 2rem 0 0;
+}
+
+.header-works-menu__check {
+  display: none;
+}
+.header-works-menu__check:checked ~ .header-works-menu__label{
+  .line {
+    background-color: rgba(#fff, 1);
+  }
+  .line_top {
+    transform: rotate(-45deg) scaleX(1.1);
+  }
+  .line_mid {
+    transform: scaleX(0);
+  }
+  .line_bot {
+    transform: rotate(45deg) scaleX(1.1);
+  }
+}
+.header-works-menu__label {
+  cursor: pointer;
+  &:hover {
+    .line {
+      background-color: rgba(#fff, 1);
+    }
+  }
+}
+.line {
+  width: 2.625rem;
+  height: .375rem;
+  margin-bottom: .625rem;
+  border-radius: .35rem;
+  background-color: rgba(#fff, 0.5);
+  transform-origin: right center;
+  transition: background-color .3s, transform .3s;
+}
+
+/***** bottom part of header *****/
+
+.header-works-bottom {
+  position: relative;
+  &::before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.svg-portfolio_header-works {
+  position: absolute;
+  top: rem(188px);
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: rem(1150px);
+  height: rem(300px);
+  fill: rgba(#fff, .1);
+}
+.header-works-person {
+  width: rem(320px);
+  margin: rem(120px) auto;
+}
+.header-works-bottom__title {
+  margin: rem(30px) 0 0 0;
+  font-size: rem(32px);
+  color: #fff;
+}
+.header-works-bottom__desc {
+  font-size: rem(16px);
+  color: rgba(#fff, .8);
+  font-weight: 200;
+  margin: 0;
+}
+
+/***** triangles *****/
+
+.triangles_works {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0;
+}
+
+.triangles-left_works, .triangles-right_works {
+  height: rem(100px);
+  width: 50%;
+  display: inline-block;
+}
+.triangles-left_works {
+  background-image: linear-gradient(to right top, #faf8f0, #faf8f0 50%, transparent 51%, transparent);
+}
+.triangles-right_works {
+  background-image: linear-gradient(to left top, #faf8f0, #faf8f0 50%, transparent 51%, transparent);
+}

@@ -1,7 +1,10 @@
-extends ../main
+extends ../main-works
 block content
     main.main-works
-      h1.main-works__title Мои работы
+      div.works-name
+        div.works-name-wrapper
+          h1.works-name__title Мои работы
+          +use('works_header','svg-works_header-dims')
       section.works-desc
         h2.works-desc__title
         p.works-desc__tech
@@ -37,6 +40,36 @@ block content
           input.connect-form__reset(type="reset" name="reset" value="Очистить")
         div.arrow
           div.arrow__up
-   block footer-page
+block footer-page
     - var page = 'works'
+block footer
+  footer.summary-blog
+    div.summary-blog-menu
+      ul.summary-blog-pages
+        li.summary-blog-pages__item
+          a.summary-blog-pages__link.summary-blog-pages__link_works(href="works.html") Мои работы
+        li.summary-blog-pages__item
+          a.summary-blog-pages__link.summary-blog-pages__link_about(href="about.html") Обо мне
+        li.summary-blog-pages__item
+          a.summary-blog-pages__link.summary-blog-pages__link_blog(href="#") Блог
+        li.summary-blog-pages__item
+          a.summary-blog-pages__link.summary-blog-pages__link_main(href="index.html") Авторизация
+      ul.summary-blog-social
+        li.summary-blog-social__item
+          a.summary-blog-social__link.summary-blog-social__link_vk(href="vk.com" target="_blank")
+            +use('vk_round','svg-vk_round-blog')
+            img.summary-blog__icon(src="assets/img/vk.png" alt="vk icon")
+        li.summary-blog-social__item
+          a.summary-blog-social__link.summary-blog-social__link_gh(href="github.com" target="_blank")
+            +use('github_round','svg-github_round-blog')
+            img.summary-blog__icon(src="assets/img/github.png" alt="github icon")
+        li.summary-blog-social__item
+          a.summary-blog-social__link.summary-blog-social__link_li(href="linkedin.com" target="_blank")
+            +use('in_round','svg-in_round-blog')
+            img.summary-blog__icon(src="assets/img/in.png" alt="linkedin icon")
+    div.summary-blog-content
+      p.summary-blog-content__info.
+        Я веб разработчик из Москвы, и этот сайт я сделал в рамках
+        обучения в LoftSchool
+      p.summary-blog-content__copyright &copy; Дмитрий Гавриш | создано с любовью в LoftSchool | 2016
 

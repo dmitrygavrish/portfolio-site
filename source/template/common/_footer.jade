@@ -1,6 +1,6 @@
 footer.summary
   div.summary-menu
-    if page == 'works'
+    //if page == 'works'
       ul.summary-pages
         li.summary-pages__item
           a.summary-pages__link.summary-pages__link_works(href="#") Мои работы
@@ -10,7 +10,7 @@ footer.summary
           a.summary-pages__link.summary-pages__link_blog(href="blog.html") Блог
         li.summary-pages__item
           a.summary-pages__link.summary-pages__link_main(href="index.html") Авторизация
-    else if page == 'about'
+    if page == 'about'
       ul.summary-pages
         li.summary-pages__item
           a.summary-pages__link.summary-pages__link_works(href="works.html") Мои работы
