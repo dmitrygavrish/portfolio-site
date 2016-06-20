@@ -1,0 +1,230 @@
+@import "../../mixins";
+@import "../../variables";
+
+.about-header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: rem(650px);
+  background: url(../img/mountains.jpg) no-repeat;
+  background-size: cover;
+  font-size: 0;
+}
+
+/*********** HEADER TOP **************/
+
+.about-header-top {
+  position: relative;
+  width: 100%;
+  height: rem(100px);
+  @include clearfix;
+}
+
+.about-social {
+  margin: rem(10px) 0 0 rem(20px);
+  list-style: none;
+  float: left;
+  padding: 0;
+}
+
+.about-social__item {
+  display: inline-block;
+  position: relative;
+  width: 2rem;
+  height: 3rem;
+  margin-right: rem(30px);
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.about-social__link_vk {
+  &:hover {
+    .svg-vk-about {
+      fill: rgba(#fff, 1);
+    }
+  }
+}
+.about-social__link_gh {
+  &:hover {
+    .svg-github-about {
+      fill: rgba(#fff, 1);
+    }
+  }
+}
+.about-social__link_li {
+  &:hover {
+    .svg-in-about {
+      fill: rgba(#fff, 1);
+    }
+  }
+}
+.svg-vk-about, .svg-github-about, .svg-in-about {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  fill: rgba(#fff, .5);
+  @include transition(fill .2s);
+}
+.svg-vk-about {
+  width: 2rem;
+  height: 2rem;
+}
+.svg-github-about {
+  width: 1.8rem;
+  height: 2rem;
+}
+.svg-in-about {
+  width: 1.6rem;
+  height: 1.8rem;
+  bottom: .2rem;
+}
+
+.about-menu {
+  float: right;
+}
+.about-menu__check {
+  display: none;
+}
+.about-menu__label {
+  cursor: pointer;
+  display: block;
+  margin: rem(15px) rem(20px) 0 0;
+  width: rem(40px);
+  height: rem(40px);
+  &:hover {
+    .about-line {
+      background-color: rgba(#fff, 1);
+    }
+  }
+}
+
+.about-line {
+  width: rem(40px);
+  @include border-radius(.35rem);
+  height: rem(6px);
+  background-color: rgba(#fff, .5);
+  transition: background-color .2s, transform .2s;
+}
+.about-line_top {
+  margin-bottom: rem(11px);
+  transform-origin: right center;
+}
+.about-line_mid {
+  margin-bottom: rem(11px);
+}
+.about-line_bot {
+  transform-origin: right center;
+}
+
+.about-menu__check:checked ~ .about-menu__label {
+  .about-line {
+    background-color: rgba(#fff, 1);
+  }
+  .about-line_top {
+    transform: rotate(-45deg) scaleX(1.2);
+  }
+  .about-line_mid {
+    transform: scaleX(0);
+  }
+  .about-line_bot {
+    transform: rotate(45deg) scaleX(1.2);
+  }
+}
+
+/********* HEADER BOTTOM ***********/
+
+.about-header-bottom {
+  position: relative;
+  width: 100%;
+  height: rem(400px);
+}
+
+.svg-portfolio_header-about {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-width: rem(1200px);
+  fill: rgba(#fff, .07);
+}
+
+.about-person {
+  position: relative;
+  margin-top: rem(100px);
+  //right: 0;
+  //left: 0;
+  //margin: auto;
+  text-align: center;
+}
+
+.about-avatar {
+  display: inline-block;
+  width: rem(140px);
+  height: rem(140px);
+  @include border-radius(50%);
+  overflow: hidden;
+}
+
+.about-avatar__image {
+  height: rem(140px);
+}
+
+.about-person__title {
+  font-size: rem(32px);
+  color: #fff;
+  padding: 0;
+  margin: rem(30px) 0 0 0;
+}
+
+.about-person__desc {
+  font-size: rem(16px);
+  font-weight: 200;
+  color: rgba(#fff, .8);
+  margin: rem(8px) 0 0 0;
+}
+
+.about-arrow {
+  position: relative;
+  z-index: 1;
+  margin-top: rem(60px);
+  text-align: center;
+}
+.about-arrow__down {
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    .svg-arrow_down-about {
+      fill: rgba(#fff, 1);
+    }
+  }
+}
+.svg-arrow_down-about {
+  width: rem(30px);
+  height: rem(22px);
+  fill: rgba(#fff, .5);
+  @include transition(fill .2s);
+}
+
+.about-triangles {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: rem(130px);
+}
+
+.about-triangles-left, .about-triangles-right {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+.about-triangles-left {
+  background-image: linear-gradient(to right top, #efeee9, #efeee9 50%, transparent 51%, transparent);
+}
+.about-triangles-right {
+  background-image: linear-gradient(to left top, #eeebdf, #eeebdf 50%, transparent 51%, transparent);
+}

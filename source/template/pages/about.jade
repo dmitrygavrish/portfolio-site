@@ -1,83 +1,260 @@
-extends ../main-about
-block content
-    main.main-about
-      section.about-info
-        +use('about_header','svg-about_header-dims')
-        h1.about-info__title Обо мне
-        div.about-content
+include ../common/_mixins
+doctype html
+html(lang="ru-RU")
+  include ../common/_head
+  body
+    include ../common/_browsehappy
+    header.about-header
+      div.about-header-top
+        ul.about-social
+          li.about-social__item
+            a.about-social__link.about-social__link_vk(href="vk.com")
+              +use('vk', 'svg-vk-about')
+          li.about-social__item
+            a.about-social__link.about-social__link_gh(href="github.com")
+              +use('github', 'svg-github-about')
+          li.about-social__item
+            a.about-social__link.about-social__link_li(href="linkedin.com")
+              +use('in', 'svg-in-about')
+        div.about-menu
+          input.about-menu__check(type="checkbox" name="checkbox" id="menu-checkbox")
+          label.about-menu__label(for="menu-checkbox")
+            div.about-line.about-line_top
+            div.about-line.about-line_mid
+            div.about-line.about-line_bot
+      div.about-header-bottom
+        +use('portfolio_header', 'svg-portfolio_header-about')
+        div.about-person
           div.about-avatar
-            img.about-avatar__img(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
-          h2.about-content__title Кто я
-          p.about-content__text.
+            img.about-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          h3.about-person__title Дмитрий Гавриш
+          p.about-person__desc Личный сайт веб-разработчика
+      div.about-arrow
+        div.about-arrow__down
+          +use('arrow_down','svg-arrow_down-about')
+      div.about-triangles
+        div.about-triangles-left
+        div.about-triangles-right
+    main.about-main-section
+      section.about-section-info
+        div.section-info-name
+          +use('about_header','svg-about_header-about')
+          h1.section-info-name__title Обо мне
+        div.content-block
+          div.avatar-block
+            img.avatar-block__img(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+          h2.content-block__title Кто я
+          p.content-block__text.
             Я начинающий веб-разработчик из Москвы. Мне 23 года. Я занимаюсь разработкой
             самых разных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-          p.about-content__text.
+          p.content-block__text.
             Этот сайт я сделал в рамках обучения в LoftSchool. Пока что сайт еще не готов,
             но обязательно будет.
-      section.about-skills
-        div.skills-content
-          h2.skills-content__title Чем я могу быть вам полезен
-          p.skills-content__text.
+      section.about-section-skills
+        div.skills-block
+          h2.skills-block__title Чем я могу быть вам полезен
+          p.skills-block__text.
             Больше всего меня привлекает Frontend разработка, но я также знаком с технологиями Backend,
             и могу решать на нем задачи легкого уровня.
-          h4.skills-content__name Frontend
-          div.skills-array
-              div.array-item.array-item_html5
-                +circle(90)
-                span.array-item__name HTML5
-              div.array-item.array-item_css3
-                +circle(85)
-                span.array-item__name CSS3
-              div.array-item.array-item_jsjq
-                +circle(55)
-                span.array-item__name.array-item__name_l JavaScript & jQuery
-          h4.skills-content__name Backend
-          div.skills-array
-            div.array-item.array-item_php
-              +circle(15)
-              span.array-item__name PHP
-            div.array-item.array-item_mysql
-              +circle(5)
-              span.array-item__name mySQL
-            div.array-item.array-item_nodejs
-              +circle(5)
-              span.array-item__name.array-item__name_l Node.js & npm
-            div.array-item.array-item_mongo
-              +circle(5)
-              span.array-item__name Mongo.db
-          h4.skills-content__name Workflow
-          div.skills-array
-            div.array-item.array-item_git
-              +circle(65)
-              span.array-item__name Git
-            div.array-item.array-item_gulp
+          h4.skills-block__name Frontend
+          div.skills-block-array
+            div.skills-item.skills-item_html5
+              +circle(90)
+              span.skills-item__name HTML5
+            div.skills-item.skills-item_css3
+              +circle(85)
+              span.skills-item__name CSS3
+            div.skills-item.skills-item_jsjq
               +circle(55)
-              span.array-item__name Gulp
-            div.array-item.array-item_bower
+              span.skills-item__name.skills-item__name_l JavaScript & jQuery
+          h4.skills-block__name Backend
+          div.skills-block-array
+            div.skills-item.skills-item_php
+              +circle(15)
+              span.skills-item__name PHP
+            div.skills-item.skills-item_mysql
+              +circle(5)
+              span.skills-item__name mySQL
+            div.skills-item.skills-item_nodejs
+              +circle(5)
+              span.skills-item__name.skills-item__name_l Node.js & npm
+            div.skills-item.skills-item_mongo
+              +circle(5)
+              span.skills-item__name Mongo.db
+          h4.skills-block__name Workflow
+          div.skills-block-array
+            div.skills-item.skills-item_git
+              +circle(65)
+              span.skills-item__name Git
+            div.skills-item.skills-item_gulp
+              +circle(55)
+              span.skills-item__name Gulp
+            div.skills-item.skills-item_bower
               +circle(75)
-              span.array-item__name Bower
-    section.contacts
-      div.contacts-container
-        div#map.contacts-map
-        div.map-mask
-          div.contacts-plate
-            h2.contacts-plate__title Контакты
-            ul.contacts-plate__list
-              li.contacts-plate__item
-                span.contacts-plate__icon.contacts-plate__icon_skype
-                  +use('skype','svg-skype-dims')
-                p.contacts-plate__text dmitry.gavrish
-              li.contacts-plate__item
-                span.contacts-plate__icon.contacts-plate__icon_email
-                  +use('envelope','svg-envelope-dims')
-                p.contacts-plate__text dmitrygavrish@gmail.com
-              li.contacts-plate__item
-                span.contacts-plate__icon.contacts-plate__icon_phone
-                  +use('phone','svg-phone-dims')
-                p.contacts-plate__text +7 916 068 43 88
-              li.contacts-plate__item
-                span.contacts-plate__icon.contacts-plate__icon_loc
-                  +use('map_marker','svg-map_marker-dims')
-                p.contacts-plate__text г. Москва, Люблино
-  block footer-page
-    - var page = 'about'
+              span.skills-item__name Bower
+    section.contacts-section
+      div.contacts-wrapper
+        div#map.contacts-bg
+        div.bg-mask
+          div.contacts-block
+            h2.contacts-block__title Контакты
+            ul.contacts-block__list
+              li.contacts-block__item
+                span.contacts-block__icon.contacts-block__icon_skype
+                  +use('skype','svg-skype-about')
+                p.contacts-block__text dmitry.gavrish
+              li.contacts-block__item
+                span.contacts-block__icon.contacts-block__icon_email
+                  +use('envelope','svg-envelope-about')
+                p.contacts-block__text dmitrygavrish@gmail.com
+              li.contacts-block__item
+                span.contacts-block__icon.contacts-block__icon_phone
+                  +use('phone','svg-phone-about')
+                p.contacts-block__text +7 916 068 43 88
+              li.contacts-block__item
+                span.contacts-block__icon.contacts-block__icon_loc
+                  +use('map_marker','svg-map_marker-about')
+                p.contacts-block__text г. Москва, Люблино
+    footer.summary-works
+      div.summary-blog-menu
+        ul.summary-blog-pages
+          li.summary-blog-pages__item
+            a.summary-blog-pages__link.summary-blog-pages__link_works(href="works.html") Мои работы
+          li.summary-blog-pages__item
+            a.summary-blog-pages__link.summary-blog-pages__link_about(href="about.html") Обо мне
+          li.summary-blog-pages__item
+            a.summary-blog-pages__link.summary-blog-pages__link_blog(href="#") Блог
+          li.summary-blog-pages__item
+            a.summary-blog-pages__link.summary-blog-pages__link_main(href="index.html") Авторизация
+        ul.summary-blog-social
+          li.summary-blog-social__item
+            a.summary-blog-social__link.summary-blog-social__link_vk(href="vk.com" target="_blank")
+              +use('vk_round','svg-vk_round-blog')
+              img.summary-blog__icon(src="assets/img/vk.png" alt="vk icon")
+          li.summary-blog-social__item
+            a.summary-blog-social__link.summary-blog-social__link_gh(href="github.com" target="_blank")
+              +use('github_round','svg-github_round-blog')
+              img.summary-blog__icon(src="assets/img/github.png" alt="github icon")
+          li.summary-blog-social__item
+            a.summary-blog-social__link.summary-blog-social__link_li(href="linkedin.com" target="_blank")
+              +use('in_round','svg-in_round-blog')
+              img.summary-blog__icon(src="assets/img/in.png" alt="linkedin icon")
+      div.summary-blog-content
+        p.summary-blog-content__info.
+          Я веб разработчик из Москвы, и этот сайт я сделал в рамках
+          обучения в LoftSchool
+        p.summary-blog-content__copyright &copy; Дмитрий Гавриш | создано с любовью в LoftSchool | 2016
+    script(type="text/javascript").
+      var map;
+      function initMap() {
+        var styles = [
+          {
+            "featureType": "administrative",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#444444"
+              }
+            ]
+          },
+          {
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [
+              {
+                "color": "#f2f2f2"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "all",
+            "stylers": [
+              {
+                "saturation": -100
+              },
+              {
+                "lightness": 45
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "all",
+            "stylers": [
+              {
+                "visibility": "simplified"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "labels.icon",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "transit",
+            "elementType": "all",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [
+              {
+                "color": "#61dac9"
+              },
+              {
+                "visibility": "on"
+              },
+              {
+                "saturation": "0"
+              }
+            ]
+          }
+        ];
+        var styledMap = new google.maps.StyledMapType(styles,
+                {name: "Styled Map"});
+
+        var mapOptions = {
+          zoom: 14,
+          center: new google.maps.LatLng(55.677323, 37.740395),
+          mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+          },
+          disableDefaultUI: true,
+          scrollwheel: false,
+          navigationControl: false,
+          mapTypeControl: false,
+          scaleControl: false,
+          draggable: false
+        };
+        var map = new google.maps.Map(document.getElementById('map'),
+                mapOptions);
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(55.677323, 37.76),
+          map: map,
+          icon: 'assets/img/map_marker.svg'
+        });
+        map.mapTypes.set('map_style', styledMap);
+        map.setMapTypeId('map_style');
+      }
+
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTR4SmCGot4Blf76TpDziAKP7-rHwts9A&callback=initMap")
