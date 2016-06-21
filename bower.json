@@ -8,6 +8,7 @@
   ],
   "dependencies": {
     "jquery": "^3.0.0",
-    "modernizer": "^2.8.2"
+    "modernizer": "^2.8.2",
+    "waypoints": "^4.0.0"
   }
 }

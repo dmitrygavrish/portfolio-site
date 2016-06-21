@@ -15,6 +15,7 @@
 
 .blog-menu {
   position: absolute;
+  top: 0;
   max-width: rem(300px);
 }
 
@@ -62,7 +63,7 @@
   padding: rem(14px) rem(14px) rem(14px) 0;
   font-size: rem(14px);
   color: $titlecolor;
-  @include transition(color .2s);
+  @include transition(color .4s);
 }
 
 /*** blog contents ***/

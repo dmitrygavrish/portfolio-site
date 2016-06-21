@@ -1,6 +1,8 @@
 'use strict';
 var toggle = 'off';
 
+/***** index page rotating plate *****/
+
 $('.authorize-button__link').on('click', function() {
   $('.welcome-plate').removeClass('rotate3d-back').addClass('rotate3d');
   $('.authorize-plate').removeClass('rotate3d-reverse').addClass('rotate3d-back').css({'display':'block'});
@@ -55,3 +57,42 @@ $(document).on('click', (function (event) {
     }, 1000)
   }
 }));
+
+/***** blog page waypoints *****/
+
+var waypoints = $('.blog-article').waypoint({
+  handler: function(direction) {
+    var menuItem = $('.blog-menu__item'),
+        hash = this.element.id;
+
+    menuItem.removeClass('blog-menu__item_active');
+
+    $.each(menuItem, function() {
+      if( $(this).children('a').attr('href').slice(1) == hash ) {
+        $(this).addClass('blog-menu__item_active');
+        console.log(menuItem);
+      }
+    })
+  },
+  offset: '20%'
+});
+
+var waymenu = $('.blog-menu').waypoint({
+  handler: function(direction) {
+    if ( direction == 'down' ) {
+      $('.blog-menu').css({
+        'position':'fixed'
+      })
+    }
+  }
+});
+
+var waymenuback = $('#wp-1').waypoint({
+  handler: function(direction) {
+    if( direction == 'up' ) {
+      $('.blog-menu').css({
+        'position':'absolute'
+      })
+    }
+  }
+});
