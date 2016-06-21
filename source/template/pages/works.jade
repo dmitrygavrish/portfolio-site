@@ -1,4 +1,36 @@
 extends ../main-works
+block header
+  header.about-header
+    div.about-header-top
+      ul.about-social
+        li.about-social__item
+          a.about-social__link.about-social__link_vk(href="vk.com")
+            +use('vk', 'svg-vk-about')
+        li.about-social__item
+          a.about-social__link.about-social__link_gh(href="github.com")
+            +use('github', 'svg-github-about')
+        li.about-social__item
+          a.about-social__link.about-social__link_li(href="linkedin.com")
+            +use('in', 'svg-in-about')
+      div.about-menu
+        input.about-menu__check(type="checkbox" name="checkbox" id="menu-checkbox")
+        label.about-menu__label(for="menu-checkbox")
+          div.about-line.about-line_top
+          div.about-line.about-line_mid
+          div.about-line.about-line_bot
+    div.about-header-bottom
+      +use('portfolio_header', 'svg-portfolio_header-about')
+      div.about-person
+        div.about-avatar
+          img.about-avatar__image(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+        h3.about-person__title Дмитрий Гавриш
+        p.about-person__desc Личный сайт веб-разработчика
+    div.about-arrow
+      div.about-arrow__down
+        +use('arrow_down','svg-arrow_down-about')
+    div.about-triangles
+      div.triangles-left_works
+      div.triangles-right_works
 block content
     main.main-works
       div.works-name

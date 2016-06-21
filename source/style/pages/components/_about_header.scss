@@ -189,9 +189,12 @@
 }
 
 .about-arrow {
-  position: relative;
+  position: absolute;
+  bottom: rem(100px);
+  left: 0;
+  right: 0;
+  margin: auto;
   z-index: 1;
-  margin-top: rem(-40px);
   text-align: center;
 }
 .about-arrow__down {

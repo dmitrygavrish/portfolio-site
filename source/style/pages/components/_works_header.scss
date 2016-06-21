@@ -124,9 +124,9 @@
 }
 
 .triangles-left_works, .triangles-right_works {
-  height: rem(100px);
-  width: 50%;
   display: inline-block;
+  width: 50%;
+  height: 100%;
 }
 .triangles-left_works {
   background-image: linear-gradient(to right top, #faf8f0, #faf8f0 50%, transparent 51%, transparent);
