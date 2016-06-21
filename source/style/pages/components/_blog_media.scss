@@ -70,7 +70,7 @@
     height: 50%;
   }
   .summary-blog-social__link {
-    margin-top: -.5rem;
+    margin-top: -1rem;
   }
   .summary-blog-pages__item, .summary-blog-social__item {
     height: 50%;
@@ -131,7 +131,10 @@
   }
   .summary-blog-pages__link {
     font-size: rem(14px);
-    padding: .8rem .5rem;
+    padding: .8rem .3rem;
     margin-top: .5rem;
+  }
+  .summary-blog-content {
+    font-size: rem(14px);
   }
 }

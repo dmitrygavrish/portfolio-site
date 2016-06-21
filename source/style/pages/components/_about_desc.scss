@@ -6,6 +6,7 @@
   @include clearfix;
 }
 .about-section-info, .about-section-skills {
+  position: relative;
   float: left;
   width: 50%;
   min-height: rem(854px);
@@ -37,6 +38,7 @@
   display: inline-block;
   margin: 0;
   font-size: rem(44px);
+  color: #393e42;
   text-transform: uppercase;
   font-family: 'Bernier', sans-serif;
   &::before, &::after {
@@ -65,16 +67,18 @@
 .avatar-block {
   width: rem(443px);
   height: rem(390px);
-  overflow: hidden;
+  background: url(../img/avatar.jpg) no-repeat;
+  background-size: cover;
 }
-.avatar-block__img {
-  height: rem(390px);
-}
+//.avatar-block__img {
+//  height: rem(390px);
+//}
 
 .content-block__title {
   position: relative;
   display: inline-block;
   font-size: rem(26px);
+  color: $titlecolor;
   text-transform: uppercase;
   font-family: 'Bernier', sans-serif;
   margin: rem(40px) 0;
@@ -98,6 +102,8 @@
 .content-block__text {
   margin: 0 0 rem(20px) 0;
   text-align: left;
+  font-weight: 200;
+  color: $titlecolor;
 }
 
 /******/
@@ -113,6 +119,7 @@
   display: inline-block;
   position: relative;
   font-size: rem(26px);
+  color: $titlecolor;
   text-transform: uppercase;
   font-family: 'Bernier', sans-serif;
   max-width: rem(250px);
@@ -138,11 +145,14 @@
 .skills-block__text {
   margin: 0 0 rem(60px) 0;
   font-size: rem(16px);
+  color: $titlecolor;
   text-align: left;
+  font-weight: 200;
 }
 
 .skills-block__name {
   font-size: rem(24px);
+  color: $titlecolor;
   text-align: left;
   margin: 0 0 rem(20px) 0;
 }
