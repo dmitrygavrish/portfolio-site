@@ -5,53 +5,54 @@ block header
         a.authorize-button__link(href="#auth") Авторизоваться
   block content
     main.main.main-welcome
-      div.welcome-plate
-        div.welcome-top
-          div.plate-avatar
-            img.plate-avatar__image(src="assets/img/avatar_img.jpg" alt="Dmitry Gavrish")
-          h1.welcome-plate__title Дмитрий Гавриш
-          p.welcome-plate__description Личный сайт веб-разработчика
-          ul.plate-social
-            li.plate-social__item
-              a.plate-social__link.plate-social__link_vk(href="vk.com" target="_blank")
-                +use('vk', 'svg-vk-dims')
-            li.plate-social__item
-              a.plate-social__link.plate-social__link_gh(href="github.com" target="_blank")
-                +use('github', 'svg-github-dims')
-            li.plate-social__item
-              a.plate-social__link.plate-social__link_li(href="linkedin.com" target="_blank")
-                +use('in', 'svg-in-dims')
-        ul.plate-menu
-          li.plate-menu__item.plate-menu__item_works
-            a.plate-menu__link.plate-menu__link_works(href="works.html") Мои работы
-          li.plate-menu__item.plate-menu__item_about
-            a.plate-menu__link.plate-menu__link_about(href="about.html") Обо мне
-          li.plate-menu__item.plate-menu__item_blog
-            a.plate-menu__link.plate-menu__link_blog(href="blog.html") Блог
-      div.authorize-plate
-        form.authorize-form
-          div.form-wrapper
-            div.form-contents
-              h2.form-contents__title Авторизуйтесь
-              label.form-contents__label.form-contents__label_login(for="login")
-                +use('login', 'svg-login-dims')
-              input.form-contents__input(type="text" name="login" id="login" placeholder="Логин")
-              label.form-contents__label.form-contents__label_pw(for="password")
-                +use('password', 'svg-password-dims')
-              input.form-contents__input(type="password" name="password" id="password" placeholder="Пароль")
-              input.form-contents__c-input(type="checkbox" name="personalize" id="personalize")
-              label.form-contents__c-label(for="personalize") Я человек
-              p.form-contents__question Вы точно не робот?
-              input.form-contents__r-input(type="radio" name="personalize-2" id="radio-1")
-              label.form-contents__r-label(for="radio-1") Да
-              input.form-contents__r-input(type="radio" name="personalize-2" id="radio-2")
-              label.form-contents__r-label(for="radio-2") Не уверен
-          div.form-menu
-            ul.form-menu__list
-              li.form-menu__item
-                input.form-menu__input.form-menu__input_reset(type="reset" name="reset" id="return" value="На главную")
-              li.form-menu__item
-                input.form-menu__input.form-menu__input_submit(type="submit" name="submit" value="Войти")
+      div.welcome-wrapper
+        div.welcome-plate
+          div.welcome-top
+            div.plate-avatar
+              img.plate-avatar__image(src="assets/img/avatar_img.jpg" alt="Dmitry Gavrish")
+            h1.welcome-plate__title Дмитрий Гавриш
+            p.welcome-plate__description Личный сайт веб-разработчика
+            ul.plate-social
+              li.plate-social__item
+                a.plate-social__link.plate-social__link_vk(href="vk.com" target="_blank")
+                  +use('vk', 'svg-vk-dims')
+              li.plate-social__item
+                a.plate-social__link.plate-social__link_gh(href="github.com" target="_blank")
+                  +use('github', 'svg-github-dims')
+              li.plate-social__item
+                a.plate-social__link.plate-social__link_li(href="linkedin.com" target="_blank")
+                  +use('in', 'svg-in-dims')
+          ul.plate-menu
+            li.plate-menu__item.plate-menu__item_works
+              a.plate-menu__link.plate-menu__link_works(href="works.html") Мои работы
+            li.plate-menu__item.plate-menu__item_about
+              a.plate-menu__link.plate-menu__link_about(href="about.html") Обо мне
+            li.plate-menu__item.plate-menu__item_blog
+              a.plate-menu__link.plate-menu__link_blog(href="blog.html") Блог
+        div.authorize-plate
+          form.authorize-form
+            div.form-wrapper
+              div.form-contents
+                h2.form-contents__title Авторизуйтесь
+                label.form-contents__label.form-contents__label_login(for="login")
+                  +use('login', 'svg-login-dims')
+                input.form-contents__input(type="text" name="login" id="login" placeholder="Логин")
+                label.form-contents__label.form-contents__label_pw(for="password")
+                  +use('password', 'svg-password-dims')
+                input.form-contents__input(type="password" name="password" id="password" placeholder="Пароль")
+                input.form-contents__c-input(type="checkbox" name="personalize" id="personalize")
+                label.form-contents__c-label(for="personalize") Я человек
+                p.form-contents__question Вы точно не робот?
+                input.form-contents__r-input(type="radio" name="personalize-2" id="radio-1")
+                label.form-contents__r-label(for="radio-1") Да
+                input.form-contents__r-input(type="radio" name="personalize-2" id="radio-2")
+                label.form-contents__r-label(for="radio-2") Не уверен
+            div.form-menu
+              ul.form-menu__list
+                li.form-menu__item
+                  input.form-menu__input.form-menu__input_reset(type="reset" name="reset" id="return" value="На главную")
+                li.form-menu__item
+                  input.form-menu__input.form-menu__input_submit(type="submit" name="submit" value="Войти")
    block footer
     footer.footer.copyright
       p.copyright__text.

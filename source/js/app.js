@@ -1,80 +1,70 @@
 'use strict';
-var toggle = 'off';
 
 /***** index page rotating plate *****/
 
+var counter = 3;
+
 $('.authorize-button__link').on('click', function() {
-  $('.welcome-plate').removeClass('rotate3d-back').addClass('rotate3d');
-  $('.authorize-plate').removeClass('rotate3d-reverse').addClass('rotate3d-back').css({'display':'block'});
-  $('.authorize-button').fadeOut(500);
-  setTimeout(function(){
-    $('.welcome-plate').css({
-      'opacity':'0'
-    });
-    $('.authorize-button').css({
-      'visibility':'hidden'
-    });
-    $('.authorize-plate').css({
-      'opacity':'1'
-    });
-  }, 250);
-  setTimeout(function() {
-    toggle = 'on';
-    $('.welcome-plate').css({
-      'transform':'rotate3d(0, 180, 0, 180deg)'
-    });
-    $('.authorize-plate').css({
-      'transform':'rotate3d(0, 0, 0, 0deg)'
-    });
-  }, 1000)
+  if (counter % 2) {
+    $('.welcome-wrapper').removeClass('rotate180back').addClass('rotate180');
+    $('.authorize-button').fadeOut(300);
+    $('.plate-avatar').fadeOut(300);
+    $('.plate-social').fadeOut(300);
+    setTimeout(function() {
+    counter += 1;
+    }, 600)
+  }
 });
 
 $(document).on('click', (function (event) {
   var target = $(event.target);
-  if ((target.closest('.authorize-plate').length == 0 || target.is('#return')) && toggle == 'on') {
-    toggle = 'off';
-    $('.welcome-plate').removeClass('rotate3d').addClass('rotate3d-back');
-    $('.authorize-plate').removeClass('rotate3d-back').addClass('rotate3d-reverse');
-    setTimeout(function(){
-      $('.welcome-plate').css({
-        'opacity':'1'
-      });
-      $('.authorize-button').fadeIn(500).css({
-        'visibility':'visible'
-      });
-      $('.authorize-plate').css({
-        'opacity':'0',
-        'display':'none'
-      });
-    }, 250);
-    setTimeout(function() {
-      $('.welcome-plate').css({
-        'transform':'rotate3d(0, 0, 0, 0deg)'
-      });
-      $('.authorize-plate').css({
-        'transform':'rotate3d(0, -180, 0, -180deg)'
-      });
-    }, 1000)
-  }
-}));
+  if ( (target.closest('.authorize-plate').length == 0 || target.is('#return')) && !(counter % 2) ) {
+    counter += 1;
+    $('.welcome-wrapper').removeClass('rotate180').addClass('rotate180back');
+    $('.authorize-button').fadeIn(300);
+    $('.plate-avatar').fadeIn(300);
+    $('.plate-social').fadeIn(300);
+}}));
+
 
 /***** blog page waypoints *****/
 
-var waypoints = $('.blog-article').waypoint({
+var waypointsDown = $('.blog-article').waypoint({
   handler: function(direction) {
-    var menuItem = $('.blog-menu__item'),
+    if (direction == 'down') {
+      var menuItem = $('.blog-menu__item'),
         hash = this.element.id;
 
-    menuItem.removeClass('blog-menu__item_active');
+      menuItem.removeClass('blog-menu__item_active');
 
-    $.each(menuItem, function() {
-      if( $(this).children('a').attr('href').slice(1) == hash ) {
-        $(this).addClass('blog-menu__item_active');
-        console.log(menuItem);
-      }
-    })
+      $.each(menuItem, function () {
+        if ($(this).children('a').attr('href').slice(1) == hash) {
+          $(this).addClass('blog-menu__item_active');
+          console.log(menuItem);
+        }
+      })
+    }
   },
-  offset: '20%'
+  offset: '35%'
+});
+
+var waypointsUp = $('.blog-article').waypoint({
+  handler: function(direction) {
+    if (direction == 'up') {
+      var menuItem = $('.blog-menu__item'),
+        hash = this.element.id;
+
+      menuItem.removeClass('blog-menu__item_active');
+
+      $.each(menuItem, function () {
+        if ($(this).children('a').attr('href').slice(1) == hash) {
+          $(this).addClass('blog-menu__item_active');
+          console.log(menuItem);
+        }
+      })
+    }
+  },
+  offset: '-1px'
 });
 
 var waymenu = $('.blog-menu').waypoint({
