@@ -3,7 +3,12 @@ doctype html
 html(lang="ru-RU")
   include common/_head
   body.flex-body
-    div.wrapper
+    div.wrapper.loading
+      div.preload
+        div.preload-circle1
+        div.preload-circle2
+        div.preload-circle3
+        div.preload-circle4
       include common/_browsehappy
       block header
         header.header

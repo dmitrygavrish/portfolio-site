@@ -136,3 +136,70 @@ var circlesUpReset = $('.skill-circle').waypoint({
   },
   offset: '100%'
 });
+
+/*********************/
+/***** preloader *****/
+/*********************/
+
+$(window).on('load', function() {
+  $('.wrapper').addClass('loaded');
+  $('.preload').find('div').css({
+    'display' : 'none'
+  });
+  setTimeout(function() {
+    $('.wrapper').removeClass('loading').removeClass('loaded');
+  }, 1000);
+});
+// $(document).ready(function () {
+//
+//   // $(function () {
+//   //   var imgs = [];
+//   //
+//   //   $.each($('*'), function () {
+//   //     var $this = $(this),
+//   //       background = $this.css('background-image'),
+//   //       img = $this.is('img');
+//   //
+//   //     if (background != 'none') {
+//   //       var path = background.replace('url("', '').replace('")', '');
+//   //
+//   //       imgs.push(path);
+//   //     }
+//   //
+//   //     if (img) {
+//   //       var path = $this.attr('src');
+//   //
+//   //       if (path) {
+//   //         imgs.push(path);
+//   //       }
+//   //     }
+//   //   });
+//   //
+//   //   var percents = 1;
+//   //
+//   //   for (var i = 0; i < imgs.length; i++) {
+//   //     var image = $('<img>', {
+//   //       attr: {
+//   //         src: imgs[i]
+//   //       }
+//   //     });
+//   //
+//   //     image.load(function () {
+//   //       setPercents(imgs.length, percents);
+//   //       percents++;
+//   //     });
+//   //   }
+//   //
+//   //   function setPercents(total, current) {
+//   //     var percent = Math.ceil(current / total * 100);
+//   //
+//   //     if (percent >= 100) {
+//   //       $('.wrap').css('display', 'block');
+//   //     }
+//   //
+//   //     $('.loader-bar').css({
+//   //       'width': percent + '%'
+//   //     }).text(percent + '%');
+//   //   }
+//   // });
+// });
