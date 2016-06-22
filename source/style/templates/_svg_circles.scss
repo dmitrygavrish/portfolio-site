@@ -1,5 +1,7 @@
 @import "../mixins";
 .skill-circle {
+  opacity: .25;
+  transition: opacity 1.5s;
   width: rem(110px);
   height: rem(110px);
   position: absolute;
@@ -26,7 +28,7 @@
   stroke: rgb(0,191,165);
   stroke-width: 32;
   stroke-dasharray: 1 100;
-  transition: stroke-dasharray .8s;
+  transition: stroke-dasharray 1.5s, opacity 1.5s;
 //  animation: circle 2s linear;
 //  -webkit-animation-fill-mode: forwards;
 //  -moz-animation-fill-mode: forwards;
@@ -41,6 +43,7 @@
 //}
 @for $i from 0 through 100 {
   .skill-circle_#{$i} {
+    transition: opacity 1.5s;
     opacity: (25 + ($i * 3 / 4)) / 100;
     .outer {
       stroke-dasharray: ($i + 1) 100;

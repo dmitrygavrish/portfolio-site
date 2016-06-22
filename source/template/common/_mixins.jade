@@ -4,6 +4,11 @@ mixin use(name, sname)
     use(xlink:href='#{svg}##{name}')
 
 mixin circle(num)
+  svg(viewBox="0 0 64 64" class="skill-circle" data-percent="#{num}")
+    circle(class="outer" r="25%" cx="50%" cy="50%")
+    circle(class="inner" r="30%" cx="50%" cy="50%")
+
+mixin circle-class(num)
   svg(viewBox="0 0 64 64" class="skill-circle skill-circle_#{num}")
     circle(class="outer" r="25%" cx="50%" cy="50%")
     circle(class="inner" r="30%" cx="50%" cy="50%")

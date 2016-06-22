@@ -86,3 +86,53 @@ var waymenuback = $('#wp-1').waypoint({
     }
   }
 });
+
+/***** about page svg-circles waypoints *****/
+
+var circlesDown = $('.skill-circle').waypoint({
+  handler: function(direction) {
+    if (direction == 'down') {
+      var percent = this.element.getAttribute('data-percent');
+
+      $(this.element).addClass('skill-circle_' + percent);
+
+    }
+  },
+  offset: '85%'
+});
+
+var circlesDownReset = $('.skill-circle').waypoint({
+  handler: function(direction) {
+    if (direction == 'down') {
+      var percent = this.element.getAttribute('data-percent');
+
+      $(this.element).removeClass('skill-circle_' + percent);
+
+    }
+  },
+  offset: '-50px'
+});
+
+var circlesUp = $('.skill-circle').waypoint({
+  handler: function(direction) {
+    if (direction == 'up') {
+      var percent = this.element.getAttribute('data-percent');
+
+      $(this.element).addClass('skill-circle_' + percent);
+
+    }
+  },
+  offset: '0'
+});
+
+var circlesUpReset = $('.skill-circle').waypoint({
+  handler: function(direction) {
+    if (direction == 'up') {
+      var percent = this.element.getAttribute('data-percent');
+
+      $(this.element).removeClass('skill-circle_' + percent);
+
+    }
+  },
+  offset: '100%'
+});
