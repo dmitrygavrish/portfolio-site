@@ -13,12 +13,12 @@ block header
           li.header-blog-social__item
             a.header-blog-social__link.header-blog-social__link_li-white(href="linkedin.com")
               +use('in', 'svg-in-dims_wh')
-        div.header-blog-menu
-          input.header-blog-menu__check(type="checkbox" name="checkbox" id="menu-checkbox")
-          label.header-blog-menu__label(for="menu-checkbox")
-            div.line.line_top
-            div.line.line_mid
-            div.line.line_bot
+        div.about-menu
+          input.about-menu__check(type="checkbox" name="checkbox" id="menu-checkbox")
+          label.about-menu__label(for="menu-checkbox")
+            div.about-line.about-line_top
+            div.about-line.about-line_mid
+            div.about-line.about-line_bot
         div.header-blog-bottom
           div.header-blog-person
             div.header-blog-avatar
@@ -34,6 +34,16 @@ block header
         div.arrow-blog__down
           +use('arrow_down','svg-arrow_down-blog')
   block content
+    div.site-menu
+      ul.site-menu__list
+        li.site-menu__item
+          a.site-menu__link(href="works.html") Мои работы
+        li.site-menu__item
+          a.site-menu__link(href="#") Блог
+        li.site-menu__item
+          a.site-menu__link(href="about.html") Обо мне
+        li.site-menu__item
+          a.site-menu__link(href="index.html") Авторизоваться
     main.main-blog
       aside.blog-menu
         ul.blog-menu__list

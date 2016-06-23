@@ -82,6 +82,8 @@
 
 .about-menu {
   float: right;
+  position: relative;
+  z-index: 12;
 }
 .about-menu__check {
   display: none;
