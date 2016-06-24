@@ -31,7 +31,7 @@ block header
         div.triangles-left_blog
         div.triangles-right_blog
       div.arrow-blog
-        div.arrow-blog__down
+        a.arrow-blog__down(href="#down")
           +use('arrow_down','svg-arrow_down-blog')
   block content
     div.site-menu
@@ -44,7 +44,10 @@ block header
           a.site-menu__link(href="about.html") Обо мне
         li.site-menu__item
           a.site-menu__link(href="index.html") Авторизоваться
-    main.main-blog
+    main#down.main-blog
+      input.blog-menu__check(type="checkbox" name="blog-switch" id="blog-switch")
+      div.label-wrapper
+        label.blog-menu__switch(for="blog-switch")
       aside.blog-menu
         ul.blog-menu__list
           li.blog-menu__item.blog-menu__item_active

@@ -30,7 +30,7 @@ html(lang="ru-RU")
           h3.about-person__title Дмитрий Гавриш
           p.about-person__desc Личный сайт веб-разработчика
       div.about-arrow
-        div.about-arrow__down
+        a.about-arrow__down(href="#down")
           +use('arrow_down','svg-arrow_down-about')
       div.about-triangles
         div.about-triangles-left
@@ -45,7 +45,7 @@ html(lang="ru-RU")
           a.site-menu__link(href="#") Обо мне
         li.site-menu__item
           a.site-menu__link(href="index.html") Авторизоваться
-    main.about-main-section
+    main#down.about-main-section
       section.about-section-info
         div.section-info-name
           +use('about_header','svg-about_header-about')

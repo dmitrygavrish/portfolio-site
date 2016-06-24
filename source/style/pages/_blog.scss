@@ -11,12 +11,42 @@
   @include clearfix;
 }
 
+.blog-menu__check {
+  display: none;
+}
+.label-wrapper {
+  position: absolute;
+  top: rem(138px);
+  width: rem(24px);
+  height: rem(48px);
+  overflow: hidden;
+  @include transition(transform .2s);
+}
+.blog-menu__switch {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: rem(-24px);
+  left: rem(-9999px);
+  width: rem(48px);
+  height: rem(48px);
+  @include border-radius(50%);
+  background-color: rgba(0, 191, 165, .85);
+}
+.blog-menu__check:checked ~ .label-wrapper {
+  transform: translateX(rem(300px));
+}
+.blog-menu__check:checked ~ .blog-menu {
+  transform: translateX(rem(350px));
+}
 /*** blog menu ****/
 
 .blog-menu {
   position: absolute;
   top: 0;
   max-width: rem(300px);
+  @include transition(transform .2s);
 }
 
 .blog-menu__list {

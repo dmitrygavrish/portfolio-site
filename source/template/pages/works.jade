@@ -1,6 +1,6 @@
 extends ../main-works
 block header
-  header.about-header
+  header#up.about-header
     div.about-header-top
       ul.about-social
         li.about-social__item
@@ -26,7 +26,7 @@ block header
         h3.about-person__title Дмитрий Гавриш
         p.about-person__desc Личный сайт веб-разработчика
     div.about-arrow
-      div.about-arrow__down
+      a.about-arrow__down(href="#down")
         +use('arrow_down','svg-arrow_down-about')
     div.about-triangles
       div.triangles-left_works
@@ -42,7 +42,7 @@ block content
           a.site-menu__link(href="about.html") Обо мне
         li.site-menu__item
           a.site-menu__link(href="index.html") Авторизоваться
-    main.main-works
+    main#down.main-works
       div.works-name
         div.works-name-wrapper
           h1.works-name__title Мои работы
@@ -103,7 +103,7 @@ block content
           textarea.connect-form__text(name="message" id="message" placeholder="Ваше сообщение")
           input.connect-form__submit(type="submit" name="submit" value="Отправить")
           input.connect-form__reset(type="reset" name="reset" value="Очистить")
-        div.works-arrow
+        a.works-arrow(href="#up")
           +use('portf_arrow_up', "svg-arrow_up")
 block footer-page
     - var page = 'works'

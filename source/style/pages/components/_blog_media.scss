@@ -37,8 +37,30 @@
     width: 100%;
     margin: rem(56px) auto 0;
   }
+
+  .blog-menu__switch {
+    left: rem(-24px);
+  }
+
   .blog-menu {
     left: - rem(350px);
+    background-color: rgba(0, 191, 165, .85);
+    border-radius: 0 rem(15px) rem(15px) 0;
+  }
+  .blog-menu__item {
+    &:hover {
+      .blog-menu__link {
+        color: rgba(#fff, 1);
+        text-shadow: 1px 1px 1px rgba(#000, .5);
+      }
+    }
+  }
+  .blog-menu__item_active .blog-menu__link {
+    color: rgba(#fff, 1);
+    text-shadow: 1px 1px 1px rgba(#000, .5);
+  }
+  .blog-menu__link {
+    color: rgba(#fff, .75);
   }
   .blog-contents {
     float: none;
