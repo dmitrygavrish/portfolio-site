@@ -72,8 +72,22 @@
   margin: 0 0 rem(20px);
 }
 .contacts-block__icon {
+  position: relative;
   display: inline-block;
   vertical-align: middle;
+}
+a.contacts-block__icon {
+  &:hover {
+    .svg-skype-about, .svg-envelope-about, .svg-phone-about {
+      fill: rgb(0, 151, 115);
+    }
+  }
+  &:active {
+    top: 2px;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 .contacts-block__text {
   font-size: rem(16px);
@@ -86,4 +100,5 @@
   width: rem(20px);
   height: rem(20px);
   fill: $green100;
+  @include transition(fill .2s);
 }

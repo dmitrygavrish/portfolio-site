@@ -1,28 +1,17 @@
-@import "pages/index";
-@import "pages/about";
-@import "pages/about_v2";
-@import "pages/blog";
-@import "pages/works";
-@import "fonts";
 * {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+
 html, body {
   height: 100%;
   width: 100%;
 }
 
-.flex-body {
-  display: flex;
-  flex-direction: column;
-}
-.header, .footer {
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.main {
-  position: relative;
-  flex: 1 0 auto;
-}
+@import "pages/index";
+@import "pages/index_v2";
+@import "pages/about";
+@import "pages/about_v2";
+@import "pages/blog";
+@import "pages/works";
+@import "fonts";

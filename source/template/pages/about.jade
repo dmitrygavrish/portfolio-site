@@ -8,13 +8,13 @@ html(lang="ru-RU")
       div.about-header-top
         ul.about-social
           li.about-social__item
-            a.about-social__link.about-social__link_vk(href="vk.com")
+            a.about-social__link.about-social__link_vk(href="https://new.vk.com/gavrishdmitry" target="_blank" title="vk")
               +use('vk', 'svg-vk-about')
           li.about-social__item
-            a.about-social__link.about-social__link_gh(href="github.com")
+            a.about-social__link.about-social__link_gh(href="https://github.com/dmitrygavrish" target="_blank" title="github")
               +use('github', 'svg-github-about')
           li.about-social__item
-            a.about-social__link.about-social__link_li(href="linkedin.com")
+            a.about-social__link.about-social__link_li(href="https://www.linkedin.com/in/dmitry-gavrish" target="_blank" title="linkedin")
               +use('in', 'svg-in-about')
         div.about-menu
           input.about-menu__check(type="checkbox" name="checkbox" id="menu-checkbox")
@@ -110,15 +110,15 @@ html(lang="ru-RU")
             h2.contacts-block__title Контакты
             ul.contacts-block__list
               li.contacts-block__item
-                span.contacts-block__icon.contacts-block__icon_skype
+                a.contacts-block__icon.contacts-block__icon_skype(href="skype:dmitry.gavrish" title="skype")
                   +use('skype','svg-skype-about')
                 p.contacts-block__text dmitry.gavrish
               li.contacts-block__item
-                span.contacts-block__icon.contacts-block__icon_email
+                a.contacts-block__icon.contacts-block__icon_email(href="mailto:dmitrygavrish@gmail.com" title="mail")
                   +use('envelope','svg-envelope-about')
                 p.contacts-block__text dmitrygavrish@gmail.com
               li.contacts-block__item
-                span.contacts-block__icon.contacts-block__icon_phone
+                a.contacts-block__icon.contacts-block__icon_phone(href="tel:89160684388" title="phone")
                   +use('phone','svg-phone-about')
                 p.contacts-block__text +7 916 068 43 88
               li.contacts-block__item
@@ -138,15 +138,15 @@ html(lang="ru-RU")
             a.summary-blog-pages__link.summary-blog-pages__link_main(href="index.html") Авторизация
         ul.summary-blog-social
           li.summary-blog-social__item
-            a.summary-blog-social__link.summary-blog-social__link_vk(href="vk.com" target="_blank")
+            a.summary-blog-social__link.summary-blog-social__link_vk(href="https://new.vk.com/gavrishdmitry" target="_blank" title="vk")
               +use('vk_round','svg-vk_round-blog')
               img.summary-blog__icon(src="assets/img/vk.png" alt="vk icon")
           li.summary-blog-social__item
-            a.summary-blog-social__link.summary-blog-social__link_gh(href="github.com" target="_blank")
+            a.summary-blog-social__link.summary-blog-social__link_gh(href="https://github.com/dmitrygavrish" target="_blank" title="github")
               +use('github_round','svg-github_round-blog')
               img.summary-blog__icon(src="assets/img/github.png" alt="github icon")
           li.summary-blog-social__item
-            a.summary-blog-social__link.summary-blog-social__link_li(href="linkedin.com" target="_blank")
+            a.summary-blog-social__link.summary-blog-social__link_li(href="https://www.linkedin.com/in/dmitry-gavrish" target="_blank" title="linkedin")
               +use('in_round','svg-in_round-blog')
               img.summary-blog__icon(src="assets/img/in.png" alt="linkedin icon")
       div.summary-blog-content

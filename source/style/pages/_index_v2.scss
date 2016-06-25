@@ -1,0 +1,87 @@
+@import "../mixins";
+@import "../variables";
+@import "../animation";
+@import "components/parallax";
+@import "components/index_content";
+
+/*________ preloader __________*/
+
+.loading-screen {
+  display: none;
+}
+
+/*_________ header ___________*/
+
+.welcome-page-wrapper {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  margin-bottom: rem(-100px);
+  &::after {
+    content: '';
+    display: block;
+    height: rem(100px);
+  }
+}
+
+.welcome-header {
+  width: 100%;
+  height: rem(100px);
+}
+
+.welcome-header-button {
+  float: right;
+  margin-right: rem(100px);
+  margin-top: rem(24px);
+}
+
+.welcome-header-button__link {
+  position: relative;
+  display: block;
+  width: rem(180px);
+  height: rem(45px);
+  font-size: rem(16px);
+  text-align: center;
+  text-decoration: none;
+  line-height: rem(42px);
+  color: #fff;
+  @include border-radius(.35rem);
+  border: 1px solid white;
+  transition: background-color .2s, border .2s, transform .2s, color .2s;
+  &:hover {
+    background-color: #fff;
+    border: 1px solid $green100;
+    color: $green100;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+/*________ footer ____________*/
+
+.welcome-footer {
+  position: relative;
+  width: 100%;
+  height: rem(100px);
+}
+
+.welcome-footer__text {
+  margin: 0;
+  text-align: center;
+  color: rgba(#fff, .8);
+  font-weight: 200;
+  font-size: rem(16px);
+  line-height: rem(100px);
+}
+
+.welcome-footer__span::after {
+  content: '|';
+  display: inline;
+}
+
+@import "components/index_media";

@@ -28,6 +28,7 @@
   width: 2rem;
   height: 2rem;
   margin-right: 1.5rem;
+
 }
 
 
@@ -178,6 +179,7 @@
   width: 100%;
 }
 .arrow-blog__down {
+  position: relative;
   width: 1.9rem;
   height: 1.1rem;
   margin: 0 auto;
@@ -192,5 +194,11 @@
     .svg-arrow_down-blog {
       fill: rgba(#fff, 1);
     }
+  }
+  &:active {
+    top: 2px;
+  }
+  &:focus {
+    outline: none;
   }
 }

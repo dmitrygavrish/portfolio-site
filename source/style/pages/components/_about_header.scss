@@ -43,6 +43,14 @@
       fill: rgba(#fff, 1);
     }
   }
+  &:active {
+    .svg-vk-about {
+      top: 2px;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
 }
 .about-social__link_gh {
   &:hover {
@@ -50,12 +58,28 @@
       fill: rgba(#fff, 1);
     }
   }
+  &:active {
+    .svg-github-about {
+      top: 2px;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
 }
 .about-social__link_li {
   &:hover {
     .svg-in-about {
       fill: rgba(#fff, 1);
     }
+  }
+  &:active {
+    .svg-in-about {
+      top: 2px;
+    }
+  }
+  &:focus {
+    outline: none;
   }
 }
 .svg-vk-about, .svg-github-about, .svg-in-about {
@@ -201,11 +225,18 @@
 }
 .about-arrow__down {
   display: inline-block;
+  position: relative;
   cursor: pointer;
   &:hover {
     .svg-arrow_down-about {
       fill: rgba(#fff, 1);
     }
+  }
+  &:active {
+    top: 2px;
+  }
+  &:focus {
+    outline: none;
   }
 }
 .svg-arrow_down-about {

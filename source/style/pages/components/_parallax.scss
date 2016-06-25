@@ -1,0 +1,45 @@
+.parallax {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+.parallax-layer {
+  position: absolute;
+  width: calc(100% + 480px);
+  min-width: 1000px;
+  left: -240px;
+  height: calc(100% + 480px);
+  top: -240px;
+  //transition: all .1s linear;
+  @include tablet {
+    width: 2000px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+  }
+  @include phone {
+    width: 1000px;
+  }
+}
+.parallax-layer__img {
+  width: 100%;
+  position: absolute;
+  display: block;
+  bottom: 0;
+}
+.parallax-layer[data-key="9"] .parallax-layer__img {
+  width: 70%;
+}
+.parallax-layer[data-key="6"] .parallax-layer__img {
+  width: 50%;
+  top: 50%;
+}
+.parallax-layer[data-key="3"] .parallax-layer__img {
+  width: 30%;
+  top: 30%;
+  right: 20%;
+}

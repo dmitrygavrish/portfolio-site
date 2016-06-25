@@ -2,7 +2,12 @@ include common/_mixins
 doctype html
 html(lang="ru-RU")
   include common/_head
-  body.flex-body
+  body
+    div.parallax
+      - var parallaxImgs = ["assets/img/10.png","assets/img/09.png","assets/img/08.png","assets/img/07.png","assets/img/06.png","assets/img/05.png","assets/img/04.png","assets/img/03.png","assets/img/02.png","assets/img/01.png"]
+      each item, key in parallaxImgs
+        div.parallax-layer(data-key=key)
+          img.parallax-layer__img(src=item alt="parallax layer")
     div.wrapper.loading
       div.preload
         div.preload-circle1
@@ -29,5 +34,5 @@ html(lang="ru-RU")
       block content
       block footer-page
         - var page = 'index'
-      block footer
-        include common/_footer
+    block footer
+      include common/_footer

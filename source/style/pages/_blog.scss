@@ -90,10 +90,18 @@
 .blog-menu__link {
   text-decoration: none;
   display: block;
+  position: relative;
   padding: rem(14px) rem(14px) rem(14px) 0;
   font-size: rem(14px);
   color: $titlecolor;
   @include transition(color .4s);
+  &:active {
+    top: 2px;
+  }
+  &:focus {
+    outline: none;
+    text-shadow: 1px 1px 0 #7a7a7a;
+  }
 }
 
 /*** blog contents ***/

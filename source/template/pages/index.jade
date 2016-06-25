@@ -1,59 +1,74 @@
-extends ../main-index
-block header
-    header.header.authorize
-      div.authorize-button
-        a.authorize-button__link(href="#auth") Авторизоваться
-  block content
-    main.main.main-welcome
-      div.welcome-wrapper
-        div.welcome-plate
-          div.welcome-top
-            div.plate-avatar
-              img.plate-avatar__image(src="assets/img/avatar_img.jpg" alt="Dmitry Gavrish")
-            h1.welcome-plate__title Дмитрий Гавриш
-            p.welcome-plate__description Личный сайт веб-разработчика
-            ul.plate-social
-              li.plate-social__item
-                a.plate-social__link.plate-social__link_vk(href="vk.com" target="_blank")
-                  +use('vk', 'svg-vk-dims')
-              li.plate-social__item
-                a.plate-social__link.plate-social__link_gh(href="github.com" target="_blank")
-                  +use('github', 'svg-github-dims')
-              li.plate-social__item
-                a.plate-social__link.plate-social__link_li(href="linkedin.com" target="_blank")
-                  +use('in', 'svg-in-dims')
-          ul.plate-menu
-            li.plate-menu__item.plate-menu__item_works
-              a.plate-menu__link.plate-menu__link_works(href="works.html") Мои работы
-            li.plate-menu__item.plate-menu__item_about
-              a.plate-menu__link.plate-menu__link_about(href="about.html") Обо мне
-            li.plate-menu__item.plate-menu__item_blog
-              a.plate-menu__link.plate-menu__link_blog(href="blog.html") Блог
-        div.authorize-plate
-          form.authorize-form
-            div.form-wrapper
-              div.form-contents
-                h2.form-contents__title Авторизуйтесь
-                label.form-contents__label.form-contents__label_login(for="login")
-                  +use('login', 'svg-login-dims')
-                input.form-contents__input(type="text" name="login" id="login" placeholder="Логин")
-                label.form-contents__label.form-contents__label_pw(for="password")
-                  +use('password', 'svg-password-dims')
-                input.form-contents__input(type="password" name="password" id="password" placeholder="Пароль")
-                input.form-contents__c-input(type="checkbox" name="personalize" id="personalize")
-                label.form-contents__c-label(for="personalize") Я человек
-                p.form-contents__question Вы точно не робот?
-                input.form-contents__r-input(type="radio" name="personalize-2" id="radio-1")
-                label.form-contents__r-label(for="radio-1") Да
-                input.form-contents__r-input(type="radio" name="personalize-2" id="radio-2")
-                label.form-contents__r-label(for="radio-2") Не уверен
-            div.form-menu
-              ul.form-menu__list
-                li.form-menu__item
-                  input.form-menu__input.form-menu__input_reset(type="reset" name="reset" id="return" value="На главную")
-                li.form-menu__item
-                  input.form-menu__input.form-menu__input_submit(type="submit" name="submit" value="Войти")
-   block footer
-    footer.footer.copyright
-      p.copyright__text.
-        <span class="copyright__span">&copy; Дмитрий Гавриш </span> создано с любовью в LoftSchool | 2016
+include ../common/_mixins
+doctype html
+html(lang="ru-RU")
+  include ../common/_head
+  body
+    include ../common/_browsehappy
+    div.parallax
+      - var parallaxImgs = ["assets/img/10.png","assets/img/09.png","assets/img/08.png","assets/img/07.png","assets/img/06.png","assets/img/05.png","assets/img/04.png","assets/img/03.png","assets/img/02.png","assets/img/01.png"]
+      each item, key in parallaxImgs
+        div.parallax-layer(data-key=key)
+          img.parallax-layer__img(src=item alt="parallax layer")
+    div.loading-screen
+      div.preload
+        div.preload-circle1
+        div.preload-circle2
+        div.preload-circle3
+        div.preload-circle4
+    div.welcome-page-wrapper
+      header.welcome-header
+        div.welcome-header-button
+          a.welcome-header-button__link(href="#auth") Авторизоваться
+      main.welcome-main
+        div.welcome-main-container
+          div.welcome-block
+            div.block-top
+              div.block-avatar
+                img.block-avatar__image(src="assets/img/avatar_img.jpg" alt="Dmitry Gavrish")
+              h1.block-top__title Дмитрий Гавриш
+              p.block-top__description Личный сайт веб-разработчика
+              ul.block-social
+                li.block-social__item
+                  a.block-social__link.block-social__link_vk(href="https://new.vk.com/gavrishdmitry" target="_blank" title="vk")
+                    +use('vk', 'svg-vk-dims')
+                li.block-social__item
+                  a.block-social__link.block-social__link_gh(href="https://github.com/dmitrygavrish" target="_blank" title="github")
+                    +use('github', 'svg-github-dims')
+                li.block-social__item
+                  a.block-social__link.block-social__link_li(href="https://www.linkedin.com/in/dmitry-gavrish" target="_blank" title="linkedin")
+                    +use('in', 'svg-in-dims')
+            ul.welcome-menu
+              li.welcome-menu__item.welcome-menu__item_works
+                a.welcome-menu__link.welcome-menu__link_works(href="works.html") Мои работы
+              li.welcome-menu__item.welcome-menu__item_about
+                a.welcome-menu__link.welcome-menu__link_about(href="about.html") Обо мне
+              li.welcome-menu__item.welcome-menu__item_blog
+                a.welcome-menu__link.welcome-menu__link_blog(href="blog.html") Блог
+          div.authorize-block
+            form.welcome-form
+              div.form-content
+                h2.form-content__title Авторизуйтесь
+                div.form-login
+                  label.form-content__label.form-content__label_login(for="login")
+                    +use('login', 'svg-login-dims')
+                  input.form-content__input(type="text" name="login" id="login" placeholder="Логин")
+                div.form-pass
+                  label.form-content__label.form-content__label_pw(for="password")
+                    +use('password', 'svg-password-dims')
+                  input.form-content__input(type="password" name="password" id="password" placeholder="Пароль")
+                input.form-content__c-input(type="checkbox" name="personalize" id="personalize")
+                label.form-content__c-label(for="personalize") Я человек
+                p.form-content__question Вы точно не робот?
+                input.form-content__r-input(type="radio" name="personalize-2" id="radio-1")
+                label.form-content__r-label(for="radio-1") Да
+                input.form-content__r-input(type="radio" name="personalize-2" id="radio-2")
+                label.form-content__r-label(for="radio-2") Не уверен
+              div.form-bottom
+                ul.form-bottom__list
+                  li.form-bottom__item
+                    input.form-bottom__input.form-bottom__input_reset(type="reset" name="reset" id="return" value="На главную")
+                  li.form-bottom__item
+                    input.form-bottom__input.form-bottom__input_submit(type="submit" name="submit" value="Войти")
+    footer.welcome-footer
+      p.welcome-footer__text.
+        <span class="welcome-footer__span">&copy; Дмитрий Гавриш </span> создано с любовью в LoftSchool | 2016

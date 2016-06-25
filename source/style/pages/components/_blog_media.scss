@@ -121,6 +121,12 @@
   .header-blog {
     height: rem(558px);
   }
+  .blog-menu__check:checked ~ .label-wrapper {
+    transform: translateX(rem(250px));
+  }
+  .blog-menu__check:checked ~ .blog-menu {
+    transform: translateX(rem(300px));
+  }
   .header-blog-menu {
     transform: scale(.6);
   }

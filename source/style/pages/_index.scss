@@ -1,13 +1,18 @@
 @import "../mixins";
 @import "../animation";
+
 .wrapper {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   min-height: 100%;
-  background-image: url(../img/mountains.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin-bottom: rem(-100px);
+  &::after {
+    content: '';
+    display: block;
+    height: rem(100px);
+  }
+  //background-image: url(../img/mountains.jpg);
+  //background-size: cover;
+  //background-repeat: no-repeat;
 }
 
 .wrapper.loading .preload {
@@ -88,6 +93,7 @@
 }
 .authorize-button__link {
   text-decoration: none;
+  position: relative;
   display: block;
   color: #fff;
   font-size: .875rem;
@@ -100,11 +106,18 @@
     color: rgb(0, 191, 165);
   }
   transition: background-color .2s, color .2s;
+  &:active {
+    top: 2px;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 /* *****main***** */
 .main-welcome {
+  position: relative;
   width: 100%;
-  height: 100%;
+  border: 1px solid red;
 }
 /* *****footer***** */
 .copyright{
@@ -125,6 +138,7 @@
 /* *****welcome-plate***** */
 .welcome-plate {
   position: absolute;
+  //border: 1px solid red;
   top: 0;
   right: 0;
   bottom: 0;
@@ -135,16 +149,6 @@
   border-radius: .35rem;
   overflow: hidden;
   transform-origin: 50% 50%;
-  //-webkit-perspective: 600px;
-  //-moz-perspective: 600px;
-  //-ms-perspective: 600px;
-  //-o-perspective: 600px;
-  //perspective: 600px;
-  //-webkit-transform-style: preserve-3d;
-  //-moz-transform-style: preserve-3d;
-  //-ms-transform-style: preserve-3d;
-  //-o-transform-style: preserve-3d;
-  //transform-style: preserve-3d;
 }
 .welcome-top {
   background-color: rgba(255, 255, 255, .85);
@@ -196,10 +200,20 @@
   height: 2rem;
   margin-bottom: 2.5rem;
 }
-//.plate-social__link {
-//  width: 2rem;
-//  height: 2rem;
-//}
+
+.plate-social__link {
+  &:hover {
+    .svg-vk-dims, .svg-github-dims, .svg-in-dims {
+      fill: rgba(0,191,165,1);
+    }
+  }
+  &:active {
+    .svg-vk-dims, .svg-github-dims, .svg-in-dims {
+      transform: translateY(2px);
+    }
+  }
+}
+
 .svg-vk-dims, .svg-github-dims, .svg-in-dims {
   position: absolute;
   //top: 0;
@@ -208,18 +222,16 @@
   left: 0;
   margin: auto;
   fill: rgba(0,191,165,.5);
-  &:hover {
-    fill: rgba(0,191,165,1);
-  }
-  transition: fill .2s;
+  transition: fill .2s, transform .1s;
 }
 .svg-vk-dims {
   width: 2rem;
   height: 1.3rem;
 }
 .svg-github-dims {
-  width: 1.6rem;
-  height: 1.5rem;
+  top: .7rem;
+  width: 1.7rem;
+  height: 1.6rem;
 }
 .svg-in-dims {
   width: 1.8rem;
@@ -245,20 +257,30 @@
   width: 25%;
   border-left: 2px solid rgba(#fff, .65);
 }
+
 .plate-menu__link {
+  //position: relative;
   text-decoration: none;
   text-align: center;
   display: block;
   color: #fff;
   font-size: .875rem;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   background-color: rgba(0, 191, 165,.85);
   &:hover {
     background-color: rgba(0, 150, 136,.85);
   }
-  transition: background-color .2s;
+  transition: background-color .2s, letter-spacing .2s;
+  &:active {
+    letter-spacing: 1px;
+  }
+  &:focus {
+    outline: none;
+  }
 }
+
 /* *****authorize-plate***** */
+
 .authorize-plate {
   //opacity: 0;
   //display: none;
@@ -365,6 +387,9 @@
   &:-ms-input-placeholder {
     color: #9b9ea0;
   }
+  &:focus {
+    outline: none;
+  }
 }
 .form-contents__c-label {
   position: relative;
@@ -446,10 +471,17 @@
   &:hover {
     background-color: rgba(0, 150, 136,.85);
   }
-  transition: background-color .2s;
+  transition: background-color .2s, letter-spacing .2s;
+  &:active {
+    letter-spacing: 1px;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 .form-menu__input_submit {
   border-left: 1px solid rgba(#fff, .65);
+
 }
 .form-menu__input_reset {
   border-right: 1px solid rgba(#fff, .65);
@@ -473,6 +505,8 @@
 }
 .welcome-plate, .authorize-plate {
   backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .authorize-plate {
   transform: rotateY(180deg);

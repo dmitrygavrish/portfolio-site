@@ -4,12 +4,12 @@
 
 var counter = 3;
 
-$('.authorize-button__link').on('click', function() {
+$('.welcome-header-button__link').on('click', function() {
   if (counter % 2) {
-    $('.welcome-wrapper').removeClass('rotate180back').addClass('rotate180');
-    $('.authorize-button').fadeOut(300);
-    $('.plate-avatar').fadeOut(300);
-    $('.plate-social').fadeOut(300);
+    $('.welcome-main-container').removeClass('rotate180back').addClass('rotate180');
+    $('.welcome-header-button').fadeOut(300);
+    //$('.plate-avatar').fadeOut(300);
+    //$('.plate-social').fadeOut(300);
     setTimeout(function() {
     counter += 1;
     }, 600)
@@ -18,12 +18,12 @@ $('.authorize-button__link').on('click', function() {
 
 $(document).on('click', (function (event) {
   var target = $(event.target);
-  if ( (target.closest('.authorize-plate').length == 0 || target.is('#return')) && !(counter % 2) ) {
+  if ( (target.closest('.authorize-block').length == 0 || target.is('#return')) && !(counter % 2) ) {
     counter += 1;
-    $('.welcome-wrapper').removeClass('rotate180').addClass('rotate180back');
-    $('.authorize-button').fadeIn(300);
-    $('.plate-avatar').fadeIn(300);
-    $('.plate-social').fadeIn(300);
+    $('.welcome-main-container').removeClass('rotate180').addClass('rotate180back');
+    $('.welcome-header-button').fadeIn(300);
+    // $('.plate-avatar').fadeIn(300);
+    // $('.plate-social').fadeIn(300);
 }}));
 
 
@@ -313,5 +313,38 @@ $(function() {
         return false;
       }
     }
+  });
+});
+
+/*__________parallax_________________*/
+
+$(document).ready(function() {
+
+  var layer = $('.parallax').find('.parallax-layer');
+
+  layer.map(function(key, value) {
+    var bottomPosition = (window.innerHeight / 2) * (key / 100);
+    $(value).css({
+      'bottom': '-' + bottomPosition + 'px',
+      'transform': 'translate3d(0, 0, 0)'
+    });
+  });
+
+  $(window).on('mousemove', function(e) {
+    var mouseX = e.pageX,
+        mouseY = e.pageY,
+        w = (window.innerWidth / 2) - mouseX,
+        h = (window.innerHeight / 2) - mouseY;
+
+    layer.map(function(key, value) {
+      var bottomPosition = (window.innerHeight / 2) * (key / 100),
+          widthPosition = w * (key / 100),
+          heightPosition = h * (key / 100);
+
+      $(value).css({
+        'bottom': '-' + bottomPosition + 'px',
+        'transform': 'translate3d(' + widthPosition + 'px,' + heightPosition + 'px, 0)'
+      });
+    });
   });
 });

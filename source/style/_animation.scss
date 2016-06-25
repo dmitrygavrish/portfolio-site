@@ -14,10 +14,10 @@
   }
 }
 .rotate180 {
-  transform: rotateY(180deg);
+  transform: translate(-50%, -50%) rotateY(180deg);
 }
 .rotate180back {
-  transform: rotateY(0deg);
+  transform: translate(-50%, -50%) rotateY(0deg);
 }
 .rotate3d {
   animation: rotate3d .9s ease;

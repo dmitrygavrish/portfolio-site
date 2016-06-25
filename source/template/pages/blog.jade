@@ -3,16 +3,16 @@ extends ../main
 block header
     header.header-blog
       div.header-blog-wrapper
-        ul.header-blog-social
-          li.header-blog-social__item
-            a.header-blog-social__link.header-blog-social__link_vk-white(href="vk.com")
-              +use('vk', 'svg-vk-dims_wh')
-          li.header-blog-social__item
-            a.header-blog-social__link.header-blog-social__link_gh-white(href="github.com")
-              +use('github', 'svg-github-dims_wh')
-          li.header-blog-social__item
-            a.header-blog-social__link.header-blog-social__link_li-white(href="linkedin.com")
-              +use('in', 'svg-in-dims_wh')
+        ul.about-social
+          li.about-social__item
+            a.about-social__link.about-social__link_vk(href="https://new.vk.com/gavrishdmitry" target="_blank" title="vk")
+              +use('vk', 'svg-vk-about')
+          li.about-social__item
+            a.about-social__link.about-social__link_gh(href="https://github.com/dmitrygavrish" target="_blank" title="github")
+              +use('github', 'svg-github-about')
+          li.about-social__item
+            a.about-social__link.about-social__link_li(href="https://www.linkedin.com/in/dmitry-gavrish" target="_blank" title="linkedin")
+              +use('in', 'svg-in-about')
         div.about-menu
           input.about-menu__check(type="checkbox" name="checkbox" id="menu-checkbox")
           label.about-menu__label(for="menu-checkbox")
@@ -107,15 +107,15 @@ block footer
           a.summary-blog-pages__link.summary-blog-pages__link_main(href="index.html") Авторизация
       ul.summary-blog-social
         li.summary-blog-social__item
-          a.summary-blog-social__link.summary-blog-social__link_vk(href="vk.com" target="_blank")
+          a.summary-blog-social__link.summary-blog-social__link_vk(href="https://new.vk.com/gavrishdmitry" target="_blank" title="vk")
             +use('vk_round','svg-vk_round-blog')
             img.summary-blog__icon(src="assets/img/vk.png" alt="vk icon")
         li.summary-blog-social__item
-          a.summary-blog-social__link.summary-blog-social__link_gh(href="github.com" target="_blank")
+          a.summary-blog-social__link.summary-blog-social__link_gh(href="https://github.com/dmitrygavrish" target="_blank" title="github")
             +use('github_round','svg-github_round-blog')
             img.summary-blog__icon(src="assets/img/github.png" alt="github icon")
         li.summary-blog-social__item
-          a.summary-blog-social__link.summary-blog-social__link_li(href="linkedin.com" target="_blank")
+          a.summary-blog-social__link.summary-blog-social__link_li(href="https://www.linkedin.com/in/dmitry-gavrish" target="_blank" title="linkedin")
             +use('in_round','svg-in_round-blog')
             img.summary-blog__icon(src="assets/img/in.png" alt="linkedin icon")
     div.summary-blog-content
