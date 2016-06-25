@@ -8,8 +8,7 @@ $('.welcome-header-button__link').on('click', function() {
   if (counter % 2) {
     $('.welcome-main-container').removeClass('rotate180back').addClass('rotate180');
     $('.welcome-header-button').fadeOut(300);
-    //$('.plate-avatar').fadeOut(300);
-    //$('.plate-social').fadeOut(300);
+    $('.welcome-block').fadeOut(350);
     setTimeout(function() {
     counter += 1;
     }, 600)
@@ -22,8 +21,7 @@ $(document).on('click', (function (event) {
     counter += 1;
     $('.welcome-main-container').removeClass('rotate180').addClass('rotate180back');
     $('.welcome-header-button').fadeIn(300);
-    // $('.plate-avatar').fadeIn(300);
-    // $('.plate-social').fadeIn(300);
+    $('.welcome-block').fadeIn(300);
 }}));
 
 

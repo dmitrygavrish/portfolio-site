@@ -1,0 +1,157 @@
+@media screen and (max-width: 1199px) {
+
+  .welcome-header-button {
+    margin-right: rem(24px);
+  }
+
+  .welcome-main-container {
+    width: rem(350px);
+  }
+
+  .welcome-block, .authorize-block {
+    width: rem(350px);
+  }
+
+  .welcome-menu__item_works {
+    width: rem(145px);
+  }
+  .welcome-menu__item_about {
+    width: rem(117px);
+  }
+  .welcome-menu__item_blog {
+    width: rem(88px);
+  }
+
+  .welcome-footer {
+    height: rem(80px);
+  }
+
+  /*_____authorize block ______*/
+
+  .form-content__title {
+    font-size: rem(30px);
+  }
+  .form-login, .form-pass {
+    width: rem(310px);
+  }
+  .form-content__input {
+    width: rem(265px);
+  }
+
+  .form-content__c-label {
+    &::before {
+      left: 7rem;
+    }
+  }
+
+  /*_____ header + footer positioning _____*/
+
+  .welcome-page-wrapper {
+    margin-bottom: rem(-80px);
+    &::after {
+      height: rem(80px);
+    }
+  }
+  .welcome-footer__text {
+    line-height: rem(80px);
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .welcome-header {
+    text-align: center;
+  }
+  .welcome-header-button {
+    margin: rem(10px) 0 0;
+    float: none;
+    display: inline-block;
+  }
+  .welcome-header-button__link {
+    width: rem(147px);
+    height: rem(40px);
+    font-size: rem(14px);
+    line-height: rem(38px);
+  }
+
+  .block-top__title {
+    //margin: 0 0 rem(10px);
+    font-size: rem(22px);
+  }
+
+  .welcome-main-container {
+    width: rem(300px);
+  }
+
+  .welcome-block, .authorize-block {
+    width: rem(300px);
+  }
+
+  .welcome-menu__item_works {
+    width: rem(125px);
+  }
+  .welcome-menu__item_about {
+    width: rem(100px);
+  }
+  .welcome-menu__item_blog {
+    width: rem(75px);
+  }
+
+  .welcome-menu__link {
+    font-size: rem(14px);
+  }
+
+  /*_____authorize block ______*/
+
+  .form-content__title {
+    font-size: rem(30px);
+  }
+  .form-login, .form-pass {
+    width: rem(260px);
+  }
+  .form-content__label {
+
+  }
+  .form-content__input {
+    width: rem(215px);
+    font-size: rem(14px);
+  }
+
+  .form-content__c-label {
+    font-size: rem(14px);
+    line-height: rem(22px);
+    &::before {
+      left: 5.7rem;
+      line-height: rem(16px);
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  .form-content__question, .form-content__r-label,
+  .form-bottom__input {
+    font-size: rem(14px);
+  }
+
+  /*_____ header + footer positioning _____*/
+
+  .welcome-page-wrapper {
+    margin-bottom: rem(-50px);
+    &::after {
+      height: rem(50px);
+    }
+  }
+  .welcome-footer {
+    height: rem(50px);
+  }
+  .welcome-footer__text {
+    line-height: rem(22px);
+    font-size: rem(14px);
+  }
+  .welcome-footer__span {
+    display: block;
+    &::after {
+      content:'';
+    }
+  }
+}

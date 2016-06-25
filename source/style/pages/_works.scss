@@ -423,6 +423,7 @@
 .connect-form__text {
   padding-top: 1rem;
   height: rem(140px);
+  resize: none;
 }
 
 .connect-form__submit, .connect-form__reset {

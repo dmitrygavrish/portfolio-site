@@ -13,9 +13,11 @@
 /*_________ header ___________*/
 
 .welcome-page-wrapper {
+  perspective: 1000px;
+  overflow: hidden;
   position: relative;
   z-index: 1;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   margin-bottom: rem(-100px);
   &::after {

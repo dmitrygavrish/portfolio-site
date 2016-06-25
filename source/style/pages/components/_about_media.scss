@@ -24,6 +24,21 @@
 
 @media screen and (max-width: 1199px) {
 
+  .about-section-info {
+    background-color: #efeee9;
+    left: 0;
+  }
+  .about-section-skills {
+    background-color: #eeebdf;
+    left: 0;
+  }
+  .about-main-wrapper_right, .about-main-wrapper_left {
+    float: none;
+    background-color: transparent;
+    left: 0;
+  }
+  /***********************/
+
   .about-triangles-right {
     background-image: linear-gradient(to left top, #efeee9, #efeee9 50%, transparent 51%, transparent);
   }

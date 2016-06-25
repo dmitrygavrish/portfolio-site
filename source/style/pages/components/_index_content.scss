@@ -1,6 +1,4 @@
-body {
-  perspective: 1000px;
-}
+
 .welcome-main {
 
 }
@@ -321,6 +319,7 @@ body {
 
 .form-bottom__input {
   display: block;
+  cursor: pointer;
   width: 100%;
   min-height: rem(45px);
   line-height: rem(45px);

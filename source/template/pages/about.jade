@@ -25,8 +25,8 @@ html(lang="ru-RU")
       div.about-header-bottom
         +use('portfolio_header', 'svg-portfolio_header-about')
         div.about-person
-          div.about-avatar
-            img.about-avatar__image(src="assets/img/avatar_img.jpg" alt="Dmitry Gavrish")
+          div.block-avatar
+            img.block-avatar__image(src="assets/img/avatar_img.jpg" alt="Dmitry Gavrish")
           h3.about-person__title Дмитрий Гавриш
           p.about-person__desc Личный сайт веб-разработчика
       div.about-arrow
@@ -46,62 +46,64 @@ html(lang="ru-RU")
         li.site-menu__item
           a.site-menu__link(href="index.html") Авторизоваться
     main#down.about-main-section
-      section.about-section-info
-        div.section-info-name
-          +use('about_header','svg-about_header-about')
-          h1.section-info-name__title Обо мне
-        div.content-block
-          div.avatar-block
-            //img.avatar-block__img(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
-          h2.content-block__title Кто я
-          p.content-block__text.
-            Я начинающий веб-разработчик из Москвы. Мне 23 года. Я занимаюсь разработкой
-            самых разных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-          p.content-block__text.
-            Этот сайт я сделал в рамках обучения в LoftSchool. Пока что сайт еще не готов,
-            но обязательно будет.
-      section.about-section-skills
-        div.skills-block
-          h2.skills-block__title Чем я могу быть вам полезен
-          p.skills-block__text.
-            Больше всего меня привлекает Frontend разработка, но я также знаком с технологиями Backend,
-            и могу решать на нем задачи легкого уровня.
-          h4.skills-block__name Frontend
-          div.skills-block-array
-            div.skills-item.skills-item_html5
-              +circle(90)
-              span.skills-item__name HTML5
-            div.skills-item.skills-item_css3
-              +circle(85)
-              span.skills-item__name CSS3
-            div.skills-item.skills-item_jsjq
-              +circle(55)
-              span.skills-item__name.skills-item__name_l JavaScript & jQuery
-          h4.skills-block__name Backend
-          div.skills-block-array
-            div.skills-item.skills-item_php
-              +circle(15)
-              span.skills-item__name PHP
-            div.skills-item.skills-item_mysql
-              +circle(5)
-              span.skills-item__name mySQL
-            div.skills-item.skills-item_nodejs
-              +circle(5)
-              span.skills-item__name.skills-item__name_l Node.js & npm
-            div.skills-item.skills-item_mongo
-              +circle(5)
-              span.skills-item__name Mongo.db
-          h4.skills-block__name Workflow
-          div.skills-block-array
-            div.skills-item.skills-item_git
-              +circle(65)
-              span.skills-item__name Git
-            div.skills-item.skills-item_gulp
-              +circle(55)
-              span.skills-item__name Gulp
-            div.skills-item.skills-item_bower
-              +circle(75)
-              span.skills-item__name Bower
+      div.about-main-wrapper_left
+        div.about-main-wrapper_right
+          section.about-section-info
+            div.section-info-name
+              +use('about_header','svg-about_header-about')
+              h1.section-info-name__title Обо мне
+            div.content-block
+              div.avatar-block
+                //img.avatar-block__img(src="assets/img/avatar.jpg" alt="Dmitry Gavrish")
+              h2.content-block__title Кто я
+              p.content-block__text.
+                Я начинающий веб-разработчик из Москвы. Мне 23 года. Я занимаюсь разработкой
+                самых разных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p.content-block__text.
+                Этот сайт я сделал в рамках обучения в LoftSchool. Пока что сайт еще не готов,
+                но обязательно будет.
+          section.about-section-skills
+            div.skills-block
+              h2.skills-block__title Чем я могу быть вам полезен
+              p.skills-block__text.
+                Больше всего меня привлекает Frontend разработка, но я также знаком с технологиями Backend,
+                и могу решать на нем задачи легкого уровня.
+              h3.skills-block__name Frontend
+              div.skills-block-array
+                div.skills-item.skills-item_html5
+                  +circle(90)
+                  span.skills-item__name HTML5
+                div.skills-item.skills-item_css3
+                  +circle(85)
+                  span.skills-item__name CSS3
+                div.skills-item.skills-item_jsjq
+                  +circle(55)
+                  span.skills-item__name.skills-item__name_l JavaScript & jQuery
+              h3.skills-block__name Backend
+              div.skills-block-array
+                div.skills-item.skills-item_php
+                  +circle(15)
+                  span.skills-item__name PHP
+                div.skills-item.skills-item_mysql
+                  +circle(5)
+                  span.skills-item__name mySQL
+                div.skills-item.skills-item_nodejs
+                  +circle(5)
+                  span.skills-item__name.skills-item__name_l Node.js & npm
+                div.skills-item.skills-item_mongo
+                  +circle(5)
+                  span.skills-item__name Mongo.db
+              h3.skills-block__name Workflow
+              div.skills-block-array
+                div.skills-item.skills-item_git
+                  +circle(65)
+                  span.skills-item__name Git
+                div.skills-item.skills-item_gulp
+                  +circle(55)
+                  span.skills-item__name Gulp
+                div.skills-item.skills-item_bower
+                  +circle(75)
+                  span.skills-item__name Bower
     section.contacts-section
       div.contacts-wrapper
         div#map.contacts-bg

@@ -4,18 +4,34 @@
 .about-main-section {
   width: 100%;
   @include clearfix;
+  overflow: hidden;
+}
+.about-main-wrapper_right {
+  position: relative;
+  width: 100%;
+  float: left;
+  background-color: #efeee9;
+  left: -50%;
+}
+.about-main-wrapper_left {
+  width: 100%;
+  float: left;
+  background-color: #eeebdf;
+  position: relative;
 }
 .about-section-info, .about-section-skills {
   position: relative;
   float: left;
   width: 50%;
   min-height: rem(854px);
+  height: 100%;
+  left: 50%;
 }
 .about-section-info {
-  background-color: #efeee9;
+  //background-color: #efeee9;
 }
 .about-section-skills {
-  background-color: #eeebdf;
+  //background-color: #eeebdf;
 }
 .section-info-name {
   position: relative;

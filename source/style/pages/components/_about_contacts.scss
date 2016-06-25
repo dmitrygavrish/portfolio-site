@@ -34,6 +34,7 @@
   @include border-radius(.35rem);
   background-color: rgba(#fff, .7);
   text-align: center;
+  overflow: hidden;
 }
 
 .contacts-block__title {

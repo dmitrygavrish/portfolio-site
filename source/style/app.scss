@@ -7,7 +7,9 @@ html, body {
   height: 100%;
   width: 100%;
 }
-
+html {
+  //position: relative;
+}
 @import "pages/index";
 @import "pages/index_v2";
 @import "pages/about";
