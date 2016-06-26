@@ -73,6 +73,9 @@
   @include phone {
     font-size: rem(48px);
   }
+  @include small {
+    font-size: rem(42px);
+  }
   &::before, &::after {
     content: '';
     display: block;

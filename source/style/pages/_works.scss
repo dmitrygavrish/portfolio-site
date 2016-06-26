@@ -22,9 +22,9 @@
 .works-name__title {
   position: relative;
   display: inline-block;
-  margin-top: rem(69px);
+  margin-top: rem(52px);
   font-family: 'Bernier', sans-serif;
-  font-size: rem(46px);
+  font-size: rem(63px);
   color: #393e42;
   &::before, &::after {
     content: '';
@@ -90,9 +90,9 @@
 .site-name__title {
   position: relative;
   display: inline-block;
-  width: rem(220px);
+  width: rem(290px);
   font-family: 'Bernier', sans-serif;
-  font-size: rem(26px);
+  font-size: rem(35px);
   color: $titlecolor;
   text-transform: uppercase;
   margin: 0 0 rem(40px);
@@ -103,7 +103,7 @@
     height: 0.35rem;
     position: absolute;
     background-color: rgba(#000, .35);
-    top: rem(13px);
+    top: rem(17.5px);
   }
   &::before {
     left: -2rem;
@@ -128,7 +128,10 @@
   position: relative;
   text-decoration: none;
   font-size: rem(16px);
-  padding: rem(15px) rem(15px) rem(15px) rem(45px);
+  width: rem(199px);
+  height: rem(45px);
+  line-height: rem(43px);
+  padding-left: rem(25px);
   color: #fff;
   background-color: $green100;
   display: inline-block;
@@ -254,12 +257,12 @@
 
 .opinion-name__title {
   position: relative;
-  width: rem(220px);
+  width: rem(280px);
   font-family: 'Bernier', sans-serif;
-  font-size: rem(46px);
+  font-size: rem(63px);
   display: inline-block;
   color: #393e42;
-  margin: rem(70px) 0 0 0;
+  margin: rem(50px) 0 0 0;
   padding: 0;
   &::before, &::after {
     content: '';
@@ -268,7 +271,7 @@
     height: 0.35rem;
     position: absolute;
     background-color: rgba(#000, .35);
-    top: rem(23px);
+    top: rem(31.5px);
   }
   &::before {
     left: -2rem;
@@ -370,11 +373,11 @@
 
 .connect-form__title {
   position: relative;
-  width: rem(200px);
-  margin: rem(40px) auto;
+  width: rem(265px);
+  margin: rem(35.5px) auto;
   text-align: center;
   text-transform: uppercase;
-  font-size: rem(26px);
+  font-size: rem(35px);
   font-family: 'Bernier', sans-serif;
   &::before, &::after {
     content: '';
@@ -383,7 +386,7 @@
     height: 0.35rem;
     position: absolute;
     background-color: rgba(#000, .35);
-    top: rem(13px);
+    top: rem(17.5px);
   }
   &::before {
     left: -2rem;

@@ -1,6 +1,6 @@
 .summary-blog {
   position: relative;
-  height: 9.25rem;
+  height: rem(146px);
   background-color: rgba(#000, .7);
   &::before {
     content: '';
@@ -11,7 +11,7 @@
 
 .summary-blog-menu, .summary-blog-content {
   position: relative;
-  height: 50%;
+  height: rem(73px);
 }
 .summary-blog-menu {
   border-bottom: 1px solid rgba(#fff, .5);

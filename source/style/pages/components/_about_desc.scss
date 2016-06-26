@@ -36,7 +36,7 @@
 .section-info-name {
   position: relative;
   width: rem(360px);
-  margin: rem(11px) auto rem(51px);
+  margin: rem(1px) auto rem(51px);
   text-align: center;
 }
 .svg-about_header-about {
@@ -53,7 +53,8 @@
   position: relative;
   display: inline-block;
   margin: 0;
-  font-size: rem(44px);
+  padding-top: rem(10px);
+  font-size: rem(63px);
   color: #393e42;
   text-transform: uppercase;
   font-family: 'Bernier', sans-serif;
@@ -93,7 +94,7 @@
 .content-block__title {
   position: relative;
   display: inline-block;
-  font-size: rem(26px);
+  font-size: rem(35px);
   color: $titlecolor;
   text-transform: uppercase;
   font-family: 'Bernier', sans-serif;
@@ -134,12 +135,12 @@
 .skills-block__title {
   display: inline-block;
   position: relative;
-  font-size: rem(26px);
+  font-size: rem(35px);
   color: $titlecolor;
   text-transform: uppercase;
   font-family: 'Bernier', sans-serif;
   max-width: rem(250px);
-  margin: rem(12px) 0 rem(32px) 0;
+  margin: rem(10px) 0 rem(32px) 0;
   &::before, &::after {
     content: '';
     display: block;

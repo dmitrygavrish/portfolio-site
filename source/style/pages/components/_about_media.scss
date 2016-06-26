@@ -64,7 +64,7 @@
     width: rem(250px);
   }
   .section-info-name__title {
-    font-size: rem(36px);
+    font-size: rem(49px);
   }
   .content-block {
     width: rem(475px);
@@ -78,8 +78,8 @@
   //}
 
   .content-block__title {
-    font-size: rem(22px);
-    margin: rem(45px) 0 rem(15px) 0;
+    font-size: rem(30px);
+    margin: rem(35px) 0 rem(15px) 0;
   }
   .content-block__text {
     font-size: rem(14px);
@@ -99,8 +99,8 @@
     padding: 0 rem(20px);
   }
   .skills-block__title {
-    font-size: rem(22px);
-    margin: rem(45px) 0 rem(15px);
+    font-size: rem(30px);
+    margin: rem(40px) 0 rem(15px);
   }
   .skills-block__text {
     margin: 0 auto rem(45px);
@@ -109,6 +109,9 @@
   }
   .skills-block__name, .skills-block-array {
     text-align: center;
+  }
+  .skills-block__name {
+    font-size: rem(21px);
   }
   .skills-block-array {
     &:last-of-type {
@@ -141,7 +144,7 @@
     width: rem(200px);
   }
   .section-info-name__title {
-    font-size: rem(26px);
+    font-size: rem(35px);
   }
   .content-block {
     width: 100%;
@@ -154,8 +157,8 @@
   }
 
   .content-block__title {
-    font-size: rem(16px);
-    margin: rem(25px) 0 rem(15px);
+    font-size: rem(21px);
+    margin: rem(22px) 0 rem(15px);
   }
   .content-block__text {
     padding: 0 rem(10px);
@@ -171,8 +174,8 @@
     padding: 0 rem(10px);
   }
   .skills-block__title {
-    font-size: rem(16px);
-    margin: rem(25px) 0 rem(15px);
+    font-size: rem(21px);
+    margin: rem(22px) 0 rem(15px);
     max-width: rem(140px);
   }
   .skills-block__text {
@@ -199,7 +202,7 @@
   }
   .contacts-block {
     width: 100%;
-    height: rem(260px);
+    height: rem(270px);
     @include border-radius(0);
     margin: 0;
     background-color: #fff;

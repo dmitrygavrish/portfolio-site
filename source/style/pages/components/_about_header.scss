@@ -36,6 +36,9 @@
   &:last-child {
     margin-right: 0;
   }
+  @include tablet {
+    width: 1.5rem;
+  }
 }
 .about-social__link_vk {
   &:hover {
@@ -93,15 +96,27 @@
 .svg-vk-about {
   width: 2rem;
   height: 2rem;
+  @include phone {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 .svg-github-about {
   width: 1.8rem;
   height: 2rem;
+  @include phone {
+    width: 1.4rem;
+    height: 1.5rem;
+  }
 }
 .svg-in-about {
   width: 1.6rem;
   height: 1.8rem;
   bottom: .2rem;
+  @include phone {
+    width: 1.3rem;
+    height: 1.4rem;
+  }
 }
 
 .about-menu {
@@ -116,6 +131,9 @@
   cursor: pointer;
   display: block;
   margin: rem(15px) rem(20px) 0 0;
+  @include phone {
+    margin: rem(25px) rem(5px) 0 0;
+  }
   width: rem(40px);
   height: rem(40px);
   &:hover {
@@ -128,16 +146,26 @@
 .about-line {
   width: rem(40px);
   @include border-radius(.35rem);
-  height: rem(6px);
+  height: rem(5px);
   background-color: rgba(#fff, .5);
   transition: background-color .2s, transform .2s;
+  @include phone {
+    width: rem(25px);
+    height: rem(4px);
+  }
 }
 .about-line_top {
-  margin-bottom: rem(11px);
+  margin-bottom: rem(10px);
   transform-origin: right center;
+  @include phone {
+    margin-bottom: rem(5px);
+  }
 }
 .about-line_mid {
-  margin-bottom: rem(11px);
+  margin-bottom: rem(10px);
+  @include phone {
+    margin-bottom: rem(5px);
+  }
 }
 .about-line_bot {
   transform-origin: right center;
@@ -148,13 +176,19 @@
     background-color: rgba(#fff, 1);
   }
   .about-line_top {
-    transform: rotate(-45deg) scaleX(1.2);
+    transform: rotate(-48deg);
+    @include phone {
+      transform: rotate(-46deg);
+    }
   }
   .about-line_mid {
     transform: scaleX(0);
   }
   .about-line_bot {
-    transform: rotate(45deg) scaleX(1.2);
+    transform: rotate(48deg);
+    @include phone {
+      transform: rotate(46deg);
+    }
   }
 }
 
