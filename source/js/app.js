@@ -346,3 +346,28 @@ $(document).ready(function() {
     });
   });
 });
+
+/*________________blur________________*/
+
+$(document).ready(function() {
+  setBlur();
+});
+
+$(window).resize(function() {
+  setBlur();
+});
+
+function setBlur() {
+
+  var blurSection = $('.blur-bg'),
+    imgWidth = blurSection.width(),
+    blur = $('.connect-blur'),
+    posTop = blurSection.offset().top - blur.offset().top,
+    posLeft = blurSection.offset().left - blur.offset().left;
+
+  blur.css({
+    'background-size' : imgWidth + 'px' + ' ' + 'auto',
+    'background-position' : posLeft + 'px' + ' ' + posTop + 'px'
+  });
+
+}

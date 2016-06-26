@@ -237,8 +237,9 @@
   position: relative;
   width: 100%;
   height: rem(1280px);
-  background: url(../img/bg.jpg) no-repeat;
-  background-size: cover;
+  //background: url(../img/bg.jpg) no-repeat;
+  //background-size: cover;
+  overflow: hidden;
 }
 .opinion-name {
   width: 100%;
@@ -343,7 +344,18 @@
 }
 
 /*** connect form ***/
-
+.blur-bg {
+  position: absolute;
+  bottom: 0;
+  min-width: 900px;
+}
+.blur-bg__image {
+  display: block;
+  max-width: 100%;
+}
+//.blur-bg__image_c {
+//
+//}
 .connect-form {
   display: block;
   margin: 0 auto;
@@ -354,16 +366,21 @@
   overflow: hidden;
   font-size: 0;
 }
-.form-mask {
+
+
+.connect-blur {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  background-image: url(../img/bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
 }
-.mask-bg {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(#fff, .2);
-}
+
 .connect-form__title, .connect-form__label,
 .connect-form__input, .connect-form__text,
 .connect-form__submit, .connect-form__reset {

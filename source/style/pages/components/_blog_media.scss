@@ -22,7 +22,7 @@
     top: 5rem;
   }
   .title-wrapper__title {
-    font-size: rem(36px);
+    font-size: rem(49px);
   }
   .header-blog-bottom__desc {
     font-size: rem(14px);
@@ -76,6 +76,9 @@
       width: rem(720px);
       margin: rem(56px) 0;
     }
+  }
+  .blog-article__title {
+    font-size: rem(30px);
   }
   .blog-article__date {
     margin: rem(12px) 0 0 0;
@@ -139,7 +142,7 @@
     top: 7rem;
   }
   .title-wrapper__title {
-    font-size: rem(26px);
+    font-size: rem(35px);
   }
   .triangles-left_blog, .triangles-right_blog {
     height: rem(36px);
@@ -155,6 +158,9 @@
       width: rem(300px);
       margin: rem(26px) 0;
     }
+  }
+  .blog-article__title {
+    font-size: rem(21px);
   }
   .blog-article__text {
     font-size: rem(12px);
