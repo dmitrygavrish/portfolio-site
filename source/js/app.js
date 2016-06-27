@@ -97,7 +97,9 @@ var waymenuback = $('#wp-1').waypoint({
 
 /***** about page svg-circles waypoints *****/
 
-var circlesDown = $('.skill-circle').waypoint({
+var circle = $('.skill-circle');
+
+var circlesDown = circle.waypoint({
   handler: function(direction) {
     if (direction == 'down') {
       var percent = this.element.getAttribute('data-percent');
@@ -109,7 +111,7 @@ var circlesDown = $('.skill-circle').waypoint({
   offset: '85%'
 });
 
-var circlesDownReset = $('.skill-circle').waypoint({
+var circlesDownReset = circle.waypoint({
   handler: function(direction) {
     if (direction == 'down') {
       var percent = this.element.getAttribute('data-percent');
@@ -121,7 +123,7 @@ var circlesDownReset = $('.skill-circle').waypoint({
   offset: '-50px'
 });
 
-var circlesUp = $('.skill-circle').waypoint({
+var circlesUp = circle.waypoint({
   handler: function(direction) {
     if (direction == 'up') {
       var percent = this.element.getAttribute('data-percent');
@@ -133,7 +135,7 @@ var circlesUp = $('.skill-circle').waypoint({
   offset: '0'
 });
 
-var circlesUpReset = $('.skill-circle').waypoint({
+var circlesUpReset = circle.waypoint({
   handler: function(direction) {
     if (direction == 'up') {
       var percent = this.element.getAttribute('data-percent');
@@ -145,72 +147,138 @@ var circlesUpReset = $('.skill-circle').waypoint({
   offset: '100%'
 });
 
+// var circles = function circlesAnimateTrigger() {
+//   var circle = $('.skill-circle');
+//
+//   return {
+//     circlesDown: circle.waypoint({
+//       handler: function(direction) {
+//         if (direction == 'down') {
+//           var percent = this.element.getAttribute('data-percent');
+//
+//           $(this.element).addClass('skill-circle_' + percent);
+//
+//         }
+//       },
+//       offset: '85%'
+//     }),
+//
+//     circlesDownReset: circle.waypoint({
+//       handler: function(direction) {
+//         if (direction == 'down') {
+//           var percent = this.element.getAttribute('data-percent');
+//
+//           $(this.element).removeClass('skill-circle_' + percent);
+//
+//         }
+//       },
+//       offset: '-50px'
+//     }),
+//
+//     circlesUp: circle.waypoint({
+//       handler: function(direction) {
+//         if (direction == 'up') {
+//           var percent = this.element.getAttribute('data-percent');
+//
+//           $(this.element).addClass('skill-circle_' + percent);
+//
+//         }
+//       },
+//       offset: '0'
+//     }),
+//
+//     circlesUpReset: circle.waypoint({
+//       handler: function(direction) {
+//         if (direction == 'up') {
+//           var percent = this.element.getAttribute('data-percent');
+//
+//           $(this.element).removeClass('skill-circle_' + percent);
+//
+//         }
+//       },
+//       offset: '100%'
+//     })
+//   };
+// };
+//
+// circles.circlesDown();
+// circles.circlesDownReset();
+// circles.circlesUp();
+// circles.circlesUpReset();
+
 /*********************/
 /***** preloader *****/
 /*********************/
 
-$(window).on('load', function() {
-  $('.wrapper').addClass('loaded');
-  $('.preload').find('div').css({
-    'display' : 'none'
+$(document).ready(function() {
+  $(function() {
+    var imgs = [];
+
+    $.each($('*'), function() {
+      var $this = $(this),
+          background = $this.css('background-image'),
+          img = $this.is('img');
+
+      if (background != 'none') {
+        var bgPath = background.replace('url("', '').replace('")', '');
+
+        imgs.push(bgPath);
+      }
+
+      if (img) {
+        var path = $this.attr('src');
+
+        if(path) {
+          imgs.push(path);
+        }
+      }
+
+    });
+
+    var percents = 1;
+    console.log(percents);
+    for (var i = 0; i < imgs.length; i++) {
+      var image = $('<img>', {
+        attr: {
+          src: imgs[i]
+        }
+      });
+
+      image.on('load', function() {
+        setPercent(imgs.length, percents);
+        percents++;
+      });
+
+    }
+
+    function setPercent(total, current) {
+      var percent = Math.ceil(current / total * 100);
+
+      // function display() {
+      //   return new Promise(function(resolve, reject) {
+      //     $('.loading-screen').animate({'opacity', '0'});
+      //     resolve();
+      //   });
+      // }
+
+      if (percent >= 100) {
+        $('.parallax').css({'display': 'block'});
+        $('.welcome-page-wrapper').css({'display': 'block'});
+        $('.loading-screen').animate({
+          opacity: 0
+        }, 1000, function() {
+          $('.loading-screen').css({'display': 'none'})
+        });
+        // setTimeout(function() {
+        //   $('.loading-screen').css('display', 'none');
+        // }, 1500);
+      }
+
+      $('.preload-percent').text(percent + '%');
+    }
+
   });
-  setTimeout(function() {
-    $('.wrapper').removeClass('loading').removeClass('loaded');
-  }, 1000);
 });
-// $(document).ready(function () {
-//
-//   // $(function () {
-//   //   var imgs = [];
-//   //
-//   //   $.each($('*'), function () {
-//   //     var $this = $(this),
-//   //       background = $this.css('background-image'),
-//   //       img = $this.is('img');
-//   //
-//   //     if (background != 'none') {
-//   //       var path = background.replace('url("', '').replace('")', '');
-//   //
-//   //       imgs.push(path);
-//   //     }
-//   //
-//   //     if (img) {
-//   //       var path = $this.attr('src');
-//   //
-//   //       if (path) {
-//   //         imgs.push(path);
-//   //       }
-//   //     }
-//   //   });
-//   //
-//   //   var percents = 1;
-//   //
-//   //   for (var i = 0; i < imgs.length; i++) {
-//   //     var image = $('<img>', {
-//   //       attr: {
-//   //         src: imgs[i]
-//   //       }
-//   //     });
-//   //
-//   //     image.load(function () {
-//   //       setPercents(imgs.length, percents);
-//   //       percents++;
-//   //     });
-//   //   }
-//   //
-//   //   function setPercents(total, current) {
-//   //     var percent = Math.ceil(current / total * 100);
-//   //
-//   //     if (percent >= 100) {
-//   //       $('.wrap').css('display', 'block');
-//   //     }
-//   //
-//   //     $('.loader-bar').css({
-//   //       'width': percent + '%'
-//   //     }).text(percent + '%');
-//   //   }
-//   // });
-// });
 
 /*______________site-menu_______________*/
 

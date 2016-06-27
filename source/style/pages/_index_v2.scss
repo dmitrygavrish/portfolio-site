@@ -7,12 +7,112 @@
 /*________ preloader __________*/
 
 .loading-screen {
-  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/prebg.jpg) no-repeat;
+  background-size: cover;
+  z-index: 5;
+}
+
+.preload {
+  width: rem(300px);
+  height: rem(300px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.preload-percent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: rem(20px);
+  line-height: rem(20px);
+  font-size: rem(14px);
+  color: #fff;
+  text-align: center;
+}
+
+.preload-circle1, .preload-circle2,
+.preload-circle3, .preload-circle4 {
+  animation: circle1 1s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  position: absolute;
+  width: rem(200px);
+  height: rem(100px);
+  right: 0;
+  left: 0;
+  top: rem(50px);
+  margin: 0 auto;
+  overflow: hidden;
+  transform-origin: center bottom;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(194px);
+    height: rem(194px);
+    border: rem(3px) solid rgba(#fff, .8);
+    @include border-radius(50%);
+  }
+}
+.preload-circle2 {
+  animation: circle2 1s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  width: rem(170px);
+  height: rem(85px);
+  top: rem(65px);
+  &::before {
+    width: rem(164px);
+    height: rem(164px);
+    border: rem(3px) solid rgba(#fff, .6);
+  }
+}
+.preload-circle3 {
+  animation: circle3 1s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  width: rem(140px);
+  height: rem(70px);
+  top: rem(80px);
+  &::before {
+    width: rem(134px);
+    height: rem(134px);
+    border: rem(3px) solid rgba(#fff, .4);
+  }
+}
+.preload-circle4 {
+  animation: circle4 1s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  width: rem(110px);
+  height: rem(55px);
+  top: rem(95px);
+  &::before {
+    width: rem(104px);
+    height: rem(104px);
+    border: rem(3px) solid rgba(#fff, .2);
+  }
 }
 
 /*_________ header ___________*/
 
 .welcome-page-wrapper {
+  display: none;
   perspective: 1000px;
   overflow: hidden;
   position: relative;
