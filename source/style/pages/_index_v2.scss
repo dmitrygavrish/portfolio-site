@@ -109,6 +109,35 @@
   }
 }
 
+.loading-screen__link {
+  display: block;
+  position: absolute;
+  top: rem(300px);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: rem(160px);
+  height: rem(30px);
+  line-height: rem(28px);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgba(#fff, .7);
+  font-weight: 200;
+  font-size: rem(14px);
+  border: 1px solid rgba(#fff, .7);
+  @include border-radius(.35rem);
+  transition: background-color .2s, color .2s;
+  &:hover {
+    background-color: rgba(#fff, .7);
+    color: $green85;
+  }
+  &:active {
+    top: rem(302px);
+  }
+}
+
 /*_________ header ___________*/
 
 .welcome-page-wrapper {

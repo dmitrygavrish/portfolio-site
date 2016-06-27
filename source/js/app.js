@@ -217,9 +217,10 @@ $(document).ready(function() {
     $.each($('*'), function() {
       var $this = $(this),
           background = $this.css('background-image'),
-          img = $this.is('img');
+          img = $this.is('img'),
+          bgImage = /url\(.*\)/gim;
 
-      if (background != 'none') {
+      if (background == bgImage) {
         var bgPath = background.replace('url("', '').replace('")', '');
 
         imgs.push(bgPath);
@@ -439,3 +440,67 @@ function setBlur() {
   });
 
 }
+
+/*___________________slider________________________*/
+
+$(function () {
+  var controlPrev = $('.controls-prev'),
+      controlNext = $('.controls-next');
+
+
+  function setActiveSlides() {
+    var slideActive = $('.works-image__item_active'),
+        slideActiveIndex = slideActive.index(),
+        prevSlide = $('.controls-prev__item'),
+        nextSlide = $('.controls-next__item');
+
+    setTimeout(function() {
+      prevSlide.removeClass('move-down');
+      nextSlide.removeClass('move-up');
+    },300);
+
+    if (slideActive.next().length == 0) {
+      nextSlide.first().addClass('controls-next__item_active');
+    } else if (slideActive.next().length != 0) {
+      nextSlide.eq(slideActiveIndex + 1).addClass('controls-next__item_active');
+    }
+
+    if (slideActive.prev().length == 0) {
+      prevSlide.last().addClass('controls-prev__item_active');
+    } else if (slideActive.prev().length != 0) {
+      prevSlide.eq(slideActiveIndex - 1).addClass('controls-prev__item_active');
+    }
+  }
+
+  setActiveSlides();
+
+  controlPrev.on('click', function() {
+    var slide = $('.works-image__item'),
+        slideActive = $('.works-image__item_active'),
+        prevSlideActive = $('.controls-prev__item_active'),
+        nextSlideActive = $('.controls-next__item_active');
+
+    slideActive.removeClass('works-image__item_active').prev().addClass('works-image__item_active');
+    if (slideActive.prev().length == 0) {
+      slide.last().addClass('works-image__item_active');
+    }
+    prevSlideActive.addClass('move-down').removeClass('controls-prev__item_active');
+    nextSlideActive.addClass('move-up').removeClass('controls-next__item_active');
+    setActiveSlides();
+  });
+
+  controlNext.on('click', function() {
+    var slide = $('.works-image__item'),
+        slideActive = $('.works-image__item_active'),
+        prevSlideActive = $('.controls-prev__item_active'),
+        nextSlideActive = $('.controls-next__item_active');
+
+    slideActive.removeClass('works-image__item_active').next().addClass('works-image__item_active');
+    if (slideActive.next().length == 0) {
+      slide.first().addClass('works-image__item_active');
+    }
+    prevSlideActive.addClass('move-down').removeClass('controls-prev__item_active');
+    nextSlideActive.addClass('move-up').removeClass('controls-next__item_active');
+    setActiveSlides();
+  });
+});

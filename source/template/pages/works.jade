@@ -57,14 +57,38 @@ block content
               +use('link', 'svg-link-dims')
         div.works-slides
           div.works-image
-            img.works-image__pic(src="assets/img/portfolio_1.png" alt="сайт")
+            ul.works-image__list
+              li.works-image__item.works-image__item_active <span>1</span>
+                img.works-image__pic(src="assets/img/portfolio_1.png" alt="сайт")
+              li.works-image__item <span>2</span>
+                img.works-image__pic(src="assets/img/portfolio_1.png" alt="сайт")
+              li.works-image__item <span>3</span>
+                img.works-image__pic(src="assets/img/portfolio_1.png" alt="сайт")
+              li.works-image__item <span>4</span>
+                img.works-image__pic(src="assets/img/portfolio_1.png" alt="сайт")
           div.works-controls
             div.controls-prev
-              img.controls-prev__pic(src="assets/img/portfolio_2.png" alt="сайт")
+              ul.controls-prev__list
+                li.controls-prev__item <span class="controls__span">1</span>
+                  img.controls-prev__pic(src="assets/img/portfolio_2.png" alt="сайт")
+                li.controls-prev__item <span class="controls__span">2</span>
+                  img.controls-prev__pic(src="assets/img/portfolio_2.png" alt="сайт")
+                li.controls-prev__item <span class="controls__span">3</span>
+                  img.controls-prev__pic(src="assets/img/portfolio_2.png" alt="сайт")
+                li.controls-prev__item <span class="controls__span">4</span>
+                  img.controls-prev__pic(src="assets/img/portfolio_2.png" alt="сайт")
               div.controls-prev-mask
               +use('portf_arrow_down', "svg-portf_arrow_down")
             div.controls-next
-              img.controls-next__pic(src="assets/img/portfolio_3.png" alt="сайт")
+              ul.controls-next__list
+                li.controls-next__item <span class="controls__span">1</span>
+                  img.controls-next__pic(src="assets/img/portfolio_3.png" alt="сайт")
+                li.controls-next__item <span class="controls__span">2</span>
+                  img.controls-next__pic(src="assets/img/portfolio_3.png" alt="сайт")
+                li.controls-next__item <span class="controls__span">3</span>
+                  img.controls-next__pic(src="assets/img/portfolio_3.png" alt="сайт")
+                li.controls-next__item <span class="controls__span">4</span>
+                  img.controls-next__pic(src="assets/img/portfolio_3.png" alt="сайт")
               div.controls-next-mask
               +use('portf_arrow_up', "svg-portf_arrow_up")
       section.opinion

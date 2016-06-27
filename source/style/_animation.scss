@@ -35,19 +35,25 @@
 /*************************/
 
 @keyframes circle1 {
-  80% {
-    transform: rotate(180deg);
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(240deg);
+  }
+  75% {
+    transform: rotate(480deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
   }
 }
 @keyframes circle2 {
   60% {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 @keyframes circle3 {
@@ -59,10 +65,16 @@
   }
 }
 @keyframes circle4 {
-  20% {
-    transform: rotate(180deg);
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-240deg);
+  }
+  67% {
+    transform: rotate(-480deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-720deg);
   }
 }

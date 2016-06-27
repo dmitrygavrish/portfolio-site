@@ -176,7 +176,19 @@
   position: relative;
   height: 70%;
 }
-.works-image__pic {
+.works-image__list {
+  padding: 0;
+  margin: auto;
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.works-image__item {
   position: absolute;
   max-width: 80%;
   max-height: 80%;
@@ -185,6 +197,28 @@
   bottom: 0;
   left: 0;
   margin: auto;
+  text-align: center;
+  opacity: 0;
+  @include transition(opacity .3s);
+}
+.works-image__item_active {
+  opacity: 1;
+}
+.works-image__item span {
+  font-size: rem(40px);
+  display: block;
+  position: absolute;
+  width: rem(40px);
+  height: rem(60px);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.works-image__pic {
+  max-width: 100%;
+  max-height: 100%;
 }
 .works-controls {
   position: relative;
@@ -196,6 +230,67 @@
   width: 50%;
   height: 100%;
   display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
+.controls-prev__list, .controls-next__list,
+.controls-prev__item, .controls-next__item{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.controls-prev__item, .controls-next__item {
+  @include transition(transform .3s linear);
+  z-index: -1;
+}
+.controls-prev__item {
+  transform: translateY(-350px);
+}
+.controls-next__item {
+  transform: translateY(350px);
+}
+.move-down {
+  transform: translateY(350px);
+  z-index: 0;
+}
+.move-up {
+  transform: translateY(-350px);
+  z-index: 0;
+}
+.controls-prev__item_active, .controls-next__item_active {
+  transform: translateY(0);
+  z-index: 1;
+}
+.controls__span {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  width: rem(72px);
+  height: rem(162px);
+  font-size: rem(122px);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  color: darkmagenta;
+  @include tablet {
+    width: rem(62px);
+    height: rem(142px);
+    font-size: rem(102px);
+  }
+  @include phone {
+    width: rem(35px);
+    height: rem(102px);
+    font-size: rem(62px);
+    line-height: rem(102px);
+  }
 }
 .controls-prev__pic, .controls-next__pic {
   max-width: 100%;
@@ -211,6 +306,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: 3;
 }
 .controls-prev-mask {
   background-image: radial-gradient(center, rgba(#cac9c4, .7), rgba(#c1c0bb, .7));
@@ -220,7 +316,7 @@
 }
 .svg-portf_arrow_down, .svg-portf_arrow_up {
   position: absolute;
-  z-index: 1;
+  z-index: 4;
   top: 0;
   right: 0;
   bottom: 0;
@@ -229,8 +325,54 @@
   width: rem(46px);
   height: rem(30px);
   fill: #fff;
+  @include transition(transform .2s ease-out);
+  @include tablet {
+    width: rem(32px);
+    height: rem(20px);
+  }
 }
-
+.controls-prev, .controls-next {
+  &:hover {
+    .svg-portf_arrow_down {
+      transform: translateY(80px);
+      @include tablet {
+        transform: translateY(60px);
+      }
+      @include phone {
+        transform: translateY(30px);
+      }
+    }
+    .svg-portf_arrow_up {
+      transform: translateY(-80px);
+      @include tablet {
+        transform: translateY(-60px);
+      }
+      @include phone {
+        transform: translateY(-30px);
+      }
+    }
+  }
+  &:active {
+    .svg-portf_arrow_down {
+      transform: translateY(75px);
+      @include tablet {
+        transform: translateY(55px);
+      }
+      @include phone {
+        transform: translateY(25px);
+      }
+    }
+    .svg-portf_arrow_up {
+      transform: translateY(-75px);
+      @include tablet {
+        transform: translateY(-55px);
+      }
+      @include phone {
+        transform: translateY(-25px);
+      }
+    }
+  }
+}
 /**** opinion section ****/
 
 .opinion {
