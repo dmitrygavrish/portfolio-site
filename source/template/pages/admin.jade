@@ -1,69 +1,74 @@
-extends ../main
-block header
+include ../common/_mixins
+doctype html
+html(lang="ru-RU")
+  include ../common/_head
+  body
+    include ../common/_browsehappy
     header.header-admin
-      div.admin-top
-        h1.admin-top__title Панель администрирования
-        a.admin-top__link Вернуться на сайт
-  block content
+      div.admin-wrapper
+        div.admin-top
+          a.admin-top__link(href="index.html") Вернуться на сайт
+          h1.admin-top__title Панель администрирования
     main.main-admin
       div.admin-menu
         ul.admin-menu__tabs
-          li.admin-menu__tab
+          li.admin-menu__tab.admin-menu__tab_active
             a.admin-menu__link(href="#tab-1") Обо мне
           li.admin-menu__tab
             a.admin-menu__link(href="#tab-2") Блог
           li.admin-menu__tab
             a.admin-menu__link(href="#tab-3") Мои работы
       div.admin-contents
-        div#tab-1.contents-page
-          h2.contents-page__title Страница &laquo;Обо мне&raquo;
-          form.skills-upgrade
-            div.skills-block
-              h3.skills-block__title Frontend
-              label.skills-block__label(for="number-html") Html
-                input.skills-block__input(type="number" name="number-html" id="number-html")
-              label.skills-block__label(for="number-css") Css
-                input.skills-block__input(type="number" name="number-css" id="number-css")
-              label.skills-block__label(for="number-js") JavaScript
-                input.skills-block__input(type="number" name="number-js" id="number-js")
-            div.skills__block
-              h3.skills-block__title Backend
-              label.skills-block__label(for="number-php") Php
-                input.skills-block__input(type="number" name="number-php" id="number-php")
-              label.skills-block__label(for="number-mysql") MySql
-                input.skills-block__input(type="number" name="number-mysql" id="number-mysql")
-              label.skills-block__label(for="number-node") Node.js
-                input.skills-block__input(type="number" name="number-node" id="number-node")
-              label.skills-block__label(for="number-mongo") Mongo.db
-                input.skills-block__input(type="number" name="number-mongo" id="number-mongo")
-            div.skills__block
-              h3.skills-block__title Workflow
-              label.skills-block__label(for="number-git") Git
-                input.skills-block__input(type="number" name="number-git" id="number-git")
-              label.skills-block__label(for="number-gulp") Gulp
-                input.skills-block__input(type="number" name="number-gulp" id="number-gulp")
-              label.skills-block__label(for="number-bower") Bower
-                input.skills-block__input(type="number" name="number-bower" id="number-bower")
-            input.skills-upgrade__submit(type="submit" name="submit-skills" value="Сохранить")
-        div#tab-2.contents-page
-          h2.contents-page__title Страница &laquo;Блог&raquo;
-          form.add-article
-            h3.add-article__title Добавить запись
-            label.add-article__label
-              input.add-article__input(type="text" name="article" id="article" placeholder="Название")
-            label.add-article__label
-              input.add-article__input(type="text" name="date" id="date" placeholder="Дата")
-            textarea.add-article__text(name="content" id="content" placeholder="Содержание")
-            input.add-article__submit(type="submit" name="submit-blog" value="Добавить")
-        div#tab-3.contents-page
-          h2.contents-page__title Страница &laquo;Мои работы&raquo;
-          form.add-project
-            h3.add-project__title Добавить работу
-            label.add-project__label
-              input.add-project__input(type="text" name="project" id="project" placeholder="Название проекта")
-            label.add-project__label
-              input.add-project__input(type="text" name="tech" id="tech" placeholder="Технологии")
-            label.add-project__image(for="projectimg") Загрузить картинку
-            input.add-project__i-input(type="file" name="projectimg" id="projectimg")
-            input.add-project__submit(type="submit" name="submit-project" value="Добавить")
-  block footer
+        div.admin-contents-bg
+          div.admin-wrapper
+            div#tab-1.contents-page.contents-page_active
+              h2.contents-page__title Страница &laquo;Обо мне&raquo;
+              form.skills-upgrade
+                div.upgrade-block
+                  h3.upgrade-block__title Frontend
+                  label.upgrade-block__label(for="number-html") Html
+                    input.upgrade-block__input(type="text" name="number-html" id="number-html")
+                  label.upgrade-block__label(for="number-css") Css
+                    input.upgrade-block__input(type="text" name="number-css" id="number-css")
+                  label.upgrade-block__label(for="number-js") JavaScript
+                    input.upgrade-block__input(type="text" name="number-js" id="number-js")
+                div.upgrade-block
+                  h3.upgrade-block__title Backend
+                  label.upgrade-block__label(for="number-php") Php
+                    input.upgrade-block__input(type="text" name="number-php" id="number-php")
+                  label.upgrade-block__label(for="number-mysql") MySql
+                    input.upgrade-block__input(type="text" name="number-mysql" id="number-mysql")
+                  label.upgrade-block__label(for="number-node") Node.js
+                    input.upgrade-block__input(type="text" name="number-node" id="number-node")
+                  label.upgrade-block__label(for="number-mongo") Mongo.db
+                    input.upgrade-block__input(type="text" name="number-mongo" id="number-mongo")
+                div.upgrade-block
+                  h3.upgrade-block__title Workflow
+                  label.upgrade-block__label(for="number-git") Git
+                    input.upgrade-block__input(type="text" name="number-git" id="number-git")
+                  label.upgrade-block__label(for="number-gulp") Gulp
+                    input.upgrade-block__input(type="text" name="number-gulp" id="number-gulp")
+                  label.upgrade-block__label(for="number-bower") Bower
+                    input.upgrade-block__input(type="text" name="number-bower" id="number-bower")
+                input.skills-upgrade__submit(type="submit" name="submit-skills" value="Сохранить")
+            div#tab-2.contents-page
+              h2.contents-page__title Страница &laquo;Блог&raquo;
+              form.add-article
+                h3.add-article__title Добавить запись
+                label.add-article__label
+                  input.add-article__input(type="text" name="article" id="article" placeholder="Название")
+                label.add-article__label
+                  input.add-article__input(type="text" name="date" id="date" placeholder="Дата")
+                textarea.add-article__text(name="content" id="content" placeholder="Содержание")
+                input.add-article__submit(type="submit" name="submit-blog" value="Добавить")
+            div#tab-3.contents-page
+              h2.contents-page__title Страница &laquo;Мои работы&raquo;
+              form.add-project
+                h3.add-project__title Добавить работу
+                label.add-project__label
+                  input.add-project__input(type="text" name="project" id="project" placeholder="Название проекта")
+                label.add-project__label
+                  input.add-project__input(type="text" name="tech" id="tech" placeholder="Технологии")
+                label.add-project__image(for="projectimg") Загрузить картинку
+                input.add-project__i-input(type="file" name="projectimg" id="projectimg")
+                input.add-project__submit(type="submit" name="submit-project" value="Добавить")

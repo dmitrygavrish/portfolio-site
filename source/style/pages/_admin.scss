@@ -1,0 +1,215 @@
+@import "../variables";
+@import "../mixins";
+@import "../animation";
+
+/*_____header_______*/
+
+.header-admin {
+  width: 100%;
+  height: rem(80px);
+  background-color: $green100;
+}
+
+.admin-wrapper {
+  width: rem(1140px);
+  margin: 0 auto;
+}
+
+.admin-top {
+  @include clearfix;
+}
+
+.admin-top__link {
+  float: right;
+  font-size: rem(16px);
+  padding: 0 rem(10px);
+  color: rgba(#fff, .7);
+  font-weight: 200;
+  line-height: rem(80px);
+  transition: background-color .2s, color .2s;
+  &:hover {
+    background-color: rgba(0, 0, 0, .1);
+  }
+  &:active {
+    color: #fff;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.admin-top__title {
+  margin: 0;
+  float: left;
+  color: #fff;
+  font-size: rem(28px);
+  line-height: rem(80px);
+}
+
+/*________menu_____________*/
+
+.admin-menu {
+  width: 100%;
+  //max-width: rem(1200px);
+  //margin: 0 auto;
+  height: rem(60px);
+  background-color: #f0efe9;
+}
+
+.admin-menu__tabs {
+  max-width: rem(1200px);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+
+.admin-menu__tab {
+  display: inline-block;
+  border-right: 2px solid rgba(#fff, .7);
+  &:first-child {
+    border-left: 2px solid rgba(#fff, .7);
+  }
+}
+
+.admin-menu__link {
+  display: block;
+  height: rem(60px);
+  width: rem(180px);
+  font-size: rem(16px);
+  line-height: rem(60px);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $titlecolor;
+  @include transition(background-color .2s);
+  &:hover {
+    background-color: #fff;
+  }
+  &:active {
+    color: #000;
+  }
+}
+
+.admin-menu__tab_active {
+  .admin-menu__link {
+    background-color: #fff;
+  }
+}
+
+/*_________admin contents_____________*/
+
+.main-admin {
+  height: calc(100% - 80px);
+}
+
+.admin-contents {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(../img/mountains.jpg) no-repeat;
+  background-size: cover;
+  border: 1px solid red;
+}
+
+.admin-contents-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#fff, .75);
+}
+
+.admin-wrapper {
+  width: rem(1140px);
+  margin: 0 auto;
+}
+
+.contents-page {
+  display: none;
+}
+
+.contents-page_active {
+   display: block;
+}
+
+.contents-page__title {
+  margin: rem(35px) 0;
+  font-size: rem(20px);
+  color: $titlecolor;
+}
+
+.skills-upgrade {
+  position: relative;
+  border: 1px solid red;
+}
+
+.skills-upgrade__submit {
+  cursor: pointer;
+  position: absolute;
+  bottom: rem(-45px);
+  display: block;
+  width: rem(120px);
+  height: rem(45px);
+  @include border-radius(.35rem);
+  color: #fff;
+  background-color: $green100;
+  border: 1px solid transparent;
+  transition: background-color .2s, border-color .2s, color .2s, transform .1s;
+  &:hover {
+    background-color: #fff;
+    border-color: $green100;
+    color: $green100;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.upgrade-block {
+  width: rem(200px);
+  padding-bottom: rem(18px);
+}
+.upgrade-block:last-of-type {
+  position: absolute;
+  top: 0;
+  left: rem(250px);
+}
+.upgrade-block__title {
+  font-size: rem(16px);
+  margin: 0 0 rem(16px);
+  color: $titlecolor;
+}
+
+.upgrade-block__label {
+  display: block;
+  position: relative;
+  width: rem(180px);
+  height: rem(32px);
+  line-height: rem(32px);
+  font-size: rem(16px);
+  font-weight: 200;
+  margin: 0 0 rem(10px) rem(20px);
+  color: $titlecolor;
+  &::after {
+    content: '%';
+    display: inline;
+    position: absolute;
+    right: rem(-16px);
+    line-height: rem(32px);
+    font-size: rem(16px);
+  }
+}
+
+.upgrade-block__input {
+  text-align: center;
+  position: absolute;
+  right: 0;
+  width: rem(46px);
+  height: rem(32px);
+  @include border-radius(.35rem);
+}
