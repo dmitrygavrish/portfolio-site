@@ -48,3 +48,63 @@
   top: 30%;
   right: 20%;
 }
+
+/*___________________parallax scroll__________________________*/
+
+.parallax-scroll {
+  //overflow-x: hidden;
+  //overflow-y: visible;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  perspective: 100px;
+  //background-image: linear-gradient(60deg, rgb(181, 197, 194) 25%, rgb(147, 188, 194));
+}
+
+.parallax-scroll-layer {
+  position: absolute;
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
+}
+
+.parallax-scroll-layer__img {
+  width: 100%;
+  position: absolute;
+  display: block;
+  bottom: 0;
+}
+
+.parallax-scroll-layer[data-key="0"] {
+  transform: translateZ(-300px) scale(4);
+}
+.parallax-scroll-layer[data-key="1"] {
+  transform: translateZ(-250px) scale(3.5);
+}
+.parallax-scroll-layer[data-key="2"] {
+  transform: translateZ(-200px) scale(3);
+}
+.parallax-scroll-layer[data-key="3"] {
+  transform: translateZ(-150px) scale(2.5);
+}
+.parallax-scroll-layer[data-key="4"] {
+  transform: translateZ(-100px) scale(2);
+}
+.parallax-scroll-layer[data-key="5"] {
+  transform: translateZ(-50px) scale(1.5);
+}
+.parallax-scroll-layer[data-key="6"] {
+  transform: translateZ(0px) scale(1);
+}
+
+.parallax-buffer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 2000px;
+}

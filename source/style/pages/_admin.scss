@@ -11,7 +11,8 @@
 }
 
 .admin-wrapper {
-  width: rem(1140px);
+  max-width: rem(1200px);
+  padding: 0 0 0 rem(30px);
   margin: 0 auto;
 }
 
@@ -23,6 +24,7 @@
   float: right;
   font-size: rem(16px);
   padding: 0 rem(10px);
+  margin-right: rem(20px);
   color: rgba(#fff, .7);
   font-weight: 200;
   line-height: rem(80px);
@@ -50,8 +52,6 @@
 
 .admin-menu {
   width: 100%;
-  //max-width: rem(1200px);
-  //margin: 0 auto;
   height: rem(60px);
   background-color: #f0efe9;
 }
@@ -109,7 +109,12 @@
   height: 100%;
   background: url(../img/mountains.jpg) no-repeat;
   background-size: cover;
-  border: 1px solid red;
+}
+
+@media screen and (min-height: 700px) {
+  .admin-contents {
+    height: calc(100% - 60px);
+  }
 }
 
 .admin-contents-bg {
@@ -119,11 +124,6 @@
   width: 100%;
   height: 100%;
   background-color: rgba(#fff, .75);
-}
-
-.admin-wrapper {
-  width: rem(1140px);
-  margin: 0 auto;
 }
 
 .contents-page {
@@ -140,12 +140,11 @@
   color: $titlecolor;
 }
 
-.skills-upgrade {
+.skills-upgrade, .add-article, .add-project {
   position: relative;
-  border: 1px solid red;
 }
 
-.skills-upgrade__submit {
+.skills-upgrade__submit, .add-article__submit, .add-project__submit {
   cursor: pointer;
   position: absolute;
   bottom: rem(-45px);
@@ -212,4 +211,225 @@
   width: rem(46px);
   height: rem(32px);
   @include border-radius(.35rem);
+}
+
+/* tab 2 */
+
+.add-article {
+  padding-bottom: rem(20px);
+}
+.add-article__title, .add-project__title {
+  color: $titlecolor;
+  font-size: rem(16px);
+  margin: 0 0 rem(18px);
+}
+
+.add-article__input, .add-project__input {
+  display: block;
+  width: rem(300px);
+  height: rem(45px);
+  font-size: rem(16px);
+  line-height: rem(45px);
+  padding-left: rem(15px);
+  @include border-radius(.35rem);
+  border: none;
+  margin: 0 0 rem(20px);
+  &::-webkit-input-placeholder {
+    color: #9b9ea0;
+  }
+  &:-moz-placeholder {
+    color: #9b9ea0;
+  }
+  &::-moz-placeholder {
+    color: #9b9ea0;
+  }
+  &:-ms-input-placeholder {
+    color: #9b9ea0;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.add-article__text {
+  display: block;
+  width: rem(500px);
+  height: rem(170px);
+  font-size: rem(16px);
+  line-height: rem(45px);
+  padding-left: rem(15px);
+  @include border-radius(.35rem);
+  border: none;
+  margin: 0 0 rem(20px);
+  resize: none;
+  &::-webkit-input-placeholder {
+    color: #9b9ea0;
+  }
+  &:-moz-placeholder {
+    color: #9b9ea0;
+  }
+  &::-moz-placeholder {
+    color: #9b9ea0;
+  }
+  &:-ms-input-placeholder {
+    color: #9b9ea0;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+/* tab 3 */
+
+.add-project {
+  padding-bottom: rem(120px);
+}
+
+.add-project__i-input {
+  display: none;
+}
+
+.add-project__image {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  font-size: rem(16px);
+  line-height: rem(34px);
+  padding-left: rem(40px);
+  max-width: rem(250px);
+  color: $green85;
+  @include transition(text-shadow .2s);
+  &::before {
+    position: absolute;
+    left: 0;
+    content: '';
+    display: block;
+    width: rem(35px);
+    height: rem(34px);
+    background-image: url(../img/adminicon.png);
+    @include transition(transform .1s);
+  }
+  &:hover {
+    text-shadow: 1px 1px 0 #fff;
+  }
+  &:active {
+    &::before {
+      transform: scale(.9);
+    }
+  }
+}
+
+
+/*_____________media for ipad_______________*/
+
+
+@media screen and (max-width: 1199px) {
+  .upgrade-block:last-of-type {
+    position: static;
+  }
+
+  .admin-wrapper {
+    width: 100%;
+  }
+
+  .admin-contents {
+    min-height: rem(768px);
+  }
+
+  .admin-menu__tab {
+    width: 33.33%;
+  }
+
+  .admin-menu__link {
+    width: 100%;
+  }
+
+  .add-article__text {
+    width: rem(500px);
+    height: rem(300px);
+  }
+}
+
+
+/*__________media for iphone____________*/
+
+
+@media screen and (max-width: 767px) {
+
+  .admin-wrapper {
+    padding: 0;
+  }
+
+  .admin-top__link {
+    float: none;
+    display: block;
+    width: rem(150px);
+    font-size: rem(14px);
+    line-height: rem(24px);
+    margin: rem(12px) auto rem(6px);
+    text-align: center;
+  }
+
+  .admin-top__title {
+    float: none;
+    font-size: rem(21px);
+    width: rem(290px);
+    margin: 0 auto rem(12px);
+    line-height: rem(24px);
+    text-align: center;
+  }
+
+  .admin-menu {
+    height: auto;
+  }
+
+  .admin-menu__tab {
+    display: block;
+    width: 100%;
+    height: rem(45px);
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid rgba(#fff, .7);
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .admin-menu__link {
+    font-size: rem(14px);
+    line-height: rem(45px);
+    height: rem(45px);
+  }
+
+  .contents-page {
+    padding: 0 rem(10px);
+  }
+
+  .contents-page__title {
+    margin: rem(28px) 0;
+  }
+
+  .upgrade-block__title, .upgrade-block__label {
+    font-size: rem(14px);
+  }
+
+  .add-article__text {
+    width: rem(300px);
+    height: rem(250px);
+  }
+
+  .add-article__input, .add-project__input, .add-project__image {
+    font-size: rem(14px);
+  }
+
+  .skills-upgrade__submit, .add-article__submit, .add-project__submit {
+    bottom: rem(-40px);
+    font-size: rem(14px);
+    width: rem(110px);
+    height: rem(40px);
+  }
+
+  .add-project {
+    padding-bottom: rem(20px);
+  }
 }

@@ -1,6 +1,10 @@
 extends ../main-works
 block header
   header#up.about-header
+    - var parallaxImgs = ["assets/img/09.png","assets/img/08.png","assets/img/06.png","assets/img/05.png","assets/img/03.png","assets/img/02.png"]
+    each item, key in parallaxImgs
+      div.header-parallax(data-key=key)
+        img.header-parallax__img(src=item alt="parallax layer")
     div.about-header-top
       ul.about-social
         li.about-social__item

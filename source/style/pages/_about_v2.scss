@@ -5,6 +5,10 @@
 @import "components/about_desc";
 @import "components/about_contacts";
 
+.page-wrapper {
+  display: none;
+}
+
 .site-menu {
   display: none;
   position: fixed;

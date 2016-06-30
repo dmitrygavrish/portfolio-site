@@ -502,9 +502,10 @@
   position: relative;
   width: rem(382px);
   height: rem(450px);
-  @include border-radius(.35rem);
+  //@include border-radius(.50rem);
   overflow: hidden;
   font-size: 0;
+  //border: 1px solid red;
 }
 
 
@@ -603,9 +604,11 @@
 }
 .connect-form__submit {
   border-right: 1px solid rgba(#fff, .5);
+  @include border-radius(0 0 0 .35rem);
 }
 .connect-form__reset {
   border-left: 1px solid rgba(#fff, .5);
+  @include border-radius(0 0 .35rem 0);
 }
 .works-arrow {
   position: relative;

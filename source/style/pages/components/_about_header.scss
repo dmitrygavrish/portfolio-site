@@ -6,11 +6,57 @@
   width: 100%;
   height: 100%;
   min-height: rem(650px);
-  background: url(../img/mountains.jpg) no-repeat;
+  overflow: hidden;
+  background: url(../img/10.png) no-repeat;
   background-size: cover;
   font-size: 0;
 }
 
+.header-parallax {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  @include tablet {
+    top: 12%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .header-parallax[data-key="5"] {
+    top: 20%;
+  }
+  .header-parallax[data-key="4"] {
+    top: 22%;
+  }
+  .header-parallax[data-key="1"] {
+    top: 5%;
+  }
+  .header-parallax[data-key="0"] {
+    top: 5%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-parallax[data-key="3"] {
+    top: 15%;
+  }
+  .header-parallax[data-key="2"] {
+    top: 20%;
+  }
+}
+
+.header-parallax__img {
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 100%;
+  min-width: 1000px;
+}
 /*********** HEADER TOP **************/
 
 .about-header-top {
