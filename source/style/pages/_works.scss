@@ -588,6 +588,7 @@
 }
 
 .connect-form__submit, .connect-form__reset {
+  outline: none;
   cursor: pointer;
   display: inline-block;
   border: none;

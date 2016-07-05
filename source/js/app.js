@@ -26,6 +26,13 @@ $(document).on('click', (function (event) {
 
 
 /***** blog page waypoints *****/
+$(window).resize(function() {
+  var blogSwitch = $('#blog-switch');
+
+  if( blogSwitch.is(':checked') ) {
+    blogSwitch.click();
+  }
+});
 
 var waypointsDown = $('.blog-article').waypoint({
   handler: function(direction) {
@@ -39,12 +46,11 @@ var waypointsDown = $('.blog-article').waypoint({
       $.each(menuItem, function () {
         if ($(this).children('a').attr('href').slice(1) == hash) {
           $(this).addClass('blog-menu__item_active');
-          console.log(menuItem);
         }
       })
     }
   },
-  offset: '35%'
+  offset: '50%'
 });
 
 var waypointsUp = $('.blog-article').waypoint({
@@ -59,7 +65,6 @@ var waypointsUp = $('.blog-article').waypoint({
       $.each(menuItem, function () {
         if ($(this).children('a').attr('href').slice(1) == hash) {
           $(this).addClass('blog-menu__item_active');
-          console.log(menuItem);
         }
       })
     }
@@ -286,11 +291,12 @@ $(document).ready(function() {
 /*______________site-menu_______________*/
 
 var menuSwitcher = 'off';
-$('.about-menu__check').on('change', function() {
-
-  // $(this).attr('disabled', 'disabled');
+$('#menu-button').on('click', function() {
 
   if (menuSwitcher == 'off') {
+    $('.about-line_top').addClass('about-line_top_active');
+    $('.about-line_mid').addClass('about-line_mid_active');
+    $('.about-line_bot').addClass('about-line_bot_active');
 
     $('.site-menu').css({
       'display': 'block'
@@ -299,7 +305,7 @@ $('.about-menu__check').on('change', function() {
     $('.site-menu__item').css({
       'opacity': '1'
     });
-    
+
     setTimeout(function() {
       $('.site-menu').addClass('site-view');
     }, 5);
@@ -313,6 +319,9 @@ $('.about-menu__check').on('change', function() {
     }, 405);
 
   } else if (menuSwitcher == 'on') {
+    $('.about-line_top').removeClass('about-line_top_active');
+    $('.about-line_mid').removeClass('about-line_mid_active');
+    $('.about-line_bot').removeClass('about-line_bot_active');
 
     $('.site-menu__item').css({
       'opacity': '0'
@@ -334,8 +343,6 @@ $('.about-menu__check').on('change', function() {
       menuSwitcher = 'off'
     }, 401);
   }
-
-  // $(this).removeAttr('disabled');
 
 });
 
@@ -363,7 +370,6 @@ $('.site-menu__link').on('click', function() {
 
       menuSwitcher = 'off';
 
-      // $('.about-menu__check').removeAttr('disabled');
     }, 401);
   }
 });
@@ -594,4 +600,58 @@ $(window).scroll(function() {
       'transform': setStrafe(10, 'down')
     });
   }());
+});
+
+/*__________frontend form validation____________*/
+$('#login').on('focus', function() {
+  $('.form-login').removeClass('not-valid');
+});
+$('#password').on('focus', function() {
+  $('.form-pass').removeClass('not-valid');
+});
+$('#personalize').on('change', function() {
+  $('.form-content__c-label').removeClass('not-valid-check');
+});
+$('.form-content__r-input').on('change', function() {
+  $('.form-content__r-label').removeClass('not-valid-check');
+});
+$('#name').on('focus', function() {
+  $(this).removeClass('not-valid-connect');
+});
+$('#email').on('focus', function() {
+  $(this).removeClass('not-valid-connect');
+});
+$('#message').on('focus', function() {
+  $(this).removeClass('not-valid-connect');
+});
+
+$('.welcome-form').on('submit', function(e) {
+  e.preventDefault();
+
+  if ( $('#login').val() == '') {
+    $('.form-login').addClass('not-valid');
+  }
+  if ( $('#password').val() == '') {
+    $('.form-pass').addClass('not-valid');
+  }
+  if ( !$('#personalize').is(':checked') ) {
+    $('.form-content__c-label').addClass('not-valid-check');
+  }
+  if ( !$('.form-content__r-input').is(':checked') ) {
+    $('.form-content__r-label').addClass('not-valid-check');
+  }
+});
+
+$('.connect-form').on('submit', function(e) {
+  e.preventDefault();
+
+  if ( $('#name').val() == '') {
+    $('#name').addClass('not-valid-connect');
+  }
+  if ( $('#email').val() == '') {
+    $('#email').addClass('not-valid-connect');
+  }
+  if ( $('#message').val() == '') {
+    $('#message').addClass('not-valid-connect');
+  }
 });

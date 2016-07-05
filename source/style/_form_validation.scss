@@ -1,0 +1,18 @@
+.not-valid {
+  .svg-login-dims {
+    fill: red;
+  }
+  .svg-password-dims {
+    fill: red;
+  }
+}
+
+.not-valid-check {
+  &::before {
+    border-color: red;
+  }
+}
+
+.not-valid-connect {
+  border-color: red;
+}
