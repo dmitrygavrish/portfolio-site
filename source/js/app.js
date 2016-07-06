@@ -455,16 +455,58 @@ function setBlur() {
 
 $(function () {
   var controlPrev = $('.controls-prev'),
-      controlNext = $('.controls-next');
-
+      controlNext = $('.controls-next'),
+      fontBig = '50px',
+      fontNormal = '35px';
 
   function setActiveSlides() {
+    if ( $(window).width() >= 1200 ) {
+      fontBig = '50px';
+      fontNormal = '35px';
+    } else if ( $(window).width() < 1199 && $(window).width() >= 768 ) {
+      fontBig = '40px';
+      fontNormal = '30px';
+    } else if ( $(window).width() < 767 ) {
+      fontBig = '30px';
+      fontNormal = '21px';
+    }
+
     var slideActive = $('.works-image__item_active'),
         slideActiveIndex = slideActive.index(),
         prevSlide = $('.controls-prev__item'),
-        nextSlide = $('.controls-next__item');
+        nextSlide = $('.controls-next__item'),
+        descBlock = $('.desc-wrapper');
 
+    function splitLetters() {
+      var title = descBlock.eq(slideActiveIndex).find('.site-name__title');
+      var letters = title.text().split('');
+      title.text('');
+      var i = 0;
 
+      function loopLetters() {
+        setTimeout(function() {
+          var span = $("<span></span>");
+          span.text(letters[i]).appendTo(title).animate({
+            fontSize: fontBig
+          }, 150, "linear", function() {
+            span.animate({
+              fontSize: fontNormal
+            }, 150);
+          });
+
+          i++;
+          if (i < letters.length) {
+            loopLetters();
+          }
+        }, 75);
+      }
+
+      loopLetters();
+    }
+
+    descBlock.css({
+      'opacity':'0'
+    });
     prevSlide.removeClass('move-down');
     nextSlide.removeClass('move-up');
 
@@ -480,6 +522,12 @@ $(function () {
     } else if (slideActive.prev().length != 0) {
       prevSlide.eq(slideActiveIndex - 1).addClass('controls-prev__item_active');
     }
+
+    descBlock.eq(slideActiveIndex).animate({
+      opacity: '1'
+    }, 300);
+
+    splitLetters();
   }
 
   setActiveSlides();

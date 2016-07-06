@@ -65,12 +65,26 @@
   @include clearfix;
 }
 .works-desc {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
   position: relative;
   width: 50%;
   height: 100%;
   float: left;
   background-color: #f0efe9;
 }
+.desc-wrapper {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+//.desc-wrapper_active {
+//  display: block;
+//}
 .desc-block {
   width: rem(420px);
   height: rem(252px);
@@ -85,6 +99,15 @@
 .site-name {
   width: 100%;
   text-align: center;
+  //border: 1px solid red;
+  height: 125px;
+  @include tablet {
+    height: 100px;
+  }
+  @include phone {
+    height: 75px;
+  }
+  overflow: hidden;
 }
 
 .site-name__title {
@@ -93,7 +116,20 @@
   width: rem(290px);
   font-family: 'Bernier', sans-serif;
   font-size: rem(35px);
-  color: $titlecolor;
+  color: transparent;
+  span {
+    font-family: 'Bernier', sans-serif;
+    color: $titlecolor;
+    font-size: 14px;
+    line-height: 50px;
+    transition: font-size .05s;
+    @include tablet {
+      line-height: 40px;
+    }
+    @include phone {
+      line-height: 30px;
+    }
+  }
   text-transform: uppercase;
   margin: 0 0 rem(40px);
   &::before, &::after {

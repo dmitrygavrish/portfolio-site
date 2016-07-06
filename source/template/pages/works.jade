@@ -51,13 +51,35 @@ block content
           h1.works-name__title Мои работы
           +use('works_header','svg-works_header-dims')
       section.works-gallery
-        div.works-desc
-          div.desc-block
-            div.site-name
-              h2.site-name__title Сайт школы онлайн образования
-            p.desc-block__tech html, css, javascript
-            a.desc-block__link(href="#" target="_blank") Посмотреть сайт
-              +use('link', 'svg-link-dims')
+        ul.works-desc
+          li.desc-wrapper
+            div.desc-block
+              div.site-name
+                h2.site-name__title Сайт школы онлайн образования
+              p.desc-block__tech html, css, javascript
+              a.desc-block__link(href="#" target="_blank") Посмотреть сайт
+                +use('link', 'svg-link-dims')
+          li.desc-wrapper
+            div.desc-block
+              div.site-name
+                h2.site-name__title Сайт школы онлайн обучения
+              p.desc-block__tech html, css, javascript
+              a.desc-block__link(href="#" target="_blank") Посмотреть сайт
+                +use('link', 'svg-link-dims')
+          li.desc-wrapper
+            div.desc-block
+              div.site-name
+                h2.site-name__title Сайт школы онлайн преподавания
+              p.desc-block__tech html, css, javascript
+              a.desc-block__link(href="#" target="_blank") Посмотреть сайт
+                +use('link', 'svg-link-dims')
+          li.desc-wrapper
+            div.desc-block
+              div.site-name
+                h2.site-name__title Сайт школы онлайн разработки
+              p.desc-block__tech html, css, javascript
+              a.desc-block__link(href="#" target="_blank") Посмотреть сайт
+                +use('link', 'svg-link-dims')
         div.works-slides
           div.works-image
             ul.works-image__list
