@@ -1,0 +1,11 @@
+include common/_mixins
+doctype html
+html(lang="ru-RU")
+  include common/_head
+  body
+    include common/_browsehappy
+    div.error-page-bg
+      div.error-message
+        h1.error-message__title 404
+        p.error-message__text Страница не найдена
+        a.error-message__link(href="index.html" title="return to main page") Вернуться на главную

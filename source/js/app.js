@@ -5,6 +5,8 @@
 var counter = 3;
 
 $('.welcome-header-button__link').on('click', function() {
+  if( $(this).attr('href') == '/admin.html') { return true; }
+
   if (counter % 2) {
     $('.welcome-main-container').removeClass('rotate180back').addClass('rotate180');
     $('.welcome-header-button').fadeOut(300);
@@ -459,6 +461,8 @@ $(function () {
       fontBig = '50px',
       fontNormal = '35px';
 
+  $('.works-image__item').first().addClass('works-image__item_active'); //added /w server version
+
   function setActiveSlides() {
     if ( $(window).width() >= 1200 ) {
       fontBig = '50px';
@@ -673,21 +677,71 @@ $('#message').on('focus', function() {
   $(this).removeClass('not-valid-connect');
 });
 
+// var messageSwitch = 0;
+
 $('.welcome-form').on('submit', function(e) {
   e.preventDefault();
+  var loginCheck = $('#login').val() == '',
+      passCheck = $('#password').val() == '',
+      checkCheck = !$('#personalize').is(':checked'),
+      radioCheck = !$('.form-content__r-input').is(':checked');
 
-  if ( $('#login').val() == '') {
+  if ( loginCheck ) {
     $('.form-login').addClass('not-valid');
   }
-  if ( $('#password').val() == '') {
+  if ( passCheck ) {
     $('.form-pass').addClass('not-valid');
   }
-  if ( !$('#personalize').is(':checked') ) {
+  if ( checkCheck ) {
     $('.form-content__c-label').addClass('not-valid-check');
   }
-  if ( !$('.form-content__r-input').is(':checked') ) {
+  if ( radioCheck ) {
     $('.form-content__r-label').addClass('not-valid-check');
   }
+  if ( loginCheck ||  passCheck || checkCheck || radioCheck ) {
+    // e.preventDefault();
+    return false;
+  }
+  /* ajax */
+  var data = {
+    login: login.value,
+    password: password.value
+  };
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST','/auth');
+  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+  xhr.send(JSON.stringify(data));
+
+  setTimeout(function() {
+    $.ajax({
+      url: "",
+      context: document.body,
+      success: function (s, x) {
+        $(this).html(s);
+      }
+    }).done(function() {
+      console.log('callbacked');
+      $('.message-block').css({
+        'display': 'block'
+      });
+      if ($('.welcome-header-button__link').text() == 'Авторизоваться') {
+        $('.message-block__text').text('Авторизация прошла неудачно')
+      } else if ($('.welcome-header-button__link').text() == 'Администрирование') {
+        $('.message-block__text').text('Авторизация прошла успешно')
+      }
+    });
+  }, 100);
+});
+
+$('.message-block__button').on('click', function() {
+  $('.message-block').animate({
+    opacity: '0'
+  }, 200, "linear", function() {
+    $('.message-block').css({
+      'display': 'none'
+    })
+  })
 });
 
 $('.connect-form').on('submit', function(e) {
@@ -702,4 +756,93 @@ $('.connect-form').on('submit', function(e) {
   if ( $('#message').val() == '') {
     $('#message').addClass('not-valid-connect');
   }
+  if ( $('#name').val() == '' || $('#email').val() == '' || $('#message').val() == '' ) {
+    return false;
+  }
+
+  /* ajax */
+  var data = {
+    name: name.value,
+    mail: email.value,
+    text: message.value
+  };
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST','/mail');
+  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+  xhr.send(JSON.stringify(data));
 });
+
+/*__________________more ajax____________________*/
+
+$('.add-article').on('submit', function(e) {
+  e.preventDefault();
+
+  var data = {
+    title: article.value,
+    date: date.value,
+    text: content.value
+  };
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST','/blog');
+  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+  xhr.send(JSON.stringify(data));
+});
+
+$('.skills-upgrade').on('submit', function(e) {
+  e.preventDefault();
+
+  var data = {
+    html: number_html.value,
+    css: number_css.value,
+    js: number_js.value,
+    php: number_php.value,
+    mysql: number_mysql.value,
+    node: number_node.value,
+    mongo: number_mongo.value,
+    git: number_git.value,
+    gulp: number_gulp.value,
+    bower: number_bower.value
+  };
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST','/about');
+  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+  xhr.send(JSON.stringify(data));
+});
+
+/*___________ server-side for works ____________*/
+
+$('.add-project').on('submit', function(e) {
+  e.preventDefault();
+
+  var data = {
+    title: project.value,
+    tech: tech.value,
+    image: projectimg.value
+  };
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST','/work');
+  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+  xhr.send(JSON.stringify(data));
+});
+
+function uploadFiles(url, files) {
+  var formData = new FormData();
+
+  for (var i = 0, file; file = files[i]; ++i) {
+    formData.append(file.name, file);
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', url, true);
+  //xhr.onload = function(e) { ... };
+
+  xhr.send(formData);  // multipart/form-data
+}
+
+document.querySelector('#projectimg').addEventListener('change', function(e) {
+  uploadFiles('/image', this.files);
+}, false);

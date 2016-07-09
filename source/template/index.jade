@@ -1,9 +1,9 @@
-include ../common/_mixins
+include common/_mixins
 doctype html
 html(lang="ru-RU")
-  include ../common/_head
+  include common/_head
   body
-    include ../common/_browsehappy
+    include common/_browsehappy
     div.parallax
       - var parallaxImgs = ["assets/img/10.png","assets/img/09.png","assets/img/08.png","assets/img/07.png","assets/img/06.png","assets/img/05.png","assets/img/04.png","assets/img/03.png","assets/img/02.png","assets/img/01.png"]
       each item, key in parallaxImgs
@@ -18,9 +18,12 @@ html(lang="ru-RU")
         div.preload-circle4
       a.loading-screen__link(href='#') Enter light version
     div.welcome-page-wrapper
+      div.message-block
+        p.message-block__text
+        button.message-block__button Закрыть
       header.welcome-header
         div.welcome-header-button
-          a.welcome-header-button__link(href="#auth") Авторизоваться
+          a.welcome-header-button__link(href!= authLink)!= authText
       main.welcome-main
         div.welcome-main-container
           div.welcome-block
@@ -47,7 +50,7 @@ html(lang="ru-RU")
               li.welcome-menu__item.welcome-menu__item_blog
                 a.welcome-menu__link.welcome-menu__link_blog(href="blog.html") Блог
           div.authorize-block
-            form.welcome-form
+            form.welcome-form(action="/auth" method="post")
               div.form-content
                 h2.form-content__title Авторизуйтесь
                 div.form-login

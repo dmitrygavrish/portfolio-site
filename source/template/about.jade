@@ -1,9 +1,9 @@
-include ../common/_mixins
+include common/_mixins
 doctype html
 html(lang="ru-RU")
-  include ../common/_head
+  include common/_head
   body
-    include ../common/_browsehappy
+    include common/_browsehappy
     div.loading-screen
       div.preload
         p.preload-percent
@@ -80,41 +80,85 @@ html(lang="ru-RU")
                 p.skills-block__text.
                   Больше всего меня привлекает Frontend разработка, но я также знаком с технологиями Backend,
                   и могу решать на нем задачи легкого уровня.
+                //#skills
+                  - var circle = [];
+                  for skill in skills
+                    include common/_about_skills
                 h3.skills-block__name Frontend
                 div.skills-block-array
                   div.skills-item.skills-item_html5
-                    +circle(90)
+                    #html
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.html)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name HTML5
                   div.skills-item.skills-item_css3
-                    +circle(85)
+                    #css
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.css)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name CSS3
                   div.skills-item.skills-item_jsjq
-                    +circle(55)
+                    #js
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.js)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name.skills-item__name_l JavaScript & jQuery
                 h3.skills-block__name Backend
                 div.skills-block-array
                   div.skills-item.skills-item_php
-                    +circle(15)
+                    #php
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.php)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name PHP
                   div.skills-item.skills-item_mysql
-                    +circle(5)
+                    #mysql
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.mysql)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name mySQL
                   div.skills-item.skills-item_nodejs
-                    +circle(5)
+                    #node
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.node)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name.skills-item__name_l Node.js & npm
                   div.skills-item.skills-item_mongo
-                    +circle(5)
+                    #mongo
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.mongo)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name Mongo.db
                 h3.skills-block__name Workflow
                 div.skills-block-array
                   div.skills-item.skills-item_git
-                    +circle(65)
+                    #git
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.git)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name Git
                   div.skills-item.skills-item_gulp
-                    +circle(55)
+                    #gulp
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.gulp)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name Gulp
                   div.skills-item.skills-item_bower
-                    +circle(75)
+                    #bower
+                      for skill in skills
+                        svg(viewBox="0 0 64 64" class="skill-circle" data-percent= skill.bower)
+                          circle(class="outer" r="25%" cx="50%" cy="50%")
+                          circle(class="inner" r="30%" cx="50%" cy="50%")
                     span.skills-item__name Bower
       section.contacts-section
         div.contacts-wrapper

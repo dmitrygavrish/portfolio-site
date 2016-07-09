@@ -1,0 +1,8 @@
+include _mixins
+li.desc-wrapper
+  div.desc-block
+    div.site-name
+      h2.site-name__title= work.title
+    p.desc-block__tech= work.tech
+    a.desc-block__link(href= work.link target="_blank") Посмотреть сайт
+      +use('link', 'svg-link-dims')

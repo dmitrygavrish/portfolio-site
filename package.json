@@ -1,10 +1,13 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "author": "dmitrygavrish",
+  "description": "portfolio-app",
+  "main": "main.js",
   "scripts": {
     "postinstall": "bower install"
   },
+  "author": "dmitrygavrish",
+  "license": "ISC",
   "devDependencies": {
     "browser-sync": "2.11.2",
     "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
@@ -23,6 +26,15 @@
     "rimraf": "2.5.2"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-mongo": "^1.2.1",
+    "connect-multiparty": "^2.0.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "jade": "^1.11.0",
+    "mongodb": "^2.1.18",
+    "mongoose": "^4.5.3",
+    "nodemailer": "^2.4.2",
     "normalize.css": "^4.1.1"
   }
 }

@@ -1,0 +1,91 @@
+include common/_mixins
+doctype html
+html(lang="ru-RU")
+  include common/_head
+  body
+    include common/_browsehappy
+    header.header-blog
+      div.header-blog-wrapper
+        ul.about-social
+          li.about-social__item
+            a.about-social__link.about-social__link_vk(href="https://new.vk.com/gavrishdmitry" target="_blank" title="vk")
+              +use('vk', 'svg-vk-about')
+          li.about-social__item
+            a.about-social__link.about-social__link_gh(href="https://github.com/dmitrygavrish" target="_blank" title="github")
+              +use('github', 'svg-github-about')
+          li.about-social__item
+            a.about-social__link.about-social__link_li(href="https://www.linkedin.com/in/dmitry-gavrish" target="_blank" title="linkedin")
+              +use('in', 'svg-in-about')
+        div.about-menu
+          button.about-menu__button(type="button" id="menu-button")
+            div.about-line.about-line_top
+            div.about-line.about-line_mid
+            div.about-line.about-line_bot
+        div.header-blog-bottom
+          div.header-blog-person
+            div.block-avatar
+              img.block-avatar__image(src="assets/img/avatar_img.jpg" alt="Dmitry Gavrish")
+          +use('blog_header','svg-blog_header-dims')
+          div.title-wrapper
+            h1.title-wrapper__title Блог
+          p.header-blog-bottom__desc Статьи, которые я написал
+      div.triangles_blog
+        div.triangles-left_blog
+        div.triangles-right_blog
+      div.arrow-blog
+        a.arrow-blog__down(href="#down")
+          +use('arrow_down','svg-arrow_down-blog')
+    div.site-menu
+      ul.site-menu__list
+        li.site-menu__item
+          a.site-menu__link(href="works.html") Мои работы
+        li.site-menu__item
+          a.site-menu__link(href="#") Блог
+        li.site-menu__item
+          a.site-menu__link(href="about.html") Обо мне
+        li.site-menu__item
+          a.site-menu__link(href="index.html") Авторизоваться
+    main#down.main-blog
+      input.blog-menu__check(type="checkbox" name="blog-switch" id="blog-switch")
+      div.label-wrapper
+        label.blog-menu__switch(for="blog-switch")
+      aside.blog-menu
+        ul.blog-menu__list
+          #titles
+            - var i = 1
+            for post, key in posts
+              include common/_blog_titles
+      section.blog-contents
+        #posts
+          - var j = 1
+          for post, key in posts
+            include common/_blog_posts
+    footer.summary-blog
+      div.summary-blog-menu
+        ul.summary-blog-pages
+          li.summary-blog-pages__item
+            a.summary-blog-pages__link.summary-blog-pages__link_works(href="works.html") Мои работы
+          li.summary-blog-pages__item
+            a.summary-blog-pages__link.summary-blog-pages__link_about(href="about.html") Обо мне
+          li.summary-blog-pages__item
+            a.summary-blog-pages__link.summary-blog-pages__link_blog(href="#") Блог
+          li.summary-blog-pages__item
+            a.summary-blog-pages__link.summary-blog-pages__link_main(href="index.html") Авторизация
+        ul.summary-blog-social
+          li.summary-blog-social__item
+            a.summary-blog-social__link.summary-blog-social__link_vk(href="https://new.vk.com/gavrishdmitry" target="_blank" title="vk")
+              +use('vk_round','svg-vk_round-blog')
+              img.summary-blog__icon(src="assets/img/vk.png" alt="vk icon")
+          li.summary-blog-social__item
+            a.summary-blog-social__link.summary-blog-social__link_gh(href="https://github.com/dmitrygavrish" target="_blank" title="github")
+              +use('github_round','svg-github_round-blog')
+              img.summary-blog__icon(src="assets/img/github.png" alt="github icon")
+          li.summary-blog-social__item
+            a.summary-blog-social__link.summary-blog-social__link_li(href="https://www.linkedin.com/in/dmitry-gavrish" target="_blank" title="linkedin")
+              +use('in_round','svg-in_round-blog')
+              img.summary-blog__icon(src="assets/img/in.png" alt="linkedin icon")
+      div.summary-blog-content
+        p.summary-blog-content__info.
+          Я веб разработчик из Москвы, и этот сайт я сделал в рамках
+          обучения в LoftSchool
+        p.summary-blog-content__copyright &copy; Дмитрий Гавриш | создано с любовью в LoftSchool | 2016
