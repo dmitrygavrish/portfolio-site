@@ -847,6 +847,7 @@ $('.skills-upgrade').on('submit', function(e) {
     xhr.open('POST','/about');
     xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
     xhr.send(JSON.stringify(data));
+    resolve();
   });
 
   promise.then(function() {
@@ -887,6 +888,7 @@ $('.add-project').on('submit', function(e) {
     xhr.open('POST','/work');
     xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
     xhr.send(JSON.stringify(data));
+    resolve();
   });
 
   promise.then(function() {
