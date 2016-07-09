@@ -4,6 +4,7 @@
   "description": "portfolio-app",
   "main": "main.js",
   "scripts": {
+    "start": "node ./main.js",
     "postinstall": "bower install"
   },
   "author": "dmitrygavrish",
