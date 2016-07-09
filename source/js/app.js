@@ -1,5 +1,12 @@
 'use strict';
+var scrollSwitch = 0;
 
+$(window).on('resize', function() {
+  if( scrollSwitch === 0) {
+    $('.bg-mask').css('background','none');
+    scrollSwitch = 1;
+  }
+});
 /***** index page rotating plate *****/
 
 var counter = 3;
@@ -35,6 +42,8 @@ $(window).resize(function() {
     blogSwitch.click();
   }
 });
+
+$('.blog-menu__item').first().addClass('blog-menu__item_active');
 
 var waypointsDown = $('.blog-article').waypoint({
   handler: function(direction) {
@@ -351,7 +360,7 @@ $('#menu-button').on('click', function() {
 $('.site-menu__link').on('click', function() {
   if ( $(this).attr('href') == '#' ) {
 
-    $('.about-menu__check').click();//.attr('disabled', 'disabled');
+    $('.about-menu__button').click();
 
     $('.site-menu__item').css({
       'opacity': '0'
@@ -721,7 +730,6 @@ $('.welcome-form').on('submit', function(e) {
         $(this).html(s);
       }
     }).done(function() {
-      console.log('callbacked');
       $('.message-block').css({
         'display': 'block'
       });
@@ -774,9 +782,18 @@ $('.connect-form').on('submit', function(e) {
 });
 
 /*__________________more ajax____________________*/
+$('.admin-message__button').on('click', function() {
+  $('.admin-message-wrapper').fadeOut(300);
+});
 
 $('.add-article').on('submit', function(e) {
   e.preventDefault();
+
+  if ( $('#article').val() == '' || $('#date').val() == '' || $('#content').val() == '' ) {
+    $('.admin-message-wrapper').fadeIn(300);
+    $('.admin-message__text').text('Не все поля заполнены');
+    return false;
+  }
 
   var data = {
     title: article.value,
@@ -784,14 +801,33 @@ $('.add-article').on('submit', function(e) {
     text: content.value
   };
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST','/blog');
-  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
-  xhr.send(JSON.stringify(data));
+  var promise = new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST','/blog');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+    xhr.send(JSON.stringify(data));
+    resolve();
+  });
+
+  promise.then(function() {
+    $('#article').val('');
+    $('#date').val('');
+    $('#content').val('');
+    $('.admin-message-wrapper').fadeIn(300);
+    $('.admin-message__text').text('Отправлено');
+  });
 });
 
 $('.skills-upgrade').on('submit', function(e) {
   e.preventDefault();
+
+  if ($('#number_html').val() == '' || $('#number_css').val() == '' || $('#number_js').val() == '' || $('#number_php').val() == '' ||
+      $('#number_mysql').val() == '' || $('#number_node').val() == '' || $('#number_mongo').val() == '' ||
+      $('#number_git').val() == '' || $('#number_gulp').val() == '' || $('#number_bower').val() == '') {
+    $('.admin-message-wrapper').fadeIn(300);
+    $('.admin-message__text').text('Не все поля заполнены');
+    return false;
+  }
 
   var data = {
     html: number_html.value,
@@ -806,10 +842,27 @@ $('.skills-upgrade').on('submit', function(e) {
     bower: number_bower.value
   };
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST','/about');
-  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
-  xhr.send(JSON.stringify(data));
+  var promise = new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST','/about');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+    xhr.send(JSON.stringify(data));
+  });
+
+  promise.then(function() {
+    $('#number_html').val('');
+    $('#number_css').val('');
+    $('#number_js').val('');
+    $('#number_php').val('');
+    $('#number_mysql').val('');
+    $('#number_node').val('');
+    $('#number_mongo').val('');
+    $('#number_git').val('');
+    $('#number_gulp').val('');
+    $('#number_bower').val('');
+    $('.admin-message-wrapper').fadeIn(300);
+    $('.admin-message__text').text('Отправлено');
+  });
 });
 
 /*___________ server-side for works ____________*/
@@ -817,16 +870,32 @@ $('.skills-upgrade').on('submit', function(e) {
 $('.add-project').on('submit', function(e) {
   e.preventDefault();
 
+  if ( $('#project').val() == '' || $('#tech').val() == '' || $('#projectimg').val() == '' ) {
+    $('.admin-message-wrapper').fadeIn(300);
+    $('.admin-message__text').text('Не все поля заполнены');
+    return false;
+  }
+
   var data = {
     title: project.value,
     tech: tech.value,
     image: projectimg.value
   };
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST','/work');
-  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
-  xhr.send(JSON.stringify(data));
+  var promise = new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST','/work');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+    xhr.send(JSON.stringify(data));
+  });
+
+  promise.then(function() {
+    $('#project').val('');
+    $('#tech').val('');
+    $('#projectimg').val('');
+    $('.admin-message-wrapper').fadeIn(300);
+    $('.admin-message__text').text('Отправлено');
+  });
 });
 
 function uploadFiles(url, files) {
@@ -846,3 +915,5 @@ function uploadFiles(url, files) {
 document.querySelector('#projectimg').addEventListener('change', function(e) {
   uploadFiles('/image', this.files);
 }, false);
+
+/*_____________________________*/

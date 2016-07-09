@@ -16,6 +16,8 @@
 }
 .bg-mask {
   position: absolute;
+  background: url(../img/mapbg.png) no-repeat;
+  background-size: cover;
   top: 0;
   left: 0;
   width: 100%;

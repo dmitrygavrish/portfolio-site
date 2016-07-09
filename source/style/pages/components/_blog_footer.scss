@@ -2,6 +2,7 @@
   position: relative;
   height: rem(146px);
   background-color: rgba(#000, .7);
+  overflow: hidden;
   &::before {
     content: '';
     display: table;
@@ -136,7 +137,7 @@
   display: inline-block;
   vertical-align: middle;
   width: 35%;
-  max-height: 100%;
+  //max-height: 100%;
   margin: auto;
   color: rgba(#fff, .8);
   font-weight: 200;

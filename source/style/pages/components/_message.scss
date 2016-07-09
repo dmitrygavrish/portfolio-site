@@ -17,21 +17,52 @@
   text-align: center;
 }
 
-.message-block__text {
+.message-block__text, .admin-message__text {
   font-size: rem(16px);
   text-align: center;
   color: $titlecolor;
 }
 
-.message-block__button {
+.message-block__button, .admin-message__button {
   display: inline-block;
   width: rem(100px);
   height: rem(40px);
+  @include border-radius(.35rem);
   background-color: $green100;
   color: #fff;
-  border: none;
+  border: 1px solid $green100;
   cursor: pointer;
+  transition: background-color .2s, color .2s;
+  &:hover {
+    background-color: #fff;
+    color: $green100;
+  }
   &:focus {
     outline: none;
   }
+}
+
+/*___________admin message_______________*/
+
+.admin-message-wrapper {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000, .5);
+  z-index: 21;
+}
+
+.admin-message {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: rem(200px);
+  height: rem(100px);
+  @include border-radius(.35rem);
+  background-color: #fff;
+  text-align: center;
 }
