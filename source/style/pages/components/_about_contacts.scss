@@ -76,7 +76,12 @@
 }
 .contacts-block__icon {
   position: relative;
-  display: inline-block;
+  display: block;
+  //vertical-align: middle;
+  text-decoration: none;
+  color: black;
+}
+.svg-skype-about, .svg-envelope-about, .svg-phone-about, .svg-map_marker-about {
   vertical-align: middle;
 }
 a.contacts-block__icon {
@@ -96,6 +101,7 @@ a.contacts-block__icon {
   font-size: rem(16px);
   margin: 0;
   display: inline-block;
+  margin-left: rem(8px);
 }
 
 .svg-skype-about, .svg-envelope-about,

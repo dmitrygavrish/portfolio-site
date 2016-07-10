@@ -8,7 +8,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport('smtps://paulissimo11%40gmail.com:pass@smtp.gmail.com');
+var transporter = nodemailer.createTransport('smtps://paulissimo11%40gmail.com:printer45@smtp.gmail.com');
 
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);

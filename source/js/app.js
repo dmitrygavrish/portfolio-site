@@ -765,6 +765,8 @@ $('.connect-form').on('submit', function(e) {
     $('#message').addClass('not-valid-connect');
   }
   if ( $('#name').val() == '' || $('#email').val() == '' || $('#message').val() == '' ) {
+    $('.admin-message-wrapper').fadeIn(300);
+    $('.admin-message__text').text('Не все поля заполнены');
     return false;
   }
 
@@ -775,10 +777,21 @@ $('.connect-form').on('submit', function(e) {
     text: message.value
   };
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST','/mail');
-  xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
-  xhr.send(JSON.stringify(data));
+  var promise = new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST','/mail');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+    xhr.send(JSON.stringify(data));
+    resolve();
+  });
+
+  promise.then(function() {
+    $('#name').val('');
+    $('#email').val('');
+    $('#message').val('');
+    $('.admin-message-wrapper').fadeIn(300);
+    $('.admin-message__text').text('Отправлено');
+  });
 });
 
 /*__________________more ajax____________________*/

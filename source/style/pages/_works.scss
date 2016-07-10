@@ -346,9 +346,11 @@
 }
 .controls-prev-mask {
   background-image: radial-gradient(center, rgba(#cac9c4, .7), rgba(#c1c0bb, .7));
+  background-color: rgba(#cac9c4, .5);
 }
 .controls-next-mask {
   background-image: radial-gradient(center, rgba(#c0bdb5, .7), rgba(#b1aea6, .7));
+  background-color: rgba(#c0bdb5, .5);
 }
 .svg-portf_arrow_down, .svg-portf_arrow_up {
   position: absolute;
@@ -436,7 +438,7 @@
 
 .opinion-name__title {
   position: relative;
-  width: rem(280px);
+  width: rem(290px);
   font-family: 'Bernier', sans-serif;
   font-size: rem(63px);
   display: inline-block;
@@ -567,7 +569,7 @@
 
 .connect-form__title {
   position: relative;
-  width: rem(265px);
+  width: rem(270px);
   margin: rem(35.5px) auto;
   text-align: center;
   text-transform: uppercase;
