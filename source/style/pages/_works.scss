@@ -116,20 +116,20 @@
   width: rem(290px);
   font-family: 'Bernier', sans-serif;
   font-size: rem(35px);
-  color: transparent;
-  span {
-    font-family: 'Bernier', sans-serif;
-    color: $titlecolor;
-    font-size: 14px;
-    line-height: 50px;
-    transition: font-size .05s;
-    @include tablet {
-      line-height: 40px;
-    }
-    @include phone {
-      line-height: 30px;
-    }
-  }
+  color: $titlecolor;
+  //span {
+  //  font-family: 'Bernier', sans-serif;
+  //  color: $titlecolor;
+  //  font-size: 14px;
+  //  line-height: 50px;
+  //  transition: font-size .05s;
+  //  @include tablet {
+  //    line-height: 40px;
+  //  }
+  //  @include phone {
+  //    line-height: 30px;
+  //  }
+  //}
   text-transform: uppercase;
   margin: 0 0 rem(40px);
   &::before, &::after {
@@ -345,11 +345,11 @@
   z-index: 3;
 }
 .controls-prev-mask {
-  background-image: radial-gradient(center, rgba(#cac9c4, .7), rgba(#c1c0bb, .7));
+  //background-image: radial-gradient(center, rgba(#cac9c4, .7), rgba(#c1c0bb, .7));
   background-color: rgba(#cac9c4, .5);
 }
 .controls-next-mask {
-  background-image: radial-gradient(center, rgba(#c0bdb5, .7), rgba(#b1aea6, .7));
+  //background-image: radial-gradient(center, rgba(#c0bdb5, .7), rgba(#b1aea6, .7));
   background-color: rgba(#c0bdb5, .5);
 }
 .svg-portf_arrow_down, .svg-portf_arrow_up {
@@ -665,6 +665,19 @@
   transition: fill .2s;
   &:hover {
       fill: rgba(#fff, 1);
+  }
+}
+
+/*//////////////*/
+
+.letter-span {
+  opacity: 0;
+  display: inline-block;
+  font-family: 'Bernier', sans-serif;
+  &.letter-span_active {
+    opacity: 1;
+    animation: bounceIn 1s;
+    -webkit-animation: bounceIn 1s;
   }
 }
 @import "components/works_media";

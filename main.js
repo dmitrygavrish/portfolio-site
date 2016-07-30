@@ -17,7 +17,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/portfoliodb');
 
 var multiparty = require('connect-multiparty');
-var multipartyMiddleware = multiparty({ uploadDir: './source/images' });
+var multipartyMiddleware = multiparty({ uploadDir: './build/assets/img' });
 
 /* models */
 /*____________________________________________________________________________*/
@@ -87,7 +87,7 @@ app.get('/works.html', function(req, res) {
 
 app.get('/about.html', function(req, res) {
   Skill.find({}).then(function(skills) {
-    console.log(skills);
+    // console.log(skills);
     res.render('about', { pageTitle: 'About page', skills: skills});
   });
 });
@@ -163,6 +163,7 @@ app.post('/work', function(req, res) {
   var work = new Work ({
     title: req.body.title,
     tech: req.body.tech,
+    url: req.body.url,
     image: imagePath
   });
   work.save();
@@ -176,7 +177,7 @@ var url = 'mongodb://localhost:27017/portfoliodb';
 
 var removeSkills = function(db, callback) {
   db.collection('skills').deleteMany( {}, function(err, results) {
-    console.log(results);
+    // console.log(results);
     callback();
   });
 };
@@ -203,7 +204,7 @@ app.post('/about', function(req, res) {
 });
 
 app.post('/auth', function(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
 
   if(req.body.login === 'admin' && req.body.password === 'pass') {
     req.session.user = 'admin';

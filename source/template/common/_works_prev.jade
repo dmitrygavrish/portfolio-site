@@ -1,4 +1,4 @@
 - i++
 li.controls-prev__item <span class="controls__span">#{i}</span>
-  - var imgPath = "assets/img/" + work.image.slice(14);
+  - var imgPath = work.image.replace( /build\\*assets\\*img\\*/g, 'assets/img/' );
     img.controls-prev__pic(src= imgPath alt="сайт")

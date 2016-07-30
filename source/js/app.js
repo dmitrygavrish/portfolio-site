@@ -490,31 +490,54 @@ $(function () {
         nextSlide = $('.controls-next__item'),
         descBlock = $('.desc-wrapper');
 
+    //======================
+    // letter by letter
+    //======================
     function splitLetters() {
       var title = descBlock.eq(slideActiveIndex).find('.site-name__title');
-      var letters = title.text().split('');
-      title.text('');
-      var i = 0;
+      var string = title.text().trim(),
+        stringArray = string.split(''),
+        word = '';
+        //animationState = $.Deferred();
 
-      function loopLetters() {
-        setTimeout(function() {
-          var span = $("<span></span>");
-          span.text(letters[i]).appendTo(title).animate({
-            fontSize: fontBig
-          }, 150, "linear", function() {
-            span.animate({
-              fontSize: fontNormal
-            }, 150);
-          });
 
-          i++;
-          if (i < letters.length) {
-            loopLetters();
-          }
-        }, 75);
+      stringArray.forEach(function (letter) {
+
+        if (letter != ' ') {
+          var letterHtml = '<span class="letter-span">' + letter + '</span>';
+        } else {
+          letterHtml = '<span class="letter-span_space">' + letter + '</span>';
+        }
+
+        word += letterHtml;
+      });
+
+      title.html(word);
+
+      var letter = title.find('.letter-span'),
+        counter = 0,
+        timer,
+        duration = 2000 / stringArray.length;
+
+      function showLetters() {
+        var currentLetter = letter.eq(counter);
+
+        currentLetter.addClass('letter-span_active');
+
+        counter++;
+
+        // if (stringArray.length == counter) {
+        //   animationState.resolve();
+        // }
+
+        if (typeof timer != 'undefined') {
+          clearTimeout(timer);
+        }
+
+        timer = setTimeout(showLetters, duration);
       }
 
-      loopLetters();
+      showLetters();
     }
 
     descBlock.css({
@@ -884,7 +907,7 @@ $('.skills-upgrade').on('submit', function(e) {
 $('.add-project').on('submit', function(e) {
   e.preventDefault();
 
-  if ( $('#project').val() == '' || $('#tech').val() == '' || $('#projectimg').val() == '' ) {
+  if ( $('#project').val() == '' || $('#tech').val() == '' || $('#projectimg').val() == '' || $('#url').val() == '' ) {
     $('.admin-message-wrapper').fadeIn(300);
     $('.admin-message__text').text('Не все поля заполнены');
     return false;
@@ -893,6 +916,7 @@ $('.add-project').on('submit', function(e) {
   var data = {
     title: project.value,
     tech: tech.value,
+    url: url.value,
     image: projectimg.value
   };
 
@@ -907,6 +931,7 @@ $('.add-project').on('submit', function(e) {
   promise.then(function() {
     $('#project').val('');
     $('#tech').val('');
+    $('#url').val('');
     $('#projectimg').val('');
     $('.admin-message-wrapper').fadeIn(300);
     $('.admin-message__text').text('Отправлено');
